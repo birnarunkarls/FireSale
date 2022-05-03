@@ -6,13 +6,10 @@
 </head>
 <body>
     <nav>
-        {% include 'navigation_bar.html' %}
+        {% include "navigation_bar.html" %}
     </nav>
-    <!-- Add navigation bar , tékka is authenicated, ef ekki -->
+
     {% block content %}
-        <div class = "container">
-            <h1>Home page</h1>
-        </div>
     {% endblock %}
 </body>
 </html>
