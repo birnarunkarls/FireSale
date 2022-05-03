@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>About</h1>
+    <div class = "nav_top">
+        <div id = "logo">
+            <button id = "logo_button">IMG</button>
+        </div>
+        <div id = "profile_info">
+            <div>
+                <p id = "average_rating">Average rating</p>
+                <p id = "profile_photo">IMG</p>
+            </div>
+            <div>
+                <button id = "blue_button">My bids</button>
+                <button id = "blue_button">My profile</button>
+                <button id = "grey_button">Log out</button>
+            </div>
+        </div>
+    </div>
+    <div class = "nav_bottom">
+        <div id = "buttons_bottom">
+            <button id = "home_button">Home</button>
+            <button id = "create_an_item_button">Create an item</button>
+            <select id = "categories_select">Categorie</select>
+        </div>
+        <div id = "search_bar">
+            <input id = "search" placeholder = "Search...">
+            <button id = "search_button">IMG</button>
+        </div>
+    </div>
+{% endblock %}

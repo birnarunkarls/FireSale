@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>About</h1>
+    {% for item in list %}
+        <div>
+            <div>{{ item.name }}</div>
+            <div>{{ item.description }}</div>
+        </div>
+    {% endfor %}
+{% endblock %}

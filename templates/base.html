@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        {% include 'navigation_bar.html' %}
+    </nav>
+    <!-- Add navigation bar , tékka is authenicated, ef ekki -->
+    <div class = "navigation_bar">
+        {% block content %}
+            <h1>Best Bid</h1>
+    </div>
+    <div class = "container">
+        {% endblock %}
+    </div>
+</body>
+</html>
