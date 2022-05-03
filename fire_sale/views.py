@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def home_page(request):
-    return render(request, 'fire_sale/navigation_bar.html')
+    return render(request, 'fire_sale/base.html')
 
 
 def about(request):
