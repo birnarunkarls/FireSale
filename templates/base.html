@@ -9,12 +9,13 @@
         {% include 'navigation_bar.html' %}
     </nav>
     <!-- Add navigation bar , tékka is authenicated, ef ekki -->
-    <div class = "navigation_bar">
-        {% block content %}
-            <h1>Best Bid</h1>
-    </div>
-    <div class = "container">
-        {% endblock %}
-    </div>
+    {% block content %}
+        <div class = "container">
+            <h1>Home page</h1>
+        </div>
+    {% endblock %}
 </body>
 </html>
+
+
+
