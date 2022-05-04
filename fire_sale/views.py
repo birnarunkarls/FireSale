@@ -2,24 +2,17 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
-# Create your views here.
+# home_page
 def home_page(request):
     return render(request, 'fire_sale/home_page.html')
 
+# category
+def category(request):
+    return render(request, 'fire_sale/category.html')
 
+# about
 def about(request):
-    return render(request, 'fire_sale/about.html', {
-        'list': [
-            {
-                'name': 'Arnar',
-                'description': 'Desc 1'
-            },
-            {
-                'name': 'Arnar2',
-                'description': 'Desc 2'
-            }
-        ]
-    })
+    return render(request, 'fire_sale/about.html')
 
 
 #def index(request):

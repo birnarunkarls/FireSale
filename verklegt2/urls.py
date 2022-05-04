@@ -21,4 +21,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # http://localhost:8000/general/*
     path('', include('fire_sale.urls')),
+    # user
+    path('user/', include('user.urls')),
+    # item
+    path('item/', include('item.urls')),
+    # bids
+    path('bids/', include('bids.urls')),
+
 ]
