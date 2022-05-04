@@ -3,5 +3,33 @@
 {% block content %}
 
     <h1>My bids</h1>
+    <div class="bidType">
+        <h2>Pending bids</h2>
+        <div class="bids">
+            <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL PENDING OFFER Í DATABASE</p>
+            <div id="pending_bids">
+                <p>All pending bids from the database</p>
+            </div>
+        </div>
+
+        <h2>Accepted bids</h2>
+         <div class="bids"">
+             <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL ACCEPTED OFFER Í DATABASE</p>
+            <div id="accepted_bids">
+                <p>All accepted bids from the database</p>
+                <button id=decline_button>Decline offer</button>
+                <button id=accept_button>Accept offer</button>
+            </div>
+        </div>
+
+        <h2>Previous bids</h2>
+         <div class="bids">
+             <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL PREVIOUS OFFER Í DATABASE</p>
+            <div id="previous_bids">
+                <p>All previous bids from the database</p>
+            </div>
+        </div>
+
+    </div>
 
 {% endblock %}
