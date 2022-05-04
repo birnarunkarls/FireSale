@@ -1,7 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>Profile edit</h1>
+    <div>
+        <div>
+            <p>Change user information</p>
+        </div>
+        <div>
+            <div>
+                <p>User name:</p>
+                <p>Email:</p>
+                <p>Password:</p>
+                <p>Full name:</p>
+                <p>Phone number:</p>
+                <p>Date of birth:</p>
+                <p>Bio:</p>
+                <p>Image</p>
+            </div>
+            <div>
+                <input id="username_input">
+                <input id="email_input">
+                <input id="password_input">
+                <input id="name_input">
+                <input id="phone_input">
+                <input type="date" id="birthday_input">
+                <input id="bio=input">
+                <input type="file" id="image_input">
+                <button id="save_info_button">Save information</button>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
