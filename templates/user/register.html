@@ -2,6 +2,42 @@
 
 {% block content %}
 
-    <h1>Register</h1>
+
+    <div>
+        <div>
+            <p>Create an account</p>
+        </div>
+        <div>
+            <div>
+                <p>User name:</p>
+                <p>Email:</p>
+                <p>Password:</p>
+                <p>Must contain at least one uppercase letter and a number and a number</p>
+                <p>Password again:</p>
+                <p>Full name:</p>
+                <p>Phone number:</p>
+                <p>Date of birth:</p>
+                <p>Bio:</p>
+                <p>Image</p>
+            </div>
+            <div>
+                <input id="username_input">
+                <input id="email_input">
+                <input id="password_input">
+                <input id="password_again_input">
+                <input id="name_input">
+                <input id="phone_input">
+                <input type="date" id="birthday_input">
+                <input id="bio=input">
+                <input type="file" id="image_input">
+                <button id="create_account_button">Save information</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p>Already have an account ?</p>
+        <button id="login">Login</button>
+    </div>
+
 
 {% endblock %}
