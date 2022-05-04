@@ -2,6 +2,55 @@
 
 {% block content %}
 
-    <h1>Make bid</h1>
+    <h1>Make a bid</h1>
+    <h2>Product name</h2>
+    <div id=make_bid_info>
+        <div id=img_div>
+            <p>IMG</p>
+        </div>
+        <div id=info_product>
+            <div id=description_product>
+                <h2>Description of the product</h2>
+                <p>Description</p>
+            </div>
+            <div id=information_seller>
+                <h2>Information on seller</h2>
+                <p>Information</p>
+            </div>
+            <div id=information_seller>
+                <h1>New bid</h1>
+                <p>Notify me about the listing by:</p>
+                <div id="notify_method">
+                    <input type="checkbox" id="notify_checkboxes" name="email" value="Email">
+                    <label for="email">Email</label>
+                    <input type="checkbox" id="notify_checkboxes" name="push_notification" value="Push notification">
+                    <label for="push_notification">Push notification</label>
+                    <input type="checkbox" id="notify_checkboxes" name="text_message" value="Text message">
+                    <label for="text_message">Text message</label>
+                </div>
+                <div id="bid_abount">
+                    <p>Bid amount ($): <input type="text" id="bid_amount" ></p>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div id="make_bid_bottom_of_page">
+        <div id="highest_bid">
+            <p>Highest bid</p>
+        </div>
+        <div id="make_bid">
+            <button id="bake_bid_button">Make bid</button>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+
 
 {% endblock %}

@@ -2,6 +2,73 @@
 
 {% block content %}
 
-    <h1>Checkout phase 1</h1>
+    <h1>Offer accepted</h1>
+    <h2>Name of product</h2>
+    <div>
+        <div id="img_of_product">
+            <p>IMG</p>
+        </div>
+        <div id="shipping_method">
+            <h1>Checkout phase 1</h1>
+            <h2>Shipping method</h2>
+            <div id="shipping_method_checkbox">
+                <input type="checkbox" id="shipping_checkboxes" name="pickup" value="Pickup">
+                <label for="pickup">Pickup from seller - contact seller by email/phone</label>
+                <input type="checkbox" id="shipping_checkboxes" name="express_shipping" value="ExpressShipping">
+                <label for="express_shipping">Express shipping - $20 (delivered in 2-3 buisness days)</label>
+                <input type="checkbox" id="shipping_checkboxes" name="standard_shipping" value="StandardShipping">
+                <label for="standard_shipping">Standard shipping - FREE (delivered in 7-10 buisness days)</label>
+            </div>
+        </div>
+        <div id="shipping_info">
+            <h2>Shipping information</h2>
+            <div id="shipping_info">
+                <p>Full name:</p>
+                <p>Street name:</p>
+                <p>House number:</p>
+                <p>Postal code:</p>
+                <p>City:</p>
+                <p>Country:</p>
+            </div>
+            <div id="shipping_info_inputs">
+                <input id="full_name">
+                <input id="street_name">
+                <input id="house_number">
+                <input id="postal_code">
+                <input id="city">
+                <input id="country">
+            </div>
+        </div>
+
+        <div id="payment_info">
+            <h1>Checkout phase 2</h1>
+            <h2>Payment information</h2>
+            <div id="payment_info">
+                <p>Cardholder name:</p>
+                <p>Card number:</p>
+                <p>Expiration date:</p>
+                <p>CVC:</p>
+            </div>
+            <div id="shipping_info_inputs">
+                <input id="cardholder_name">
+                <input id="card_number">
+                <input type="date" id="expiration_date">
+                <input id="cvc">
+            </div>
+        </div>
+
+        <div id="rate_seller">
+            <h1>Checkout phase 3</h1>
+            <h2>Please rate the seller</h2>
+            <input type="radio" class="rating_option" value="one_star">
+            <input type="radio" class="rating_option" value="two_stars">
+            <input type="radio" class="rating_option" value="three_stars">
+            <input type="radio" class="rating_option" value="four_stars">
+            <input type="radio" class="rating_option" value="five_stars">
+        </div>
+
+        <button id="continue_button">Continue</button>
+
+    </div>
 
 {% endblock %}
