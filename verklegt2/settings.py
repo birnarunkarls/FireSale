@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'verklegt2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': BASE_DIR / 'fire-sale-db',
+        'NAME': 'fire-sale-db',
         'USER': 'fire-sale-db-user',
         'PASSWORD': 'BestBids22',
         'HOST': '35.234.153.107',
