@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fire_sale.apps.FireSaleConfig',
-    'bids.apps.BidsConfig',
+    'checkout.apps.CheckoutConfig',
     'item.apps.ItemConfig',
     'user.apps.UserConfig',
 

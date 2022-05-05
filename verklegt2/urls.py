@@ -25,7 +25,7 @@ urlpatterns = [
     path('user/', include('user.urls')),
     # item
     path('item/', include('item.urls')),
-    # bids
-    path('bids/', include('bids.urls')),
+    # checkout
+    path('checkout/', include('checkout.urls')),
 
 ]
