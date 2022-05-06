@@ -1,3 +1,11 @@
-div {
-    background-color: purple;
+.nav_top {
+    background-color: whitesmoke;
+}
+
+.nav_bottom {
+    background-color: #5874EC;
+}
+
+#buttons_bottom {
+    display: inline-block;
 }
