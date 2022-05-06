@@ -12,6 +12,9 @@ class Item(models.Model):
     image = models.CharField(max_length=9999, default="IMG")
     highest_bid = models.CharField(max_length=9999, default="")
 
+    def __str__(self):
+        return self.name
+
 
 class Bid(models.Model):
     # user = models.OneToOneField(User, on_delete=models.CASCADE)
