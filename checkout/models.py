@@ -11,6 +11,9 @@ class Shipping(models.Model):
     city = models.CharField(max_length=255, blank=True)
     country = models.CharField(max_length=9999, blank=True)
 
+    def __str__(self):
+        return self.full_name
+
 
 class Payment(models.Model):
     cardholder_name = models.CharField(max_length=9999, blank=True)
@@ -19,6 +22,9 @@ class Payment(models.Model):
     cvc = models.CharField(max_length=9999, blank=True)
     payment_date = models.CharField(max_length=9999, blank=True)
     total_amoun = models.CharField(max_length=9999, blank=True)
+
+    def __str__(self):
+        return self.cardholder_name
 
 
 

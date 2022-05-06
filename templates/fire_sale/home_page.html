@@ -3,7 +3,15 @@
 {% block content %}
     <div>
         <div>Popular items</div>
-        <div>Clothing</div>
+        <div id="'clothing">
+            <h1>Clothing</h1>
+            {% for item in items %}
+                <p>hallo</p>
+                {% include 'item/single_item.html' with item=item %}
+            {% endfor %}
+
+        </div>
+
         <div>Electronics</div>
         <div>Furniture</div>
     </div>

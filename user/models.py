@@ -3,20 +3,18 @@ from django.db import models
 
 
 
-# user_user table name
-class User(models.Model):
-     username = models.OneToOneField(User, on_delete=models.CASCADE)
-#    password = models.OneToOneField(User, on_delete=models.CASCADE)
-
-
 # user_profile table name
 class Profile(models.Model):
-    #user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    #user = models.ForeignKey(User, on_delete=models.CASCADE)
+    #first_name =
     phone_number = models.CharField(max_length=9999, blank=True)
     date_of_birth = models.CharField(max_length=255, blank=True)
     profile_picture = models.CharField(max_length=9999, blank=True)
     bio = models.CharField(max_length=9999, blank=True)
+
+    def __str__(self):
+        return self.user
 
 
 
