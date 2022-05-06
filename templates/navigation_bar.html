@@ -4,7 +4,7 @@
     <div id="logo">
         <button id="logo_button"><a href="{% url 'fire_sale-home_page' %}">IMG</a></button>
     </div>
-    {% if request.user.is_authenticatet %}
+    {% if request.user.is_authenticated %}
         <div id="profile_info">
             <div>
                 <p id="average_rating">Average rating</p>
@@ -27,8 +27,9 @@
 <div class="nav_bottom">
     <div id="buttons_bottom">
         <button><a href="{% url 'fire_sale-home_page' %}">Home</a></button>
-        <button><a href="{% url 'item-create_item' %}">Create an item</a></button>
-
+        {% if request.user.is_authenticated %}
+            <button><a href="{% url 'item-create_item' %}">Create an item</a></button>
+        {% endif %}
         <select id="categories_select">Category
             <option value="popular_items">Popular items</option>
             <option value="clothing">Clothing</option>

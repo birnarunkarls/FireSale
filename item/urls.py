@@ -13,4 +13,5 @@ urlpatterns = [
     # make a bid
     path('make_bid', views.make_bid, name="item-make_bid"),
 
+    path('<int:id>', views.get_item_by_id, name="item-get_item_by_id"),
 ]

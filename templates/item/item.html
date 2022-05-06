@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h1>MacBook Pro 13"</h1>
+    <h1>{{ item.name }}</h1>
     <div>
         <div id="img_comp">
             <p>IMG</p>
@@ -10,12 +10,12 @@
         <div class="productInfoBox">
             <div class="productInfo">
                 <h2>Product information</h2>
-                <p>Condition: Good</p>
-                <p>Description: Great computer, high quality</p>
-                <p>Category: Electronics</p>
+                <p>Condition: {{ item.condition }}</p>
+                <p>Description: {{ item.description }}</p>
+                <p>Category: {{ item.category }}</p>
             </div>
             <div class="makeABid">
-                <button id="make_a_bid_button">MAKE A BID</button>
+                <button id="make_a_bid_button"><a href="{% url 'item-make_bid' %}">MAKE A BID</a></button>
             </div>
         </div>
         <div class="sellerInfoBox">
@@ -25,12 +25,12 @@
                 </div>
                 <div class="sellerInfo">
                     <h3>Seller information</h3>
-                    <p>Bill Smith</p>
+                    <p>Name: {{ item.seller_id_id }}</p>
                     <p>Average rating: 4,5</p>
                 </div>
             </div>
             <div class="highestBid">
-                <p>Highest bid: $100.000</p>
+                <p>Highest bid: ${{ item.highest_bid }}</p>
             </div>
         </div>
         <div class="moreLikeThisBox">
