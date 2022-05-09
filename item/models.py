@@ -24,6 +24,6 @@ class Bid(models.Model):
     notification = models.CharField(max_length=255, blank=True)
 
 
-class ItemImages(models.Model):
+class Images(models.Model):
     item_id = models.ForeignKey(Item, on_delete=models.CASCADE, blank=True)
     image = models.CharField(max_length=9999, default="")
