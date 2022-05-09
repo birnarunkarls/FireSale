@@ -1,10 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import models
-from user.models import User
+# from user.models import User
 
 
 class Item(models.Model):
-    seller_id = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
+    seller_id = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=9999, default="")
     description = models.CharField(max_length=255, default="")
     condition = models.CharField(max_length=9999, default="")
@@ -24,6 +24,6 @@ class Bid(models.Model):
     notification = models.CharField(max_length=255, blank=True)
 
 
-class ItemImages(models.Model):
-    item_id = models.ForeignKey(Item, on_delete=models.CASCADE, blank=True)
+class Images(models.Model):
+    item_id = models.ForeignKey(Item, on_delete=models.CASCADE)
     image = models.CharField(max_length=9999, default="")

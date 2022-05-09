@@ -23,3 +23,12 @@ INSERT INTO checkout_payment (cardholder_name, cardnumber, expiration_date, cvc,
 INSERT INTO checkout_shipping (method, full_name, street_name, house_numer, postal_code, city, country) VALUES ('standard_shipping', 'Jón Jónsson', 'Menntavegur', '1', '102', 'Reykjavik', 'Iceland');
 INSERT INTO checkout_shipping (method, full_name, street_name, house_numer, postal_code, city, country) VALUES ('standard_shipping', 'Gunnar Gunnarsson', 'Laugarvegur', '1', '101', 'Reykjavik', 'Iceland');
 
+
+INSERT INTO item_images (item_id, image) VALUES (19, 'https://images.hindustantimes.com/tech/img/2021/12/21/960x540/iPhone_13_Mini_(9)_1632560822480_1640057457018.jpg')
+INSERT INTO item_images (item_id, image) VALUES (19, 'https://images.hindustantimes.com/tech/img/2022/03/16/960x540/iPhone_13_Mini_(10)_1633111870000_1647407172205.jpg')
+
+
+
+
+
+

@@ -6,8 +6,7 @@ from django.db import models
 # user_profile table name
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    #user = models.ForeignKey(User, on_delete=models.CASCADE)
-    #first_name =
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=9999, blank=True)
     date_of_birth = models.CharField(max_length=255, blank=True)
     profile_picture = models.CharField(max_length=9999, blank=True)

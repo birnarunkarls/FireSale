@@ -3,8 +3,8 @@
 {% block content %}
 
     <h1>{{ item.name }}</h1>
-    <div>
-        <div id="img_comp">
+    <div class="itemPage">
+        <div class="imgItem">
             <p>IMG</p>
         </div>
         <div class="productInfoBox">
@@ -14,8 +14,8 @@
                 <p>Description: {{ item.description }}</p>
                 <p>Category: {{ item.category }}</p>
             </div>
-            <div class="makeABid">
-                <button id="make_a_bid_button"><a href="{% url 'item-make_bid' %}">MAKE A BID</a></button>
+            <div class="largeButton">
+                <button class="makeBidButton"><a href="{% url 'item-make_bid' %}">MAKE A BID</a></button>
             </div>
         </div>
         <div class="sellerInfoBox">
@@ -31,25 +31,6 @@
             </div>
             <div class="highestBid">
                 <p>Highest bid: ${{ item.highest_bid }}</p>
-            </div>
-        </div>
-        <div class="moreLikeThisBox">
-            <div class="moreLikeThis">
-                <p>More like this!</p>
-            </div>
-            <div class="moreLikeThisItems">
-                <div id="more_like_this_macbook_air">
-                    <p>IMG</p>
-                    <p>MacBook Air</p>
-                </div>
-                <div id="more_like_this_macbook_pro">
-                    <p>IMG</p>
-                    <p>MacBook Pro</p>
-                </div>
-                <div id="more_like_this_vintage">
-                    <p>IMG</p>
-                    <p>Vintage computer</p>
-                </div>
             </div>
         </div>
 

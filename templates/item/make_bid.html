@@ -2,53 +2,43 @@
 
 {% block content %}
 
-    <h1>Make a bid</h1>
     <h2>Product name</h2>
-    <div id=make_bid_info>
-        <div id=img_div>
+    <div class=makeBidInfo>
+        <div class=imgDiv>
             <p>IMG</p>
         </div>
-        <div id=info_product>
+        <div class="infoProduct">
             <div id=description_product>
-                <h2>Description of the product</h2>
+                <h3>Description of the product</h3>
                 <p>Description</p>
             </div>
             <div id=information_seller>
-                <h2>Information on seller</h2>
+                <h3>Information on seller</h3>
                 <p>Information</p>
             </div>
-            <div id=information_seller>
-                <h1>New bid</h1>
-                <p>Notify me about the listing by:</p>
-                <div id="notify_method">
-                    <input type="checkbox" id="notify_checkboxes" name="email" value="Email">
-                    <label for="email">Email</label>
-                    <input type="checkbox" id="notify_checkboxes" name="push_notification" value="Push notification">
-                    <label for="push_notification">Push notification</label>
-                    <input type="checkbox" id="notify_checkboxes" name="text_message" value="Text message">
-                    <label for="text_message">Text message</label>
-                </div>
-                <div id="bid_abount">
-                    <p>Bid amount ($): <input type="text" id="bid_amount" ></p>
-                </div>
-
+            <div id="highest_bid">
+                <h4 id="higest_bid_text">Highest bid</h4>
             </div>
         </div>
+        <div class="newBid">
+            <h2>New bid</h2>
+            <p>Notify me about the listing by:</p>
+            <div id="notify_method">
+                <input type="checkbox" id="notify_checkboxes" name="email" value="Email">
+                <label for="email" id="notify_checkboxes">Email</label>
+                <input type="checkbox" id="notify_checkboxes" name="push_notification" value="Push notification"><label for="push_notification">Push notification</label>
+                <input type="checkbox" id="notify_checkboxes" name="text_message" value="Text message"><label for="text_message">Text message</label>
+            </div>
+            <div id="bid_abount">
+                <p>Bid amount ($): <input type="text" id="bid_amount" ></p>
+            </div>
+            <div class="makeBid">
+                <button class="makeBidButton"><a href="{% url 'item-my_bids' %}">CONFIRM BID</a></button>
+            </div>
 
-
-    </div>
-    <div id="make_bid_bottom_of_page">
-        <div id="highest_bid">
-            <p>Highest bid</p>
         </div>
-        <div id="make_bid">
-            <button id="make_bid_button"><a href="{% url 'item-my_bids' %}">Make bid</a></button>
-        </div>
-    </div>
-    <div>
 
-    </div>
-    <div>
+
 
     </div>
 
