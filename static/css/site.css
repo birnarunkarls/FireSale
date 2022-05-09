@@ -1,20 +1,98 @@
-.nav_top {
-    background-color: whitesmoke;
+
+.navTop, .navBottom {
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
-.nav_bottom {
-    background-color: #5874EC;
-    padding: 5px;
+.navTop {
+    background-color: #ffeee5;
 }
 
-#buttons_bottom {
-    display: inline-block;
+.navBottom {
+    background-color: #18ACBA;
 }
+
+#logo {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover, #categories_select:hover {
+    text-decoration: none;
+    color: #f5ccb8;
+}
+
+#login_register {
+    display: flex;
+    flex: 1.9;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.blueButton, .greyButton {
+    margin-right: 20px;
+    font-weight: bold;
+    width: 90px;
+}
+
+.blueButton {
+    background-color: #ffa998;
+}
+
+.greyButton {
+    background-color: #f76566;
+}
+
+
+.buttonsBottom {
+    display: flex;
+    flex: 1;
+    background-color: transparent;
+}
+
+#lower_button, #categories_select {
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    padding: 3px 15px 3px 15px;
+    font-weight: bold;
+}
+
 
 #search_bar {
+    padding: 1.5px 15px 1.5px 15px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#search {
+    width: 70%;
+    border: none;
+}
+
+#search_button {
+    background-color: white;
+    border: none;
+}
+
+#items_for_sale {
+    justify-content: space-evenly;
+}
+
+.eachItem {
+    border: #18ACBA;
+    background-color: #94d9e0;
     display: inline-block;
-    margin-left: 70%;
+    margin: 5px;
+    width: 310px;
+    height: 200px;
 }
