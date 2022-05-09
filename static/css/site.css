@@ -1,20 +1,13 @@
 .nav_top {
     background-color: whitesmoke;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav_bottom {
     background-color: #5874EC;
     padding: 5px;
-}
-
-
-#logo_button {
-    margin-left: 49%;
-}
-
-#login_register {
-    margin-left: 90%;
 }
 
 #buttons_bottom {
@@ -25,4 +18,3 @@
     display: inline-block;
     margin-left: 70%;
 }
-
