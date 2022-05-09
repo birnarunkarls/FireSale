@@ -1,5 +1,5 @@
 
-<div class="nav_top">
+<div class="navTop">
 
     <div id="logo">
         <button id="logo_button"><a href="{% url 'fire_sale-home_page' %}">IMG</a></button>
@@ -11,24 +11,24 @@
                 <p id="profile_photo">IMG</p>
             </div>
             <div>
-                <button id="blue_button"><a href="{% url 'item-my_bids' %}">My Bids</a></button>
-                <button id="blue_button"><a href="{% url 'user-my_profile' %}">My Profile</a></button>
-                <button id="grey_button">Log out</button>
+                <button class="blueButton"><a href="{% url 'item-my_bids' %}">My Bids</a></button>
+                <button class="blueButton"><a href="{% url 'user-my_profile' %}">My Profile</a></button>
+                <button class="greyButton">Log out</button>
             </div>
         </div>
     {%  else %}
         <div id="login_register">
-            <button id="login_button"><a href="{% url 'user-login' %}">Login</a></button>
-            <button id="register_button"><a href="{% url 'user-register' %}">Register</a></button>
+            <button class="blueButton"><a href="{% url 'user-login' %}">Login</a></button>
+            <button class="greyButton"><a href="{% url 'user-register' %}">Register</a></button>
         </div>
     {% endif %}
 </div>
 
-<div class="nav_bottom">
-    <div id="buttons_bottom">
-        <button><a href="{% url 'fire_sale-home_page' %}">Home</a></button>
+<div class="navBottom">
+    <div class="buttonsBottom">
+        <button id="lower_button"><a href="{% url 'fire_sale-home_page' %}">Home</a></button>
         {% if request.user.is_authenticated %}
-            <button><a href="{% url 'item-create_item' %}">Create an item</a></button>
+            <button id="lower_button"><a href="{% url 'item-create_item' %}">Create an item</a></button>
         {% endif %}
         <select id="categories_select">Category
             <option value="popular_items">Popular items</option>
@@ -39,6 +39,8 @@
     </div>
     <div id="search_bar">
         <input id="search" placeholder="Search...">
-        <button id="search_button">IMG</button>
+        <button id="search_button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg></button>
     </div>
 </div>

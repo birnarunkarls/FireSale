@@ -4,7 +4,7 @@ from user.models import User
 
 
 class Item(models.Model):
-    seller_id = models.ForeignKey(User, on_delete=models.CASCADE, default="")
+    seller_id = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     name = models.CharField(max_length=9999, default="")
     description = models.CharField(max_length=255, default="")
     condition = models.CharField(max_length=9999, default="")
@@ -22,3 +22,8 @@ class Bid(models.Model):
     buyer_id = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.CharField(max_length=9999, blank=True)
     notification = models.CharField(max_length=255, blank=True)
+
+
+class ItemImages(models.Model):
+    item_id = models.ForeignKey(Item, on_delete=models.CASCADE, blank=True)
+    image = models.CharField(max_length=9999, default="")
