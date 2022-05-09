@@ -122,7 +122,7 @@ a:hover, #categories_select:hover {
 
 /* Item page */
 
-.itemPage {
+.itemPage, .makeBidInfo, .bidType {
     display: flex;
     height: 400px;
 }
@@ -136,7 +136,7 @@ a:hover, #categories_select:hover {
     border-radius: 5px;
 }
 
-.productInfoBox, .sellerInfoBox {
+.productInfoBox, .sellerInfoBox, .bids {
     display: flex;
     flex-direction: column;
     background-color: #ffeee5;
@@ -165,12 +165,8 @@ a:hover, #categories_select:hover {
 
 /* make bid */
 
-.makeBidInfo {
-    display: flex;
-    height: 400px;
-}
 
-.imgDiv, .infoProduct, .newBid {
+.imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview {
     background-color: #ffeee5;
     flex: 1;
     padding: 20px;
@@ -179,12 +175,12 @@ a:hover, #categories_select:hover {
 }
 
 
-.infoProduct, .newBid {
+.infoProduct, .newBid, .ckeckoutOverview {
     display: flex;
     flex-direction: column;
 }
 
-#description_product, #information_seller, #notify_method, #bid_abount {
+#description_product, #information_seller, #notify_method, #bid_amount {
     flex: 3;
 }
 
@@ -193,6 +189,53 @@ a:hover, #categories_select:hover {
     flex: 1;
     border-top: 1.5px solid #008c96;
     text-align: center;
+}
+
+
+#decline_button {
+    padding: 3px 10px 3px 10px;
+    background-color: red;
+}
+
+#accept_button {
+    padding: 3px 10px 3px 10px;
+    background-color: #45d745;
+}
+
+.checkoutPage, #checkout_heading {
+    display: flex;
+    flex-direction: row;
+}
+
+#img_of_product, .cheackoutHeadingText{
+    flex: 1;
+}
+
+.fillInfo {
+    flex: 1.8;
+}
+
+#shipping, #payment_info, #rate_seller, #product_info {
+    background-color: #ffeee5;
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.headingCheckout{
+    padding-bottom: 10px;
+}
+
+
+#checkout_overview_center, #checkout_overview_bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+#img_of_product, #shipping_info_overview, #payment_info_overview {
+    height: 250px;
 }
 
 

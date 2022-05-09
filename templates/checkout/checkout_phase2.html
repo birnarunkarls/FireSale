@@ -1,27 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>Offer accepted</h1>
-    <h1>Checkout overview</h1>
+    <div id="checkout_heading">
+        <h1 class="cheackoutHeadingText">Offer accepted</h1>
+        <h1 class="cheackoutHeadingText">Checkout overview</h1>
+    </div>
     <h2>Product name</h2>
 
-    <div id="checkout_overview_center">
-        <div id="img_of_product">
-            <p>IMG</p>
+    <div class="ckeckoutOverview">
+        <div id="checkout_overview_center">
+            <div id="img_of_product">
+                <p>IMG</p>
+            </div>
+            <div id="shipping_info_overview">
+                <p>Shipping overview</p>
+            </div>
+            <div id="payment_info_overview">
+                <p>Payment overview</p>
+            </div>
         </div>
-        <div id="shipping_info_overview">
-            <p>Shipping overview</p>
+
+        <div id="checkout_overview_bottom">
+            <div id="product_info">
+                <p>Product information</p>
+            </div>
+            <div id="confirm_bid">
+                <button class="makeBidButton">CONFIRM PURCHASE</button>
+            </div>
         </div>
-        <div id="payment_info_overview">
-            <p>Payment overview</p>
-        </div>
-    </div>
-    <div id="checkout_overview_bottom">
-        <div id="product_info">
-            <p>Product information</p>
-        </div>
-        <button id="confirm_bid_button">CONFIRM PURCHASE</button>
     </div>
 
 {% endblock %}
