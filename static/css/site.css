@@ -31,16 +31,6 @@
     width: 110px;
 }
 
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-a:hover, #categories_select:hover {
-    text-decoration: none;
-    color: #f5ccb8;
-}
-
 #login_register {
     display: flex;
     flex: 1.9;
@@ -57,6 +47,31 @@ a:hover, #categories_select:hover {
     border-radius: 5px;
 }
 
+#search_bar {
+    padding: 1.5px 15px 1.5px 15px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#search {
+    width: 70%;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* buttons */
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover, #categories_select:hover {
+    text-decoration: none;
+    color: #f5ccb8;
+}
+
 .lightButton {
     background-color: #ffa998;
 }
@@ -64,7 +79,6 @@ a:hover, #categories_select:hover {
 .darkButton {
     background-color: #f76566;
 }
-
 
 .buttonsBottom {
     display: flex;
@@ -80,21 +94,6 @@ a:hover, #categories_select:hover {
     font-weight: bold;
 }
 
-
-#search_bar {
-    padding: 1.5px 15px 1.5px 15px;
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-}
-
-#search {
-    width: 70%;
-    border: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
 #search_button {
     background-color: white;
     border: none;
@@ -102,8 +101,25 @@ a:hover, #categories_select:hover {
     border-bottom-right-radius: 5px;
 }
 
-/* Home page */
+.makeBidButton {
+    background-color: #008c96;
+    padding: 15px 50px 15px 50px;
+    font-size: xx-large;
+    border: none;
+    border-radius: 5px;
+}
 
+#decline_button {
+    padding: 3px 10px 3px 10px;
+    background-color: red;
+}
+
+#accept_button {
+    padding: 3px 10px 3px 10px;
+    background-color: #45d745;
+}
+
+/* Home page */
 #items_for_sale {
     justify-content: space-evenly;
 }
@@ -119,126 +135,76 @@ a:hover, #categories_select:hover {
     height: 200px;
 }
 
-
-/* Item page */
-
 .itemPage, .makeBidInfo, .bidType {
     display: flex;
     height: 400px;
 }
 
-
-.imgItem {
-    background-color: #ffeee5;
-    padding: 20px;
-    margin: 10px;
-    flex: 1.2;
-    border-radius: 5px;
-}
-
-.productInfoBox, .sellerInfoBox, .bids {
+.ckeckoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid {
     display: flex;
     flex-direction: column;
+}
+
+.checkoutPage, #checkout_heading, #checkout_overview_center, #checkout_overview_bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+/* inner div - pink boxes*/
+.imgItem, .imgDiv, #img_of_product, #shipping_info_overview, #payment_info_overview, #shipping, #payment_info, #rate_seller, #product_info, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid {
     background-color: #ffeee5;
     padding: 20px;
     margin: 10px;
-    flex: 1;
     border-radius: 5px;
 }
 
+
+/* flex 1 */
+.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .cheackoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom {
+    flex: 1;
+}
+
+ /* flex 1.2 */
+.imgItem {
+    flex: 1.2;
+}
+
+/* flex 1,8 */
+.fillInfo {
+    flex: 1.8;
+}
+
+/* flex 3 */
+#description_product, #information_seller, #notify_method, #bid_amount {
+    flex: 3;
+}
+
+/* flex 6 */
 .productInfo {
     flex: 6;
 }
 
 .largeButton, .makeBid {
-    flex: 1;
     margin: auto;
 }
 
-.makeBidButton {
-    background-color: #008c96;
-    padding: 15px 50px 15px 50px;
-    font-size: xx-large;
-    border: none;
-    border-radius: 5px;
-}
-
-/* make bid */
-
-
-.imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview {
-    background-color: #ffeee5;
-    flex: 1;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-
-.infoProduct, .newBid, .ckeckoutOverview {
-    display: flex;
-    flex-direction: column;
-}
-
-#description_product, #information_seller, #notify_method, #bid_amount {
-    flex: 3;
-}
-
-
 #highest_bid {
-    flex: 1;
     border-top: 1.5px solid #008c96;
     text-align: center;
 }
 
-
-#decline_button {
-    padding: 3px 10px 3px 10px;
-    background-color: red;
-}
-
-#accept_button {
-    padding: 3px 10px 3px 10px;
-    background-color: #45d745;
-}
-
-.checkoutPage, #checkout_heading {
-    display: flex;
-    flex-direction: row;
-}
-
-#img_of_product, .cheackoutHeadingText{
-    flex: 1;
-}
-
-.fillInfo {
-    flex: 1.8;
-}
-
-#shipping, #payment_info, #rate_seller, #product_info {
-    background-color: #ffeee5;
-    flex: 1;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-.headingCheckout{
+.headingCheckout, #shipping_method_checkbox{
     padding-bottom: 10px;
 }
 
-
-#checkout_overview_center, #checkout_overview_bottom {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-}
 
 #img_of_product, #shipping_info_overview, #payment_info_overview {
     height: 250px;
 }
 
 /* Rating stars */
+
+
 
 
 

@@ -1,0 +1,467 @@
+/* Navigation bar */
+.navTop, .navBottom {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.navTop {
+    background-color: #fff3ed;
+    padding-bottom: 15px;
+}
+
+.navBottom {
+    background-color: #18ACBA;
+}
+
+#logo {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+#logo_button {
+    background-color: transparent;
+    border: none;
+    width: 100px;
+}
+
+#logo_image {
+    width: 110px;
+}
+
+#login_register {
+    display: flex;
+    flex: 1.9;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.lightButton, .darkButton {
+    margin-right: 20px;
+    font-weight: bold;
+    width: 93px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+}
+
+#search_bar {
+    padding: 1.5px 15px 1.5px 15px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#search {
+    width: 70%;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* buttons */
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover, #categories_select:hover {
+    text-decoration: none;
+    color: #f5ccb8;
+}
+
+.lightButton {
+    background-color: #ffa998;
+}
+
+.darkButton {
+    background-color: #f76566;
+}
+
+.buttonsBottom {
+    display: flex;
+    flex: 1;
+    background-color: transparent;
+}
+
+#lower_button, #categories_select {
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    padding: 3px 15px 3px 15px;
+    font-weight: bold;
+}
+
+#search_button {
+    background-color: white;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.makeBidButton {
+    background-color: #008c96;
+    padding: 15px 50px 15px 50px;
+    font-size: xx-large;
+    border: none;
+    border-radius: 5px;
+}
+
+#decline_button {
+    padding: 3px 10px 3px 10px;
+    background-color: red;
+}
+
+#accept_button {
+    padding: 3px 10px 3px 10px;
+    background-color: #45d745;
+}
+
+/* Home page */
+#items_for_sale {
+    justify-content: space-evenly;
+}
+
+.eachItem {
+    padding: 20px;
+    border-radius: 5px;
+    border: #18ACBA;
+    background-color: #94d9e0;
+    display: inline-block;
+    margin: 5px;
+    width: 310px;
+    height: 200px;
+}
+
+/* outer div */
+.itemPage, .makeBidInfo, .bidType {
+    display: flex;
+    height: 400px;
+}
+
+/* inner div - one div - pink boxes*/
+.imgItem, .imgDiv, #img_of_product, #shipping_info_overview, #payment_info_overview, #shipping, #payment_info, #rate_seller, #product_info {
+    background-color: #ffeee5;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* inner div - many divs in that div - pinko boxes - column direction*/
+.productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffeee5;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* flex 1 */
+.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .cheackoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom {
+    flex: 1;
+}
+
+ /* flex 1.2 */
+.imgItem {
+    flex: 1.2;
+}
+
+/* flex 1,8 */
+.fillInfo {
+    flex: 1.8;
+}
+
+/* flex 3 */
+#description_product, #information_seller, #notify_method, #bid_amount {
+    flex: 3;
+}
+
+/* flex 6 */
+.productInfo {
+    flex: 6;
+}
+
+.largeButton, .makeBid {
+    margin: auto;
+}
+
+.ckeckoutOverview {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkoutPage, #checkout_heading, #checkout_overview_center, #checkout_overview_bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+#highest_bid {
+    border-top: 1.5px solid #008c96;
+    text-align: center;
+}
+
+.headingCheckout{
+    padding-bottom: 10px;
+}
+
+#img_of_product, #shipping_info_overview, #payment_info_overview {
+    height: 250px;
+}
+
+/* Rating stars */
+
+
+
+
+
+
+
+
+/* Navigation bar */
+.navTop, .navBottom {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.navTop {
+    background-color: #fff3ed;
+    padding-bottom: 15px;
+}
+
+.navBottom {
+    background-color: #18ACBA;
+}
+
+#logo {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+#logo_button {
+    background-color: transparent;
+    border: none;
+    width: 100px;
+}
+
+#logo_image {
+    width: 110px;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover, #categories_select:hover {
+    text-decoration: none;
+    color: #f5ccb8;
+}
+
+#login_register {
+    display: flex;
+    flex: 1.9;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.lightButton, .darkButton {
+    margin-right: 20px;
+    font-weight: bold;
+    width: 93px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+}
+
+.lightButton {
+    background-color: #ffa998;
+}
+
+.darkButton {
+    background-color: #f76566;
+}
+
+
+.buttonsBottom {
+    display: flex;
+    flex: 1;
+    background-color: transparent;
+}
+
+#lower_button, #categories_select {
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    padding: 3px 15px 3px 15px;
+    font-weight: bold;
+}
+
+
+#search_bar {
+    padding: 1.5px 15px 1.5px 15px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#search {
+    width: 70%;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#search_button {
+    background-color: white;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Home page */
+
+#items_for_sale {
+    justify-content: space-evenly;
+}
+
+.eachItem {
+    padding: 20px;
+    border-radius: 5px;
+    border: #18ACBA;
+    background-color: #94d9e0;
+    display: inline-block;
+    margin: 5px;
+    width: 310px;
+    height: 200px;
+}
+
+
+/* Item page */
+
+.itemPage, .makeBidInfo, .bidType {
+    display: flex;
+    height: 400px;
+}
+
+
+.imgItem {
+    background-color: #ffeee5;
+    padding: 20px;
+    margin: 10px;
+    flex: 1.2;
+    border-radius: 5px;
+}
+
+.productInfoBox, .sellerInfoBox, .bids {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffeee5;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    border-radius: 5px;
+}
+
+.productInfo {
+    flex: 6;
+}
+
+.largeButton, .makeBid {
+    flex: 1;
+    margin: auto;
+}
+
+.makeBidButton {
+    background-color: #008c96;
+    padding: 15px 50px 15px 50px;
+    font-size: xx-large;
+    border: none;
+    border-radius: 5px;
+}
+
+/* make bid */
+
+
+.imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview {
+    background-color: #ffeee5;
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+.infoProduct, .newBid, .ckeckoutOverview {
+    display: flex;
+    flex-direction: column;
+}
+
+#description_product, #information_seller, #notify_method, #bid_amount {
+    flex: 3;
+}
+
+
+#highest_bid {
+    flex: 1;
+    border-top: 1.5px solid #008c96;
+    text-align: center;
+}
+
+
+#decline_button {
+    padding: 3px 10px 3px 10px;
+    background-color: red;
+}
+
+#accept_button {
+    padding: 3px 10px 3px 10px;
+    background-color: #45d745;
+}
+
+.checkoutPage, #checkout_heading {
+    display: flex;
+    flex-direction: row;
+}
+
+#img_of_product, .cheackoutHeadingText{
+    flex: 1;
+}
+
+.fillInfo {
+    flex: 1.8;
+}
+
+#shipping, #payment_info, #rate_seller, #product_info {
+    background-color: #ffeee5;
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.headingCheckout{
+    padding-bottom: 10px;
+}
+
+
+#checkout_overview_center, #checkout_overview_bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+#img_of_product, #shipping_info_overview, #payment_info_overview {
+    height: 250px;
+}
+
+/* Rating stars */
+
+
+
+
