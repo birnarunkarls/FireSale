@@ -9,7 +9,6 @@ class Item(models.Model):
     description = models.CharField(max_length=255, default="")
     condition = models.CharField(max_length=9999, default="")
     category = models.CharField(max_length=9999, default="")
-    image = models.CharField(max_length=9999, default="IMG")
     highest_bid = models.FloatField(default=0)
 
     def __str__(self):

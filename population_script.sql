@@ -1,12 +1,12 @@
-INSERT INTO user_profile (user, phone_number, date_of_birth, profile_picture, bio) VALUES (1, '777-7000', '15.06.1990', 'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_07/2233721/171120-smile-stock-njs-333p.jpg', 'I am very loyal');
-INSERT INTO user_profile (user, phone_number, date_of_birth, profile_picture, bio) VALUES (1, '777-7000', '15.06.1990', 'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_07/2233721/171120-smile-stock-njs-333p.jpg', 'I am very loyal');
+INSERT INTO user_profile (user, first_name, last_name, phone_number, date_of_birth, profile_picture, bio) VALUES (1, 'Birna', 'Karlsdottir', '777-7000', '15.06.1990', 'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_07/2233721/171120-smile-stock-njs-333p.jpg', 'I am very loyal');
+INSERT INTO user_profile (user, first_name, last_name, phone_number, date_of_birth, profile_picture, bio) VALUES (2, 'Helena', 'Agustsdottir', '777-9000', '07.10.2000', 'https://www.scienceabc.com/wp-content/uploads/ext-www.scienceabc.com/wp-content/uploads/2015/10/smile-2.jpg-.jpg', 'I love animals and am very caring');
+INSERT INTO user_profile (user, first_name, last_name, phone_number, date_of_birth, profile_picture, bio) VALUES (3, 'Birta', 'Hlidkvist', '777-8000', '22.08.1990', 'https://images.indianexpress.com/2019/04/smiling759_getty.jpg', 'My hobby is bird watching');
 
 INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Iphone', 'black iphone 11', 'very good, no cracks', 'electronics', 'IMG', 'SÆKJA', 1);
-INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Bike', 'red racer', 'nice', 'other', 'IMG', 'SÆKJA', 1);
-INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Macbook', 'grey macbook pro 13', 'bad condition', 'electronics', 'IMG', 'SÆKJA', 1);
-INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Mic', 'cordless', 'very good', 'electronics', 'IMG', 'SÆKJA', 1);
+INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Bike', 'red racer', 'nice', 'other', 'IMG', 'SÆKJA', 2);
+INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Macbook', 'grey macbook pro 13', 'bad condition', 'electronics', 'IMG', 'SÆKJA', 3);
+INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Mic', 'cordless', 'very good', 'electronics', 'IMG', 'SÆKJA', 2);
 INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Sweater', 'pink knit', 'medium', 'clothing', 'IMG', 'SÆKJA', 1);
-
 
 INSERT INTO item_bid (amount, notification, buyer_id_id, item_id_id) VALUES ('100', 'text_message', 1, 19);
 INSERT INTO item_bid (amount, notification, buyer_id_id, item_id_id) VALUES ('1000', 'push_notification', 2, 21);
