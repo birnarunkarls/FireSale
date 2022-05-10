@@ -62,7 +62,7 @@
                 <input type="radio" class="rating_option" name="rating" value="five_stars">
             </div>
 
-            <button class="makeBidButton"><a href="{% url 'checkout-checkout_phase2' %}">Continue</a></button>
+            <button class="makeBidButton"><a href="{% url 'checkout-checkout_phase2' item.id %}">Continue</a></button>
         </div>
     </div>
 

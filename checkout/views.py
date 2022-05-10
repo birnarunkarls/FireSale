@@ -13,8 +13,13 @@ def checkout_phase1(request, id):
         'id': id
     })
 
-def checkout_phase2(request):
-    return render(request, 'checkout/checkout_phase2.html')
+def checkout_phase2(request,id):
+    item = Item.objects.filter(pk=id).first()
+    return render(request, 'checkout/checkout_phase2.html', {
+        'item': item,
+        'name': item.name,
+        'id': id
+    })
 
 def checkout_phase3(request):
     return render(request, 'checkout/checkout_phase3.html')

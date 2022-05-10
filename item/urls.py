@@ -9,7 +9,7 @@ urlpatterns = [
     # create_item
     path('create_item', views.create_item, name="item-create_item"),
     # my bids
-    path('my_bids', views.my_bids, name="item-my_bids"),
+    path('my_bids/<int:id>', views.my_bids, name="item-my_bids"),
     # my listings
     path('my_listings/<int:id>', views.my_listings, name="item-my_listings"),
     # make a bid

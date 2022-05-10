@@ -5,12 +5,12 @@
         <h1 class="checkoutHeadingText">Offer accepted</h1>
         <h1 class="checkoutHeadingText">Checkout overview</h1>
     </div>
-    <h2>Product name</h2>
+    <h2>{{ name }}</h2>
 
     <div class="checkoutOverview">
         <div id="checkout_overview_center">
             <div id="img_of_product">
-                <p>IMG</p>
+                <img src="{{ item.images_set.first.image }}"/>
             </div>
             <div id="shipping_info_overview">
                 <p>Shipping overview</p>
@@ -23,6 +23,7 @@
         <div id="checkout_overview_bottom">
             <div id="product_info">
                 <p>Product information</p>
+                <p>Description: {{ item.description }}</p>
             </div>
             <div id="confirm_bid">
                 <button class="makeBidButton">CONFIRM PURCHASE</button>

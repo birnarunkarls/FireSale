@@ -18,8 +18,12 @@ def create_item(request):
 
 
 # my bids
-def my_bids(request):
-    return render(request, 'item/my_bids.html')
+def my_bids(request, id):
+    item = Item.objects.filter(pk=id).first()
+    return render(request, 'item/my_bids.html', {
+        'item': item,
+        'id': id
+    })
 
 # my listings
 def my_listings(request, id):

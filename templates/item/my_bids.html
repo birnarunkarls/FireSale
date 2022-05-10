@@ -18,7 +18,7 @@
             <div id="accepted_bids">
                 <p>All accepted bids from the database</p>
                 <button id=decline_button>Decline offer</button>
-                <button id=accept_button><a href="{% url 'checkout-checkout_phase1' %}">Accept offer</a></button>
+                <button id=accept_button><a href="{% url 'checkout-checkout_phase1' item.id %}">Accept offer</a></button>
             </div>
         </div>
 
