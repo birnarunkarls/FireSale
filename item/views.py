@@ -1,15 +1,15 @@
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
-from item.models import Item, Bid
+from django.shortcuts import render
+
+from item.forms.item_form import ItemCreateForm
+from item.models import Item
 from django.contrib.auth.models import User
-from user.models import Profile
+
 
 # Create your views here.
 
 # item
 def item(request):
-    context = {'items': Item.objects.filter(pk=id).first()}
-    return render(request, 'item/item.html', context)
+    return render(request, 'item/item.html')
 
 
 # create_item
@@ -23,9 +23,8 @@ def my_bids(request):
 
 
 # make_bid
-def make_bid(request, id):
-    context = {'items': Item.objects.filter(pk=id).first()}
-    return render(request, 'item/make_bid.html', context)
+def make_bid(request):
+    return render(request, 'item/make_bid.html')
 
 
 def get_item_by_id(request, id):
@@ -38,4 +37,12 @@ def get_item_by_id(request, id):
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name
     })
 
-#def create_item(request)
+def create_item(request):
+    if request.method == "POST":
+        print(1)
+    else:
+        form = ItemCreateForm()
+        # TODO: Instance new ItemCreateForm()
+    return render(request, 'item/create_item.html', {
+        'form': form
+    })

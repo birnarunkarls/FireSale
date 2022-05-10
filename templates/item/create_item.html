@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <form class="form form-horizontal" action="{% url 'item-create_item' %}method="post">
+    {% csrf_token %}
+    {{ form }}
+
     <div class="createANewItemBox">
         <div id="create_item">
             <h1>Create a new item</h1>
@@ -23,10 +27,10 @@
                 <p>Image: <input type="file" id="image"></p>
             </div>
             <div class="saveInformation">
-                <button id="save_information_button">Save information</button>
+                <input type="submit" class="btn btn-primary pull-right" value="Create"/>
             </div>
         </div>
     </div>
 
-
+    </form>
 {% endblock %}
