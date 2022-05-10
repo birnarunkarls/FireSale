@@ -7,7 +7,7 @@ from user.models import Profile
 # Create your views here.
 
 # item
-def item(request, id):
+def item(request):
     context = {'items': Item.objects.filter(pk=id).first()}
     return render(request, 'item/item.html', context)
 
@@ -37,3 +37,5 @@ def get_item_by_id(request, id):
         "seller": seller,
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name
     })
+
+#def create_item(request)
