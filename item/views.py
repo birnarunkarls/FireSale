@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from item.forms.item_form import ItemCreateForm
-from item.models import Item
+from item.models import Item, Images
 from django.contrib.auth.models import User
 
 
@@ -39,7 +39,12 @@ def get_item_by_id(request, id):
 
 def create_item(request):
     if request.method == "POST":
-        print(1)
+        form = ItemCreateForm(data=request.POST)
+        if form.is_valid():
+            item = form.save()
+            item_image = Images(image=request.POST('image'), item=item)
+            item_image.save()
+            return redirect('')
     else:
         form = ItemCreateForm()
         # TODO: Instance new ItemCreateForm()
