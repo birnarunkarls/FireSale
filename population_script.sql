@@ -4,9 +4,9 @@ INSERT INTO fire_sale_about (phone_number, email, address) VALUES ('666-6666', '
 INSERT INTO user_profile (bio, user_id, date_of_birth, phone_number, profile_picture) VALUES ('I am very loyal', 1, '15.06.1990', '777-7000', 'IMG');
 
 
-INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Iphone', 'black iphone 11', 'very good, no cracks', 'electronics', 'IMG', 'SÆKJA', 1);
-INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Bike', 'red racer', 'nice', 'other', 'IMG', 'SÆKJA', 1);
-INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Macbook', 'grey macbook pro 13', 'bad condition', 'electronics', 'IMG', 'SÆKJA', 1);
+INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Iphone', 'black iphone 11', 'very good, no cracks', 'electronics', 'IMG', 'SÆKJA', 1);
+INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Bike', 'red racer', 'nice', 'other', 'IMG', 'SÆKJA', 1);
+INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Macbook', 'grey macbook pro 13', 'bad condition', 'electronics', 'IMG', 'SÆKJA', 1);
 INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Mic', 'cordless', 'very good', 'electronics', 'IMG', 'SÆKJA', 1);
 INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id_id) VALUES ('Sweater', 'pink knit', 'medium', 'clothing', 'IMG', 'SÆKJA', 1);
 
