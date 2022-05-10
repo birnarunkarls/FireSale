@@ -3,22 +3,26 @@
 {% block content %}
 
     <div>
-        <div>
-            <p>Login</p>
+        <div class="logInRegBox">
+            <div class="logInResBar">
+                <p class="loginRegHeader">Login</p>
+            </div>
+            <div class="logRegInput">
+                <div class="inputText">
+                    <p class="loginRegText">Username:</p>
+                    <p class="loginRegText">Password:</p>
+                </div>
+                <div class="inputColumn">
+                    <input id="username_input">
+                    <input id="password_input">
+                </div>
+            </div>
+            <div id="log_in_buttons">
+                <button id="forgot_password_button">forgot password?</button>
+                <button id="login_button">Login</button>
+            </div>
+            </div>
         </div>
-        <div>
-            <p>Username:</p>
-            <input id="username_input">
-        </div>
-        <div>
-            <p>Password:</p>
-            <input id="password_input">
-        </div>
-        <div>
-            <button id="forgot_password_button">forgot password?</button>
-            <button id="login_button">Login</button>
-        </div>
-
     </div>
 
 
