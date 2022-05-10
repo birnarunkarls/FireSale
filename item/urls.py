@@ -11,7 +11,8 @@ urlpatterns = [
     # my checkout
     path('my_bids', views.my_bids, name="item-my_bids"),
     # make a bid
-    path('make_bid', views.make_bid, name="item-make_bid"),
+    #path('make_bid', views.make_bid, name="item-make_bid"),
+    path('make_bid/<', views.make_bid, name="item-make_bid"),
 
     path('<int:id>', views.get_item_by_id, name="item-get_item_by_id"),
 
