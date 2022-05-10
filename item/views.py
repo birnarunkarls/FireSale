@@ -7,8 +7,9 @@ from user.models import Profile
 # Create your views here.
 
 # item
-def item(request):
-    return render(request, 'item/item.html')
+def item(request, id):
+    context = {'items': Item.objects.filter(pk=id).first()}
+    return render(request, 'item/item.html', context)
 
 
 # create_item
@@ -22,8 +23,9 @@ def my_bids(request):
 
 
 # make_bid
-def make_bid(request):
-    return render(request, 'item/make_bid.html')
+def make_bid(request, id):
+    context = {'items': Item.objects.filter(pk=id).first()}
+    return render(request, 'item/make_bid.html', context)
 
 
 def get_item_by_id(request, id):
