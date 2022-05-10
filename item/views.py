@@ -10,26 +10,28 @@ from user.models import Profile
 def item(request):
     return render(request, 'item/item.html')
 
+
 # create_item
 def create_item(request):
     return render(request, 'item/create_item.html')
+
 
 # my checkout
 def my_bids(request):
     return render(request, 'item/my_bids.html')
 
+
 # make_bid
 def make_bid(request):
     return render(request, 'item/make_bid.html')
 
+
 def get_item_by_id(request, id):
     item = Item.objects.filter(pk=id).first()
     seller = User.objects.filter(pk=item.seller.id).first()
-    profile = Profile.objects.filter(pk=seller.id).first()
 
     print(item)
     print(seller)
-    print(profile)
 
     return render(request, 'item/item.html', {
         'item': item,
