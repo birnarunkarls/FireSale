@@ -1,29 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <div>
-            <p>Change user information</p>
+    <div class="logInRegBox">
+        <div class="logInResBar">
+            <p class="loginRegHeader">Change user information</p>
         </div>
-        <div>
-            <div>
-                <p>User name:</p>
-                <p>Email:</p>
-                <p>Password:</p>
-                <p>Full name:</p>
-                <p>Phone number:</p>
-                <p>Date of birth:</p>
-                <p>Bio:</p>
-                <p>Image</p>
+        <div class="logRegInput">
+            <div class="inputText">
+                <p class="loginRegText">User name:</p>
+                <p class="loginRegText">Email:</p>
+                <p class="loginRegText">Password:</p>
+                <p class="loginRegText">Full name:</p>
+                <p class="loginRegText">Phone number:</p>
+                <p class="loginRegText">Date of birth:</p>
+                <p class="loginRegText">Bio:</p>
+                <p class="loginRegText">Image</p>
             </div>
-            <div>
+            <div class="inputColumn">
                 <input id="username_input">
                 <input id="email_input">
                 <input id="password_input">
                 <input id="name_input">
                 <input id="phone_input">
                 <input type="date" id="birthday_input">
-                <input id="bio=input">
+                <input id="bio_input">
                 <input type="file" id="image_input">
                 <button id="save_info_button">Save information</button>
             </div>
