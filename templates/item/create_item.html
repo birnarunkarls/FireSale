@@ -1,36 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class="form form-horizontal" action="{% url 'item-create_item' %}method="post">
+    <form class="form form-horizontal" action="{% url 'item-create_item' %}" method="post">
     {% csrf_token %}
     {{ form }}
-
-    <div class="createANewItemBox">
-        <div id="create_item">
-            <h1>Create a new item</h1>
+        <div class="saveInformation">
+            <input type="submit" class="btn btn-primary pull-right" value="Create"/>
         </div>
-        <div class="newProductBox">
-            <div id="new_product">
-                <h1>New product</h1>
-            </div>
-            <div class="newProductInfo">
-                <p>Name: <input id="item_name"></p>
-                <p>Condition: <input id="item_condition"></p>
-                <p>Description: <input id="item_description"></p>
-                <p>Category:
-                    <select id="item_category">
-                        <option value="clothing">Clothing</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="furniture">Furniture</option>
-                    </select>
-                </p>
-                <p>Image: <input type="file" id="image"></p>
-            </div>
-            <div class="saveInformation">
-                <input type="submit" class="btn btn-primary pull-right" value="Create"/>
-            </div>
-        </div>
-    </div>
-
     </form>
+
+
 {% endblock %}
