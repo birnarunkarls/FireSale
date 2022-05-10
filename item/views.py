@@ -30,10 +30,8 @@ def get_item_by_id(request, id):
     item = Item.objects.filter(pk=id).first()
     seller = User.objects.filter(pk=item.seller.id).first()
 
-    print(item)
-    print(seller)
-
     return render(request, 'item/item.html', {
         'item': item,
-        "seller": seller
+        "seller": seller,
+        'full_name': seller.profile.first_name + ' ' + seller.profile.last_name
     })
