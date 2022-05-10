@@ -1,8 +1,5 @@
-INSERT INTO fire_sale_about (phone_number, email, address) VALUES ('666-6666', 'bestbids@bestbids.com', 'Menntavegur 1');
-
-
-INSERT INTO user_profile (bio, user_id, date_of_birth, phone_number, profile_picture) VALUES ('I am very loyal', 1, '15.06.1990', '777-7000', 'IMG');
-
+INSERT INTO user_profile (user, phone_number, date_of_birth, profile_picture, bio) VALUES (1, '777-7000', '15.06.1990', 'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_07/2233721/171120-smile-stock-njs-333p.jpg', 'I am very loyal');
+INSERT INTO user_profile (user, phone_number, date_of_birth, profile_picture, bio) VALUES (1, '777-7000', '15.06.1990', 'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_07/2233721/171120-smile-stock-njs-333p.jpg', 'I am very loyal');
 
 INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Iphone', 'black iphone 11', 'very good, no cracks', 'electronics', 'IMG', 'SÆKJA', 1);
 INSERT INTO item_item (name, description, condition, category, image, highest_bid, seller_id) VALUES ('Bike', 'red racer', 'nice', 'other', 'IMG', 'SÆKJA', 1);
