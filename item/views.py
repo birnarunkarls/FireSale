@@ -37,3 +37,5 @@ def get_item_by_id(request, id):
         "seller": seller,
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name
     })
+
+#def create_item(request)
