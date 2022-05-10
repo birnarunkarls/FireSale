@@ -1,7 +1,7 @@
 <div class="eachItem">
     <a href="/item/{{ item.id }}">
-        <p>IMG</p>
+        <img class="itemImg" src="{{ item.images_set.first.image }}" />
         <h4>{{ item.name }}</h4>
-        <h4>{{ item.description }}</h4>
+        <p>{{ item.description }}</p>
     </a>
 </div>
