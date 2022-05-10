@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class="form form-horizontal" action="{% url 'item-create_item' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-        <div class="saveInformation">
-            <input type="submit" class="makeBidButton" value="Create listing"/>
+    <div class="logInRegBox">
+        <div class="logInResBar">
+                <p class="loginRegHeader">Create new listing</p>
         </div>
-    </form>
+        <form class="createItemListing" action="{% url 'item-create_item' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+            <div class="saveInformation">
+                <input type="submit" class="createListingButton" value="CREATE LISTING"/>
+            </div>
+        </form>
+    </div>
 
 
 {% endblock %}

@@ -22,15 +22,26 @@ def my_bids(request):
     return render(request, 'item/my_bids.html')
 
 # my listings
-def my_listings(request):
-    return render(request, 'item/my_listings.html')
+def my_listings(request, id):
+    item = Item.objects.filter(pk=id).first()
+
+    return render(request, 'item/my_listings.html', {
+        'item': item,
+        'id': id
+    })
+
 
 # make_bid
 def make_bid(request, id):
     bid_item = Item.objects.filter(pk=id).first()
+    seller = User.objects.filter(pk=bid_item.seller.id).first()
+
     return render(request, 'item/make_bid.html', {
         'bid_item': bid_item,
-        'id': id
+        'id': id,
+        'seller': seller,
+        'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
+        'bio': seller.profile.bio
     })
 
 
@@ -62,7 +73,10 @@ def create_item(request):
 def delete_item(request,id):
     item = get_object_or_404(Item, pk=id)
     item.delete()
-    return redirect('fire_sale-home_page')
+    return redirect('fire_sale-home_page', {
+        'item': item,
+        'id': id
+    })
 
 def update_item(request, id):
     instance = get_object_or_404(Item, pk=id)

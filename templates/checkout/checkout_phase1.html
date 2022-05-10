@@ -3,11 +3,13 @@
 {% block content %}
 
     <h1>Offer accepted</h1>
-    <h2>Name of product</h2>
+    <h2>{{ name }}</h2>
     <div class="checkoutPage">
         <div id="img_of_product">
-            <p>IMG</p>
+            <img src="{{ item.images_set.first.image }}" />
+            <p>Description: {{ item.description }}</p>
         </div>
+
         <div class="fillInfo">
             <div id="shipping">
                 <div id="shipping_method">

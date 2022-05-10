@@ -11,10 +11,9 @@ urlpatterns = [
     # my bids
     path('my_bids', views.my_bids, name="item-my_bids"),
     # my listings
-    path('my_listings', views.my_listings, name="item-my_listings"),
+    path('my_listings/<int:id>', views.my_listings, name="item-my_listings"),
     # make a bid
     path('make_bid/<int:id>', views.make_bid, name="item-make_bid"),
-    #path('make_bid/<int:id>/', views.make_bid, name="item-make_bid"),
 
     path('<int:id>', views.get_item_by_id, name="item-get_item_by_id"),
 

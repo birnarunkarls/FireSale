@@ -30,11 +30,11 @@
         {% if request.user.is_authenticated %}
             <button id="lower_button"><a href="{% url 'item-create_item' %}">Create an item</a></button>
         {% endif %}
-        <select id="categories_select">Category
-            <option value="popular_items">Popular items</option>
-            <option value="clothing">Clothing</option>
-            <option value="electronics">Electronics</option>
-            <option value="furniture">Furniture</option>
+        <select id="categories_select">
+            <option value="categories" disabled selected>Categories</option>
+            {% for category in item.item_itemcategory %}
+                <option value="category">{{ category.name }}</option>
+            {% endfor %}
         </select>
     </div>
     <div id="search_bar">

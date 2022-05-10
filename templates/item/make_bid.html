@@ -2,19 +2,20 @@
 
 
 {% block content %}
-    <h2> {{ item.name }} </h2>
+    <h2> {{ bid_item.name }} </h2>
     <div class=makeBidInfo>
         <div class="imgItem">
-            <img class="itemImg" src="{{ item.images_set.first.image }}" />
+            <img class="itemImg" src="{{ bid_item.images_set.first.image }}" />
         </div>
         <div class="infoProduct">
             <div id=description_product>
                 <h3>Description of the product</h3>
-                <p>Description</p>
+                <p>{{ bid_item.description }}</p>
             </div>
             <div id=information_seller>
                 <h3>Information on seller</h3>
-                <p>Information</p>
+                <p>Name: {{ full_name }}</p>
+                <p>Bio: {{ bio }}</p>
             </div>
             <div id="highest_bid">
                 <h4 id="highest_bid_text">Highest bid</h4>
