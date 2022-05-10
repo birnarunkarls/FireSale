@@ -21,7 +21,7 @@ class Payment(models.Model):
     expiration_date = models.CharField(max_length=9999, blank=True)
     cvc = models.CharField(max_length=9999, blank=True)
     payment_date = models.CharField(max_length=9999, blank=True)
-    total_amount = models.CharField(max_length=9999, blank=True)
+    total_amount = models.FloatField(default="")
 
     def __str__(self):
         return self.cardholder_name
