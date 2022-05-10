@@ -7,7 +7,7 @@ from user.models import Profile
 # Create your views here.
 
 # item
-def item(request, id):
+def item(request):
     context = {'items': Item.objects.filter(pk=id).first()}
     return render(request, 'item/item.html', context)
 
