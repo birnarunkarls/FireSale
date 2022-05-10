@@ -169,7 +169,7 @@ a:hover, #categories_select:hover, #item_name_home_page:hover {
     height: 400px;
 }
 
-.ckeckoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox {
+.checkoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox {
     display: flex;
     flex-direction: column;
 }
@@ -188,7 +188,7 @@ a:hover, #categories_select:hover, #item_name_home_page:hover {
 }
 
 /* flex 1 */
-.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .cheackoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems {
+.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems {
     flex: 1;
 }
 

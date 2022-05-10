@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ item.name }}</h1>
+    <a href="{% url 'item-delete_item' item.id %}" class="block btn btn-primary">Delete item</a>
+{% endblock %}

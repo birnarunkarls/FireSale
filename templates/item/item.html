@@ -16,7 +16,7 @@
                 <p>Category: {{ item.category }}</p>
             </div>
             <div class="largeButton">
-                <button class="makeBidButton"><a href="{% url 'item-make_bid' %}">MAKE A BID</a></button>
+                <button class="makeBidButton"><a href="{% url 'item-make_bid' item.id %}">MAKE A BID</a></button>
             </div>
         </div>
         <div class="sellerInfoBox">
