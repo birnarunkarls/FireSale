@@ -5,7 +5,9 @@
     <h1>{{ item.name }}</h1>
     <div class="itemPage">
         <div class="imgItem">
-            <p>IMG</p>
+            {% for item_image in item.images_set.all %}
+                <img class="itemImg" src="{{ item_image.image }}" />
+            {% endfor %}
         </div>
         <div class="productInfoBox">
             <div class="productInfo">
@@ -25,7 +27,7 @@
                 </div>
                 <div class="sellerInfo">
                     <h3>Seller information</h3>
-                    <p>Name: {{ item.seller_id_id }}</p>
+                    <p>Name: {{ item.seller_id }}</p>
                     <p>Average rating: 4,5</p>
                 </div>
             </div>

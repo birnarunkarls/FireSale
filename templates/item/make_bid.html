@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block content %}
 
-    <h2> {{ item.name }} </h2>
+{% block content %}
+    <h2> {{ item.id.name }} </h2>
     <div class=makeBidInfo>
         <div class=imgDiv>
-            <img class="itemImg" src="{{ item.images_set.first.image }}" />
+            <p>IMG</p>
         </div>
         <div class="infoProduct">
             <div id=description_product>
@@ -41,6 +41,5 @@
 
 
     </div>
-
 
 {% endblock %}
