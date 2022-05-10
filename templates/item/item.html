@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>{{ item.name }}</h1>
+    <h1 id="item_title">{{ item.name }}</h1>
     <div class="itemPage">
         <div class="imgItem">
             {% for item_image in item.images_set.all %}
-                <img class="itemImg" src="{{ item_image.image }}" />
+                <img class="itemImgBig" src="{{ item_image.image }}" />
             {% endfor %}
         </div>
         <div class="productInfoBox">
@@ -35,10 +34,20 @@
                 <p>Highest bid: ${{ item.highest_bid }}</p>
             </div>
         </div>
-        <div class="similarItems">
-            <div>item1</div>
-            <div>item2</div>
-            <div>item3</div>
+        <div class="similarItemsBox">
+            <h5>Similar Items</h5>
+            <div class="similarItems">
+                <img class="simItemImg" src="{{ seller.profile.profile_picture }}" />
+                <p class="simItemName"> {{ full_name }}</p>
+            </div>
+            <div class="similarItems">
+                <img class="simItemImg" src="{{ seller.profile.profile_picture }}" />
+                <p class="simItemName"> {{ full_name }}</p>
+            </div>
+            <div class="similarItems">
+                <img class="simItemImg" src="{{ seller.profile.profile_picture }}" />
+                <p class="simItemName"> {{ full_name }}</p>
+            </div>
         </div>
     </div>
 

@@ -144,38 +144,57 @@ a:hover, #categories_select:hover, #item_name_home_page:hover {
     height: 200px;
 }
 
-.itemPage, .makeBidInfo, .bidType {
+.itemImgBig {
+    width: 340px;
+    height: 230px;
+    margin-top: 30px;
+}
+
+#item_title {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.simItemImg {
+    width: 120px;
+}
+
+.simItemName {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.makeBidInfo, .bidType, .productInfoBox, .sellerInfoBox, .similarItemsBox {
     display: flex;
     height: 400px;
 }
 
-.ckeckoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons {
+.ckeckoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox {
     display: flex;
     flex-direction: column;
 }
 
-.checkoutPage, #checkout_heading, #checkout_overview_center, #checkout_overview_bottom, .logRegInput {
+.itemPage, .checkoutPage, #checkout_heading, #checkout_overview_center, #checkout_overview_bottom, .logRegInput {
     display: flex;
     flex-direction: row;
 }
 
 /* inner div - pink boxes*/
-.imgItem, .imgDiv, #img_of_product, #shipping_info_overview, #payment_info_overview, #shipping, #payment_info, #rate_seller, #product_info, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid {
+.imgItem, .imgDiv, #img_of_product, #shipping_info_overview, #payment_info_overview, #shipping, #payment_info, #rate_seller, #product_info, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, .similarItemsBox {
     background-color: #ffeee5;
     padding: 20px;
     margin: 10px;
     border-radius: 5px;
 }
 
-
 /* flex 1 */
-.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .cheackoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom {
+.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .cheackoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems {
     flex: 1;
 }
 
  /* flex 1.2 */
-.imgItem {
-    flex: 1.2;
+ .imgItem {
+    flex: 1;
 }
 
 /* flex 1,8 */
@@ -205,7 +224,6 @@ a:hover, #categories_select:hover, #item_name_home_page:hover {
 .headingCheckout, #shipping_method_checkbox{
     padding-bottom: 10px;
 }
-
 
 #img_of_product, #shipping_info_overview, #payment_info_overview {
     height: 250px;
