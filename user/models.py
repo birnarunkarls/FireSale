@@ -7,10 +7,12 @@ from django.db import models
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    phone_number = models.CharField(max_length=9999, blank=True)
-    date_of_birth = models.CharField(max_length=255, blank=True)
-    profile_picture = models.CharField(max_length=9999, blank=True)
-    bio = models.CharField(max_length=9999, blank=True)
+    first_name = models.CharField(max_length=9999, default="")
+    last_name = models.CharField(max_length=9999, default="")
+    phone_number = models.CharField(max_length=9999, default="")
+    date_of_birth = models.CharField(max_length=255, default="")
+    profile_picture = models.CharField(max_length=9999, default="")
+    bio = models.CharField(max_length=9999, default="")
 
     def __str__(self):
         return self.user
