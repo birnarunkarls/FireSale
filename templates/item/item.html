@@ -23,11 +23,11 @@
         <div class="sellerInfoBox">
             <div class="seller">
                 <div id="img_seller">
-                    <p>IMG</p>
+                    <img class="itemImg" src="{{ seller.profile.profile_picture }}" />
                 </div>
                 <div class="sellerInfo">
                     <h3>Seller information</h3>
-                    <p>Name: {{ item.seller_id }}</p>
+                    <p>Seller username: {{ seller.username }}</p>
                     <p>Average rating: 4,5</p>
                 </div>
             </div>

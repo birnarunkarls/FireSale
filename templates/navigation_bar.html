@@ -2,7 +2,7 @@
 <div class="navTop">
 
     <div id="logo">
-        <button id="logo_button"><a href="{% url 'fire_sale-home_page' %}"></a><img id="logo_image" src="/static/images/logo_best_bids.png"></button>
+        <button id="logo_button"><a href="{% url 'fire_sale-home_page' %}"><img id="logo_image" src="/static/images/logo_best_bids.png"></a></button>
     </div>
     {% if request.user.is_authenticated %}
         <div id="profile_info">

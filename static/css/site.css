@@ -62,12 +62,16 @@
 }
 
 /* buttons */
+#item_name_home_page, item_description_page {
+    color: black;
+}
+
 a {
     text-decoration: none;
     color: whitesmoke;
 }
 
-a:hover, #categories_select:hover {
+a:hover, #categories_select:hover, #item_name_home_page:hover {
     text-decoration: none;
     color: #f5ccb8;
 }
@@ -127,11 +131,16 @@ a:hover, #categories_select:hover {
 .eachItem {
     padding: 20px;
     border-radius: 5px;
-    border: #18ACBA;
+    border: 2px solid #18ACBA;
     background-color: #94d9e0;
     display: inline-block;
     margin: 5px;
     width: 310px;
+    height: 300px;
+}
+
+.itemImg {
+    width: 270px;
     height: 200px;
 }
 
@@ -339,9 +348,6 @@ a:hover, #categories_select:hover {
     margin-bottom: 8px;
     font-size: small;
 }
-
-
-
 
 
 

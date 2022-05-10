@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from item.models import Item, Bid
+from django.contrib.auth.models import User
+from user.models import Profile
 
 # Create your views here.
 
@@ -21,8 +23,13 @@ def make_bid(request):
     return render(request, 'item/make_bid.html')
 
 def get_item_by_id(request, id):
-    item = Item.objects.get(pk=id)
-    Bid.objects.filter(item_id=item).order_by("-amount").first()
+    item = Item.objects.filter(pk=id).first()
+    seller = User.objects.filter(pk=item.seller.id).first()
+
+    print(item)
+    print(seller)
+
     return render(request, 'item/item.html', {
-        'item': get_object_or_404(Item, pk=id)
+        'item': item,
+        "seller": seller
     })
