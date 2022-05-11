@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 import user
 from item.forms.item_form import ItemCreateForm, ItemUpdateForm
-from item.models import Item, Images
+from item.models import Item, Images, ItemCategory
 from django.contrib.auth.models import User
 
 
@@ -101,8 +101,16 @@ def update_item(request, id):
         'id': id
     })
 
+
+
 def categories(request, id):
-    context = Item.objects.filter(pk=id)
-    return render(request, 'fire_sale/home_page.html', {
-        'item': context
+    context = Item.objects.filter(category=id)
+    #category = ItemCategory.objects.filter(pk=context.name.id)
+    print(context)
+    #print(category)
+    return render(request, 'item/categories.html', {
+        'id': id,
+        #'category': category
     })
+
+
