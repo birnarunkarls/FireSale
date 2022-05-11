@@ -6,12 +6,12 @@
     </div>
     {% if user.is_authenticated %}
         <div id="profile_info">
-            <div>
-                <p id="user_name">{{ user }}</p>
+            <div id="logged_in_top">
                 <p id="average_rating">Average rating</p>
-                <p> img</p>
+                <p id="user_name">{{ user }}</p>
+                <img src="{{ user.profile.profile_picture }}" class="profileImage"/>
             </div>
-            <div>
+            <div id="logged_in_bottom">
                 <button class="lightButton"><a href="{% url 'item-my_bids' user.id %}">My Bids</a></button>
                 <button class="lightButton"><a href="{% url 'user-profile' %}">My Profile</a></button>
                 <button class="darkButton"><a href="{% url 'user-logout' %}">Log out</a></button>
@@ -22,9 +22,6 @@
             <button class="lightButton"><a href="{% url 'user-login' %}">Login</a></button>
             <button class="darkButton"><a href="{% url 'user-register' %}">Register</a></button>
         </div>
-    {% endif %}
-    {% if user.is_authenticated %}
-        <img src="{{ user.profile.profile_picture }}" class="profileImage"/>
     {% endif %}
 
 </div>

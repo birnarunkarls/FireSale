@@ -8,6 +8,7 @@
 .navTop {
     background-color: #fff3ed;
     padding-bottom: 15px;
+    display: flex;
 }
 
 .navBottom {
@@ -34,9 +35,33 @@
 #login_register {
     display: flex;
     flex: 1.9;
-    justify-content: flex-end;
+    justify-content: right;
     align-items: flex-start;
 }
+
+#profile_info {
+    display: flex;
+    flex: 1.9;
+    justify-content: flex-end;
+    flex-direction: column;
+
+}
+
+#logged_in_top, #logged_in_bottom {
+    display: flex;
+    justify-content: right;
+}
+
+#logged_in_top {
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+#average_rating, #user_name {
+    margin-right: 20px;
+    margin-top: 13px;
+}
+
 
 .lightButton, .darkButton, #already_acc_login {
     margin-right: 20px;
