@@ -52,11 +52,12 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 #search {
-    width: 70%;
-    border: none;
+    width: 40%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -84,7 +85,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     background-color: #f76566;
 }
 
-.buttonsBottom {
+.buttonsBottom, #search_bar, .categoriesPlace {
     display: flex;
     flex: 1;
     background-color: transparent;
@@ -188,7 +189,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 }
 
 /* flex 1 */
-.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems {
+.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems{
     flex: 1;
 }
 
@@ -383,3 +384,8 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     padding: 10px;
 }
 
+.homePageTop {
+    display: flex;
+    flex-direction: column;
+
+}
