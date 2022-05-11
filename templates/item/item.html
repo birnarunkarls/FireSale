@@ -36,18 +36,14 @@
         </div>
         <div class="similarItemsBox">
             <h5>Similar Items</h5>
-            <div class="similarItems">
-                <img class="simItemImg" src="{{ seller.profile.profile_picture }}" />
-                <p class="simItemName"> {{ full_name }}</p>
-            </div>
-            <div class="similarItems">
-                <img class="simItemImg" src="{{ seller.profile.profile_picture }}" />
-                <p class="simItemName"> {{ full_name }}</p>
-            </div>
-            <div class="similarItems">
-                <img class="simItemImg" src="{{ seller.profile.profile_picture }}" />
-                <p class="simItemName"> {{ full_name }}</p>
-            </div>
+            {% for item in similar_items %}
+                <div class="similarItems">
+                    <a class="similarItem" href="/item/{{ item.id }}">
+                        <img class="simItemImg" src="{{ item.images_set.first.image }}" />
+                        <p class="simItemName"> {{ item.name }}</p>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 
