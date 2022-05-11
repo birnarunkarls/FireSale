@@ -4,16 +4,16 @@
     <div id="logo">
         <button id="logo_button"><a href="{% url 'fire_sale-home_page' %}"><img id="logo_image" src="/static/images/logo_best_bids.png"></a></button>
     </div>
-    {% if request.user.is_authenticated %}
+    {% if user.is_authenticated %}
         <div id="profile_info">
             <div>
                 <p id="average_rating">Average rating</p>
-                <p id="profile_photo">IMG</p>
+                <p> img</p>
             </div>
             <div>
-                <button class="lightButton"><a href="{% url 'item-my_bids' %}">My Bids</a></button>
-                <button class="lightButton"><a href="{% url 'user-my_profile' %}">My Profile</a></button>
-                <button class="darkButton">Log out</button>
+                <button class="lightButton"><a href="{% url 'item-my_bids' user.id %}">My Bids</a></button>
+                <button class="lightButton"><a href="{% url 'user-profile' %}">My Profile</a></button>
+                <button class="darkButton"><a href="{% url 'user-logout' %}">Log out</a></button>
             </div>
         </div>
     {%  else %}
@@ -22,25 +22,29 @@
             <button class="darkButton"><a href="{% url 'user-register' %}">Register</a></button>
         </div>
     {% endif %}
+    {% if user.is_authenticated %}
+        <img src="{{ user.profile.profile_picture }}" class="profileImage"/>
+    {% endif %}
+
 </div>
 
 <div class="navBottom">
     <div class="buttonsBottom">
         <button id="lower_button"><a href="{% url 'fire_sale-home_page' %}">Home</a></button>
         {% if request.user.is_authenticated %}
-            <button id="lower_button"><a href="{% url 'item-create_item' %}">Create an item</a></button>
+            <button id="lower_button"><a href="{% url 'item-create_item' user.id %}">Create an item</a></button>
         {% endif %}
-        <select id="categories_select">
-            <option value="categories" disabled selected>Categories</option>
-            {% for category in item.item_itemcategory %}
-                <option value="category">{{ category.name }}</option>
-            {% endfor %}
-        </select>
+
     </div>
     <div id="search_bar">
-        <input id="search" placeholder="Search...">
-        <button id="search_button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg></button>
+        <input type="search" id="search" class="form-control" placeholder="Search..."/>
+        <div class="input-group-btn">
+            <button type="button" id="search_button" class="btn btn-default">Search</button>
+        </div>
     </div>
 </div>
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+-->

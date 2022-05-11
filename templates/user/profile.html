@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<form class="form form-horizontal" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="makeBidButton" value="Update" />
+</form>
     <div class="myProfile">
-        <div id="my_proflie_pic">
+        <div id="my_profile_pic">
             <p>IMG</p>
         </div>
         <div id="my_profile_info">

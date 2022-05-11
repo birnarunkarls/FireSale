@@ -5,7 +5,7 @@
         <div class="logInResBar">
                 <p class="loginRegHeader">Create new listing</p>
         </div>
-        <form class="createItemListing" action="{% url 'item-create_item' %}" method="post">
+        <form class="createItemListing" action="{% url 'item-create_item' user.id %}" method="post">
         {% csrf_token %}
         {{ form }}
             <div class="saveInformation">

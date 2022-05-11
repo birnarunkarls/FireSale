@@ -71,7 +71,7 @@ a {
     color: whitesmoke;
 }
 
-a:hover, #categories_select:hover, #item_name_home_page:hover, .createListingButton:hover{
+a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover{
     text-decoration: none;
     color: #f5ccb8;
 }
@@ -105,7 +105,7 @@ a:hover, #categories_select:hover, #item_name_home_page:hover, .createListingBut
     border-bottom-right-radius: 5px;
 }
 
-.makeBidButton, .createListingButton {
+.makeBidButton, .createListingButton, .updateListingButton {
     background-color: #008c96;
     padding: 15px 50px 15px 50px;
     font-size: xx-large;
@@ -216,7 +216,7 @@ a:hover, #categories_select:hover, #item_name_home_page:hover, .createListingBut
     margin: auto;
 }
 
-.createListingButton {
+.createListingButton, .updateListingButton {
     margin-left: 19%;
     margin-top: 3%;
     color: white;
@@ -335,7 +335,7 @@ a:hover, #categories_select:hover, #item_name_home_page:hover, .createListingBut
     margin: 50px 100px 0px 320px;
 }
 
-#my_proflie_pic {
+#my_profile_pic {
     flex: 1;
     border: 1.5px solid #008c96;
 }
@@ -373,6 +373,13 @@ a:hover, #categories_select:hover, #item_name_home_page:hover, .createListingBut
     font-size: small;
 }
 
-
-
+.profileImage {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.categories {
+    color: black;
+    padding: 10px;
+}
 

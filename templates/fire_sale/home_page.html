@@ -2,6 +2,10 @@
 
 {% block content %}
     <div>
+        <h3>Categories: </h3>
+        {% for category in categories %}
+            <a class="categories" href="/item/categories/{{category.id}}">{{ category.name }}</a>
+        {% endfor %}
         <h1>All products</h1>
         <div id="items_for_sale">
             <div class="allItems">
@@ -9,7 +13,6 @@
                     {% include 'fire_sale/single_item.html'%}
                 {% endfor %}
             </div>
-
         </div>
     </div>
 {% endblock %}
