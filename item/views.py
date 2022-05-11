@@ -104,8 +104,8 @@ def update_item(request, id):
 
 
 def categories(request, id):
-    context = Item.objects.filter(category=id)
-    #category = ItemCategory.objects.filter(pk=context.name.id)
+    context = Item.objects.filter(category=id).all()
+    #category = ItemCategory.objects.filter(pk=context.id)
     print(context)
     #print(category)
     return render(request, 'item/categories.html', {
