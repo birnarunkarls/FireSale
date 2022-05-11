@@ -2,7 +2,7 @@
 
 {% block content %}
     <div>
-        <div class="homePageTop">
+        <div class="categoryPageTop">
             <div id="search_bar">
                 <input type="search" id="search" class="form-control" placeholder="Search for the name of an item..."/>
                 <div class="input-group-btn">
@@ -14,18 +14,11 @@
 
             </div>
             <div class="categoriesPlace">
-                <h4>Categories: </h4>
+                <h3>Categories: </h3>
                 {% for category in categories %}
                     <a class="categories" href="/item/categories/{{category.id}}">{{ category.name }}</a>
                 {% endfor %}
             </div>
-
-            <div class="sortBy">
-                <h5>Sort by:</h5>
-                <a class="sort" href="/">Name</a>
-                <a class="sort" href="/">Name</a>
-            </div>
-
             <h1>All products</h1>
             <div id="items_for_sale">
                 <div class="allItems">
