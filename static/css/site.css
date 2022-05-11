@@ -1,4 +1,8 @@
 /* Navigation bar */
+body {
+    background-color: #f1f1f1;
+}
+
 .navTop, .navBottom {
     padding: 10px;
     display: flex;
@@ -6,7 +10,7 @@
 }
 
 .navTop {
-    background-color: #fff3ed;
+    background-color: #ffffff;
     padding-bottom: 15px;
     display: flex;
 }
@@ -44,7 +48,7 @@
     flex: 1.9;
     justify-content: flex-end;
     flex-direction: column;
-
+    margin-right: 50px;
 }
 
 #logged_in_top, #logged_in_bottom {
@@ -72,24 +76,11 @@
     border-radius: 5px;
 }
 
-#search_bar {
-    padding: 1.5px 15px 1.5px 15px;
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-#search {
-    width: 40%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
 /* buttons */
-#item_name_home_page, item_description_page {
+#item_name_home_page, #item_description_page {
     color: black;
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
 a {
@@ -97,7 +88,7 @@ a {
     color: whitesmoke;
 }
 
-a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover{
+a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover{
     text-decoration: none;
     color: #f5ccb8;
 }
@@ -114,6 +105,10 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     display: flex;
     flex: 1;
     background-color: transparent;
+}
+
+.buttonsBottom {
+    margin-left: 55px;
 }
 
 #lower_button, #categories_select {
@@ -155,18 +150,19 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 }
 
 .eachItem {
-    padding: 20px;
+    padding: 5px;
+    border: 1px solid #c4c4c4;
     border-radius: 5px;
-    border: 2px solid #18ACBA;
-    background-color: #b3dae0;
+    background-color: #ffffff;
     display: inline-block;
     margin: 5px;
+    margin-bottom: 10px;
     width: 310px;
     height: 300px;
 }
 
 .itemImg {
-    width: 270px;
+    width: 300px;
     height: 200px;
 }
 
@@ -183,11 +179,13 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 .simItemImg {
     width: 120px;
+    height: 84px;
 }
 
 .simItemName {
     font-size: 12px;
     font-weight: bold;
+    color: black;
 }
 
 .makeBidInfo, .bidType, .productInfoBox, .sellerInfoBox, .similarItemsBox {
@@ -313,15 +311,9 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-bottom: 0px;
 }
 
-#forgot_password_button {
-    margin-left: 360px;
-    background-color: transparent;
-    width: 120px;
-    font-size: small;
-    border: none;
-}
 
-#login_button, #create_account_button, #edit_info_button, #save_info_button {
+
+.login_button, #create_account_button, #edit_info_button, #save_info_button, .btn btn-primary {
     background-color: #008c96;
     border: none;
     font-size: medium;
@@ -331,7 +323,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     border-radius: 5px;
 }
 
-#login_button {
+.login_button {
     margin: 25px 210px 15px 210px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -404,13 +396,58 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     width: 50px;
     height: 50px;
 }
-.categories {
-    color: black;
-    padding: 10px;
-}
 
 .homePageTop {
     display: flex;
     flex-direction: column;
-
 }
+
+#home_page_top_line_1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 8px 8px 8px 8px;
+}
+
+#search_bar {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#search {
+    border: none;
+}
+
+.categories, #categories_header, .sort, #sort_by_header  {
+    color: black;
+    margin-right: 15px;
+}
+
+#categories_header, #sort_by_header {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.categoriesPlace, .sortBy {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0px 15px 0px 15px;
+    background-color: white;
+    border: 1px solid black;
+    margin-right: 45px;
+}
+
+.categoriesPlace {
+    flex: 0.75;
+}
+
+.sortBy {
+    flex: 0.38;
+}
+
