@@ -53,11 +53,19 @@ def make_bid(request, id):
 def get_item_by_id(request, id):
     item = Item.objects.filter(pk=id).first()
     seller = User.objects.filter(pk=item.seller.id).first()
+    category = item.category
+    list_of_items = []
+    for i in Item.objects.filter(category__id=category.id).all():
+        if i.id != id:
+            list_of_items.append(i)
+    print(list_of_items)
 
     return render(request, 'item/item.html', {
         'item': item,
         'seller': seller,
-        'full_name': seller.profile.first_name + ' ' + seller.profile.last_name
+        'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
+        'category': category,
+        'similar_items': list_of_items
     })
 
 @login_required
@@ -104,13 +112,16 @@ def update_item(request, id):
 
 
 def categories(request, id):
-    context = Item.objects.filter(category=id).all()
+    context = ItemCategory.objects.filter(pk=id).first()
+    #item = Item.objects.filter(category=context.id)
     #category = ItemCategory.objects.filter(pk=context.id)
-    print(context)
-    #print(category)
+    list_of_items = []
+    for i in Item.objects.filter(category__id=id).all():
+        list_of_items.append(i)
     return render(request, 'item/categories.html', {
         'id': id,
-        #'category': category
+        'context': context,
+        'items': list_of_items
     })
 
 
