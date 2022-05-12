@@ -16,7 +16,7 @@
                 <p><b>Category: </b>{{ item.category }}</p>
             </div>
             <div id="highest_bid_box">
-                <p id="highest_bid_text">Highest bid: ${{ highest_bid }}</p>
+                <p id="highest_bid_text">Highest bid: {{ highest_bid }}</p>
             </div>
             <div class="largeButton">
                 <button class="makeBidButton"><a href="{% url 'item-make_bid' item.id %}">MAKE A BID</a></button>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="sellerInfo">
                     <p><b>Name: </b>{{ full_name }}</p>
-                    <p><b>Average rating: </b>{{ seller.average_rating }}</p>
+                    <p><b>Average rating: </b>{{ average_rating }}</p>
                 </div>
             </div>
         </div>

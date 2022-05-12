@@ -5,6 +5,7 @@ import user
 from item.forms.item_form import ItemCreateForm, ItemUpdateForm
 from item.models import Item, Images, ItemCategory, Bid
 from django.contrib.auth.models import User
+from checkout.models import Rating
 
 
 # Create your views here.
@@ -89,20 +90,34 @@ def get_item_by_id(request, id):
     seller = User.objects.filter(pk=item.seller.id).first()
     category = item.category
     bid = Bid.objects.filter(item__id=item.id).all()
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
     highest_bid = []
     for i in bid:
         highest_bid.append(i.amount)
+    if len(highest_bid) != 0:
+        highest_bid_amount = '$' + str(max(highest_bid))
+    else:
+        highest_bid_amount = 'No bids made'
     list_of_items = []
     for i in Item.objects.filter(category__id=category.id).all():
         if i.id != id:
             list_of_items.append(i)
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
+    print(average_rating)
     return render(request, 'item/item.html', {
         'item': item,
         'seller': seller,
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
         'category': category,
         'similar_items': list_of_items,
-        'highest_bid': max(highest_bid)
+        'highest_bid': highest_bid_amount,
+        'average_rating': average_rating
     })
 
 @login_required
