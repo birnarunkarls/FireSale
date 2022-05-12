@@ -1,21 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="logInRegBox">
-         <div class="logInResBar">
-                <p class="loginRegHeader">Create an account</p>
-         </div>
-        <form class="form form-horizontal" method="post">
+    <div class="blueBox">
+        <div class="blueBoxBar">
+             <p class="blueBoxHeader">Create an account</p>
+        </div>
+        <form class="blueBoxFormReg" method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" class="login_button" value="Sign up"/>
+            <input type="submit" class="blueBoxButton" value="Sign up"/>
         </form>
     </div>
-
     <div>
         <p id="already_acc_text">Already have an account ?</p>
-        <button id="already_acc_login">Login</button>
+        <button id="already_acc_login_button">Login</button>
     </div>
-
 
 {% endblock %}
