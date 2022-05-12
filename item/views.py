@@ -59,14 +59,14 @@ def my_bids(request, id):
     })
 
 # my listings
-@login_required
-def my_listings(request, id):
-    item = Item.objects.filter(pk=id).first()
-
-    return render(request, 'item/my_listings.html', {
-        'item': item,
-        'id': id
-    })
+#@login_required
+#def my_listings(request, id):
+#    item = Item.objects.filter(pk=id).first()
+#
+#    return render(request, 'item/my_listings.html', {
+#        'item': item,
+#        'id': id
+#    })
 
 
 # make_bid
@@ -134,11 +134,14 @@ def delete_item(request,id):
 @login_required
 def update_item(request, id):
     instance = get_object_or_404(Item, pk=id)
+    #seller = User.objects.filter(pk=item.id).first()
     if request.method == "POST":
         form = ItemUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():
             form.save()
-            return redirect('item-my_listings', id=id)
+            #print(id)
+            #print(seller)
+            return redirect('item-my_bids', id=id)
     else:
         form = ItemUpdateForm(instance=instance)
     return render(request, 'item/update_item.html', {
