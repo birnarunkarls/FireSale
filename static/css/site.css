@@ -119,7 +119,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     padding-top: 10px;
 }
 
-a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover, .makeBidButton:hover{
+a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover, .makeBidButton:hover, .itemNameHomePage:hover{
     text-decoration: none;
     color: #f5ccb8;
 }
@@ -147,7 +147,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 .makeBidButton, .createListingButton, .updateListingButton {
     background-color: #008c96;
-    padding: 15px 50px 15px 50px;
+    padding: 15px 15px 15px 15px;
     font-size: x-large;
     border: none;
     border-radius: 5px;
@@ -279,10 +279,10 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 #highest_bid_box {
     border-radius: 5px;
     border: 2px solid #008c96;
-    padding: 5px;
+    padding: 2px;
     width: 80%;
     margin-left: 10%;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 #highest_bid_text {
@@ -293,8 +293,8 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 }
 
 .makeBidButton {
-    margin-top: 15%;
-    margin-left: 15%;
+    margin-top: 30px;
+    margin-left: 23%;
 }
 
 #img_seller {
@@ -348,9 +348,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 /* flex 1 */
 .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems{
     flex: 1;
-}
-.largeButton {
-    align-items: flex-end;
 }
 
 /* flex 1,8 */
@@ -456,6 +453,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 }
 
 .sortBy {
-    flex: 0.38;
+    flex: 0.535;
 }
 
