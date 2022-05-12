@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from item.models import Item
 # Create your views here.
 
@@ -23,3 +23,14 @@ def checkout_phase2(request,id):
 
 def checkout_phase3(request):
     return render(request, 'checkout/checkout_phase3.html')
+
+
+def checkout(request):
+    if request.method == 'POST':
+        form = CheckoutForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('rating')
+    return render(request, 'checkout/checkout_phase1.html', {
+        'form': CheckoutForm()
+    })

@@ -36,11 +36,8 @@ INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 3, 17);
 INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (10300, 1, 20);
 INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (14000, 7, 26);
 
-INSERT INTO checkout_payment (user_id, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES (4, 'Jón Jónsson', '1111-11-111111', '07/27', '111', '01.05.20222', 10000);
-INSERT INTO checkout_payment (user_id, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES (2, 'Gunnar Gunnarsson', '2222-11-222222', '02/25', '123', '05.05.20222', 2000);
-
-INSERT INTO checkout_shipping (method, full_name, street_name, house_number, postal_code, city, country, payment_id) VALUES ('standard_shipping', 'Jón Jónsson', 'Menntavegur', '1', '102', 'Reykjavik', 'Iceland', 3);
-INSERT INTO checkout_shipping (method, full_name, street_name, house_number, postal_code, city, country, payment_id) VALUES ('standard_shipping', 'Gunnar Gunnarsson', 'Laugarvegur', '1', '101', 'Reykjavik', 'Iceland', 4);
+INSERT INTO checkout_checkout (full_name, street_name, house_number, postal_code, city, country, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount, user_id, item_id) VALUES ('Jón Jónsson', 'Menntavegur', '1', '102', 'Reykjavik', 'Iceland', 'Birna Rún Karlsdóttir', '1111-11-111111', '07/27', '111', '01.05.20222', 10000, 1, 20);
+INSERT INTO checkout_checkout (full_name, street_name, house_number, postal_code, city, country, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount, user_id, item_id) VALUES ('Gunnar Gunnarsson', 'Bjarmaland', '0', '108', 'Reykjavik', 'Iceland', 'Birna Rún Karlsdóttir', '1111-11-111111', '07/27', '111', '01.05.20222', 20000, 1, 30);
 
 INSERT INTO checkout_rating (seller_id, rating) VALUES (1, 6);
 INSERT INTO checkout_rating (seller_id, rating) VALUES (2, 9);
