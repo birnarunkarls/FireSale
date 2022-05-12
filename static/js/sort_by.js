@@ -10,13 +10,13 @@ $(document).ready(function (){
             success: function (resp) {
                 console.log(resp.data)
                 var newHtml = resp.data.map(d => {
-                    console.log(d.bid)
+                    console.log(d)
                     return `<div class="eachItem">
                         <a href="/${d.id}">
                             <img class="itemImg" src="${d.firstImage}" />
                                 <h4 class="itemNameHomePage">${d.name}</h4>
                                 <p class="itemDescriptionPage">${d.description}</p>
-                                <p class="itemDescriptionPage">${d.amount}</p>
+                                <!-- <p class="itemDescriptionPage">${d.amount}</p> -->
                         </a>
 
                     </div>`

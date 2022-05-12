@@ -1,24 +1,24 @@
 
 <div class="navTop">
 
-    <div id="logo">
+    <div id="logo_div">
         <button id="logo_button"><a href="{% url 'fire_sale-home_page' %}"><img id="logo_image" src="/static/images/logo_best_bids.png"></a></button>
     </div>
     {% if user.is_authenticated %}
-        <div id="profile_info">
-            <div id="logged_in_top">
-                <p id="average_rating">Average rating: {{ average_rating }}</p>
+        <div id="profile_info_nav">
+            <div id="profile_info_nav_top">
+                <p id="average_rating">{{ average_rating }}</p>
                 <p id="user_name">{{ user }}</p>
                 <img src="{{ user.profile.profile_picture }}" class="profileImage"/>
-            </div>
-            <div id="logged_in_bottom">
+            <div/>
+            <div id="profile_info_nav_bottom">
                 <button class="lightButton"><a href="{% url 'item-my_bids' user.id %}">My Bids</a></button>
                 <button class="lightButton"><a href="{% url 'user-profile' %}">My Profile</a></button>
                 <button class="darkButton"><a href="{% url 'user-logout' %}">Log out</a></button>
             </div>
         </div>
     {%  else %}
-        <div id="login_register">
+        <div id="login_register_nav">
             <button class="lightButton"><a href="{% url 'user-login' %}">Login</a></button>
             <button class="darkButton"><a href="{% url 'user-register' %}">Register</a></button>
         </div>

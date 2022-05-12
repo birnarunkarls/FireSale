@@ -8,25 +8,24 @@ body {
     min-height: 400px;
 }
 
+/* Navigation bar */
 .navTop, .navBottom {
-    padding: 10px;
+    padding: 10px 80px 10px 60px;
     display: flex;
     flex-direction: row;
 }
 
 .navTop {
     background-color: #ffffff;
-    padding-bottom: 15px;
-    display: flex;
 }
 
 .navBottom {
     background-color: #18ACBA;
 }
 
-#logo {
+#logo_div {
     display: flex;
-    flex: 1.2;
+    flex: 1.12;
     justify-content: flex-end;
     height: 100px;
 }
@@ -41,30 +40,22 @@ body {
     width: 110px;
 }
 
-#login_register {
-    margin-right: 50px;
+#login_register_nav {
     display: flex;
     flex: 1;
     justify-content: right;
     align-items: flex-start;
 }
 
-#profile_info {
-    display: flex;
+#profile_info_nav {
     flex: 1;
     justify-content: flex-end;
-    flex-direction: column;
-    margin-right: 50px;
 }
 
-#logged_in_top, #logged_in_bottom {
+#profile_info_nav_top, #profile_info_nav_bottom {
     display: flex;
     justify-content: right;
-}
-
-#logged_in_top {
-    margin-bottom: 10px;
-    margin-right: 20px;
+    margin-bottom: 5px;
 }
 
 #average_rating, #user_name {
@@ -72,9 +63,8 @@ body {
     margin-top: 13px;
 }
 
-
 .lightButton, .darkButton, #already_acc_login {
-    margin-right: 20px;
+    margin-left: 20px;
     font-weight: bold;
     width: 93px;
     height: 32px;
@@ -111,10 +101,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     display: flex;
     flex: 1;
     background-color: transparent;
-}
-
-.buttonsBottom {
-    margin-left: 55px;
 }
 
 #lower_button, #categories_select {
@@ -205,7 +191,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 450px;
 }
 
-.checkoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox {
+#profile_info_nav, .checkoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox {
     display: flex;
     flex-direction: column;
 }
@@ -330,7 +316,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     color: white;
 }
 
-.birta {
+.login_form {
     display: flex;
     flex-direction: column;
 }
