@@ -10,7 +10,7 @@
                 <p id="average_rating">{{ average_rating }}</p>
                 <p id="user_name">{{ user }}</p>
                 <img src="{{ user.profile.profile_picture }}" class="profileImage"/>
-            <div/>
+            </div>
             <div id="profile_info_nav_bottom">
                 <button class="lightButton"><a href="{% url 'item-my_bids' user.id %}">My Bids</a></button>
                 <button class="lightButton"><a href="{% url 'user-profile' %}">My Profile</a></button>
@@ -23,7 +23,6 @@
             <button class="darkButton"><a href="{% url 'user-register' %}">Register</a></button>
         </div>
     {% endif %}
-
 </div>
 
 <div class="navBottom">
