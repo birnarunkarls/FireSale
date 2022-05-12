@@ -58,7 +58,6 @@ def get_item_by_id(request, id):
     for i in Item.objects.filter(category__id=category.id).all():
         if i.id != id:
             list_of_items.append(i)
-    print(list_of_items)
 
     return render(request, 'item/item.html', {
         'item': item,
@@ -124,4 +123,14 @@ def categories(request, id):
         'items': list_of_items
     })
 
+
+#def sort_by_name(request):
+    #context = Item.objects.order_by('name').all()
+    #list_of_items = []
+    #for i in context:
+        #list_of_items.append(i)
+    #print(list_of_items)
+    #return render(request, 'item/sort_by.html', {
+        #'context': list_of_items
+    #})
 

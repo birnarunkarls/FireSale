@@ -7,14 +7,24 @@ from item.models import Item, ItemCategory
 def home_page(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
-        items = [{
+        filtered_items = Item.objects.filter(name__icontains=search_filter)
+
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({'data': [{
             'id': x.id,
             'name': x.name,
             'description': x.description,
             'condition': x.condition,
             'firstImage': x.images_set.first().image
-        } for x in Item.objects.filter(name__icontains=search_filter)]
-        return JsonResponse({'data': items})
+        } for x in filtered_items]})
+        return render(request, 'fire_sale/home_page.html', {
+            'items': filtered_items
+        })
+    if 'order_by' in request.GET:
+        order_by = request.GET['order_by']
+        return render(request, 'fire_sale/home_page.html', {
+            'items': Item.objects.order_by(order_by)
+        })
     context = {'items': Item.objects.all().order_by('name'), 'categories': ItemCategory.objects.all()}
     return render(request, 'fire_sale/home_page.html', context)
 
