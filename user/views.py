@@ -1,10 +1,10 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
 from user.forms.profile_form import ProfileForm
 from user.models import Profile
-
+from checkout.models import Rating
+from statistics import mean
 # Create your views here.
 
 
@@ -26,6 +26,7 @@ def register(request):
 # profile
 def profile(request):
     profile = Profile.objects.filter(user=request.user).first()
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
     if request.method == 'POST':
         form = ProfileForm(instance=profile, data=request.POST)
         if form.is_valid():
@@ -33,14 +34,21 @@ def profile(request):
             profile.user = request.user
             profile.save()
             return redirect('user-profile')
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
     return render(request, 'user/profile.html', {
-        'form': ProfileForm(instance=profile)
+        'form': ProfileForm(instance=profile),
+        'average_rating': round(mean(all_ratings),1)
     })
 
 
 # profile_edit
 def profile_edit(request):
     return render(request, 'user/profile_edit.html')
+
+
+
 
 
 
