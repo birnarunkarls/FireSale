@@ -90,7 +90,7 @@ def get_item_by_id(request, id):
     seller = User.objects.filter(pk=item.seller.id).first()
     category = item.category
     bid = Bid.objects.filter(item__id=item.id).all()
-    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    ratings = Rating.objects.filter(seller__id=seller.id).all()
     all_ratings = []
     highest_bid = []
     for i in bid:
@@ -103,13 +103,13 @@ def get_item_by_id(request, id):
     for i in Item.objects.filter(category__id=category.id).all():
         if i.id != id:
             list_of_items.append(i)
+
     for i in ratings:
         all_ratings.append(i.rating)
     if len(all_ratings) != 0:
-        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+        average_rating_seller = round(sum(all_ratings)/len(all_ratings), 1)
     else:
-        average_rating = ""
-    print(average_rating)
+        average_rating_seller = ""
     return render(request, 'item/item.html', {
         'item': item,
         'seller': seller,
@@ -117,7 +117,7 @@ def get_item_by_id(request, id):
         'category': category,
         'similar_items': list_of_items,
         'highest_bid': highest_bid_amount,
-        'average_rating': average_rating
+        'average_rating_seller': average_rating_seller
     })
 
 @login_required
