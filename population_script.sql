@@ -20,12 +20,16 @@ INSERT INTO item_bid (amount, notification, buyer_id, item_id) VALUES (100, 'tex
 INSERT INTO item_bid (amount, notification, buyer_id, item_id) VALUES (1000, 'push_notification', 2, 9);
 INSERT INTO item_bid (amount, notification, buyer_id, item_id) VALUES (2500, 'text_message', 3, 9);
 
+INSERT INTO checkout_payment (user_id, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES (4, 'Jón Jónsson', '1111-11-111111', '07/27', '111', '01.05.20222', 10000);
+INSERT INTO checkout_payment (user_id, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES (2, 'Gunnar Gunnarsson', '2222-11-222222', '02/25', '123', '05.05.20222', 2000);
 
-INSERT INTO checkout_payment (cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES ('Jón Jónsson', '1111-11-111111', '07/27', '111', '01.05.20222', 10000);
-INSERT INTO checkout_payment (cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES ('Gunnar Gunnarsson', '2222-11-222222', '02/25', '123', '05.05.20222', 2000);
+INSERT INTO checkout_shipping (method, full_name, street_name, house_number, postal_code, city, country, payment_id) VALUES ('standard_shipping', 'Jón Jónsson', 'Menntavegur', '1', '102', 'Reykjavik', 'Iceland', 3);
+INSERT INTO checkout_shipping (method, full_name, street_name, house_number, postal_code, city, country, payment_id) VALUES ('standard_shipping', 'Gunnar Gunnarsson', 'Laugarvegur', '1', '101', 'Reykjavik', 'Iceland', 4);
 
-INSERT INTO checkout_shipping (method, full_name, street_name, house_number, postal_code, city, country) VALUES ('standard_shipping', 'Jón Jónsson', 'Menntavegur', '1', '102', 'Reykjavik', 'Iceland');
-INSERT INTO checkout_shipping (method, full_name, street_name, house_number, postal_code, city, country) VALUES ('standard_shipping', 'Gunnar Gunnarsson', 'Laugarvegur', '1', '101', 'Reykjavik', 'Iceland');
+INSERT INTO checkout_rating (seller_id, rating) VALUES (1, 6);
+INSERT INTO checkout_rating (seller_id, rating) VALUES (2, 9);
+INSERT INTO checkout_rating (seller_id, rating) VALUES (2, 10);
+INSERT INTO checkout_rating (seller_id, rating) VALUES (5, 8);
 
 
 INSERT INTO item_images (item_id, image) VALUES (7, 'https://images.hindustantimes.com/tech/img/2021/12/21/960x540/iPhone_13_Mini_(9)_1632560822480_1640057457018.jpg')

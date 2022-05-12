@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h1>{{ context.name }}</h1>
+        <div id="items_for_sale">
+            <div class="allItems">
+                {% for item in context %}
+                    {% include 'fire_sale/single_item.html'%}
+                {% endfor %}
+            </div>
+        </div>
+
+{% endblock %}

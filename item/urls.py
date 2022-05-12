@@ -21,6 +21,8 @@ urlpatterns = [
 
     path('update_item/<int:id>', views.update_item, name="item-update_item"),
 
-    path('categories/<int:id>', views.categories, name="item-categories")
+    path('categories/<int:id>', views.categories, name="item-categories"),
+
+    #path('sort_by', views.sort_by, name='item-sort_by')
 
 ]
