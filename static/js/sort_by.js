@@ -10,6 +10,7 @@ $(document).ready(function (){
             success: function (resp) {
                 console.log(resp.data)
                 var newHtml = resp.data.map(d => {
+                    console.log(d.bid)
                     return `<div class="eachItem">
                         <a href="/${d.id}">
                             <img class="itemImg" src="${d.firstImage}" />
