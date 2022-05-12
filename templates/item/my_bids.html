@@ -6,11 +6,13 @@
     <div class="bidType">
         <div class="bids">
         <h2>My listed items</h2>
-            {%  %}
+            {% for i in {{ listings }} %}
+                <div id="pending_bids">
+                    <p>Listing {{ i }}</p>
+                    <p>Listing name {{ i.name }}</p>
+                </div>
+            {% endblock %}
             <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL PENDING OFFER Í DATABASE</p>
-            <div id="pending_bids">
-                <p>All pending bids from the database</p>
-            </div>
         </div>
 
         <div class="bids">

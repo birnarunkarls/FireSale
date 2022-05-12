@@ -19,11 +19,41 @@ def item(request):
 @login_required
 def my_bids(request, id):
     item = Item.objects.filter(pk=id).first()
-    seller = User.objects.filter(pk=item.id).first()
-    print(seller)
+    #seller = User.objects.filter(pk=id).first()
+    listings = Item.objects.filter(seller__id=id)
+    bids = Bid.objects.filter(buyer__id=id)
+    #bid_items = Item.objects.filter(seller__id=seller.id)
+    all_listings = []
+    for i in listings:
+        all_listings.append(i)
+
+
+    all_bids_id = []
+    all_bids_names = []
+    print(all_listings)
+    print(bids)
+
+    for j in bids:
+        all_bids_id.append(j)
+        print(j.id)
+
+    print(all_bids_id)
+
+    for k in all_bids_id:
+        bid = Item.objects.filter(pk=k.id).first()
+        all_bids_names.append(bid)
+        print(k.id)
+    print(all_bids_names)
+
+    #for k in bids:
+    #    all_bids.append(k.item)
+    #    print(k.item.id)
+    #print(all_bids)
+
     return render(request, 'item/my_bids.html', {
         'item': item,
         'id': id
+        'listings': listings
     })
 
 # my listings
