@@ -2,7 +2,7 @@ $(document).ready(function (){
     $('.sort').on('click', function(e) {
         e.preventDefault();
         console.log("Clicking sort by")
-        let sort_by_value = e.target.textContent;
+        let sort_by_value = $(this).attr('value');
         console.log(sort_by_value)
         $.ajax({
             url: '/?sort_by='+ sort_by_value,
@@ -18,7 +18,6 @@ $(document).ready(function (){
                                 <p class="itemDescriptionPage">${d.description}</p>
                                 <!-- <p class="itemDescriptionPage">${d.amount}</p> -->
                         </a>
-
                     </div>`
                 });
                 $(".allItems").html(newHtml.join(''));

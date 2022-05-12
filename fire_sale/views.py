@@ -2,7 +2,6 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from item.models import Item, ItemCategory, Bid
 from checkout.models import Rating
-from statistics import mean
 
 
 # home_page
@@ -54,12 +53,16 @@ def home_page(request):
     all_ratings = []
     for i in ratings:
         all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
 
     return render(request, 'fire_sale/home_page.html', {
         #'highest_bid': max(highest_bid),
         'items': Item.objects.all().order_by('name'),
         'categories': ItemCategory.objects.all(),
-        'average_rating': round(mean(all_ratings), 1)
+        'average_rating': average_rating
     })
 
 

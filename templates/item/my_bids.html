@@ -6,12 +6,18 @@
     <div class="bidType">
         <div class="bids">
         <h2>My listed items</h2>
-            {% for i in {{ listings }} %}
+            {% for i in listings %}
                 <div id="pending_bids">
-                    <p>Listing {{ i }}</p>
-                    <p>Listing name {{ i.name }}</p>
+                    <img class="listingImage" src="{{i.images_set.first.image}}"/>
+                    <p>{{ i }}</p>
+                    <p>{{ i.description }}</p>
+                    <div class="editItemButtonr">
+                        <a href="{% url 'item-delete_item' i.id %}" class="block btn btn-primary">Delete item</a>
+                        <a href="{% url 'item-update_item' i.id %}" class="block btn btn-primary">Update item</a>
+                    </div>
+                    <p>Highest bid: {</p>
                 </div>
-            {% endblock %}
+            {% endfor %}
             <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL PENDING OFFER Í DATABASE</p>
         </div>
 

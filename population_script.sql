@@ -60,6 +60,8 @@ INSERT INTO checkout_rating (seller_id, rating) VALUES (4, 3);
 INSERT INTO checkout_rating (seller_id, rating) VALUES (5, 10);
 INSERT INTO checkout_rating (seller_id, rating) VALUES (6, 7);
 INSERT INTO checkout_rating (seller_id, rating) VALUES (7, 1);
+INSERT INTO checkout_rating (seller_id, rating) VALUES (3, 10);
+INSERT INTO checkout_rating (seller_id, rating) VALUES (3, 10);
 
 INSERT INTO item_images (item_id, image) VALUES (7, 'https://images.hindustantimes.com/tech/img/2021/12/21/960x540/iPhone_13_Mini_(9)_1632560822480_1640057457018.jpg')
 INSERT INTO item_images (item_id, image) VALUES (7, 'https://images.hindustantimes.com/tech/img/2022/03/16/960x540/iPhone_13_Mini_(10)_1633111870000_1647407172205.jpg')
