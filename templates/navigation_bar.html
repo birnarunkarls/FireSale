@@ -7,7 +7,7 @@
     {% if user.is_authenticated %}
         <div id="profile_info_nav">
             <div id="profile_info_nav_top">
-                <p id="average_rating">{{ average_rating }}</p>
+                <p id="average_rating">Average rating: {{ average_rating }}</p>
                 <p id="user_name">{{ user }}</p>
                 <img src="{{ user.profile.profile_picture }}" class="profileImage"/>
             </div>

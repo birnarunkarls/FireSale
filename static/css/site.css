@@ -1,4 +1,4 @@
-/* Navigation bar */
+
 body {
     background-color: #f1f1f1;
     min-height: 400px;
@@ -6,6 +6,16 @@ body {
 
 .container {
     min-height: 400px;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover, .makeBidButton:hover{
+    text-decoration: none;
+    color: #f5ccb8;
 }
 
 /* Navigation bar */
@@ -63,6 +73,7 @@ body {
     margin-top: 13px;
 }
 
+/* buttons */
 .lightButton, .darkButton, #already_acc_login {
     margin-left: 20px;
     font-weight: bold;
@@ -73,11 +84,6 @@ body {
     color: white;
 }
 
-/* buttons */
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
 .itemNameHomePage, .itemDescriptionPage {
     color: black;
     padding-left: 20px;
@@ -87,14 +93,6 @@ a {
 a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover, .makeBidButton:hover{
     text-decoration: none;
     color: #f5ccb8;
-}
-
-.lightButton {
-    background-color: #ffa998;
-}
-
-.darkButton {
-    background-color: #f76566;
 }
 
 .buttonsBottom, #search_bar, .categoriesPlace {
@@ -134,6 +132,14 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 #accept_button {
     padding: 3px 10px 3px 10px;
     background-color: #45d745;
+}
+
+.lightButton {
+    background-color: #ffa998;
+}
+
+.darkButton {
+    background-color: #f76566;
 }
 
 /* Home page */
