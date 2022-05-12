@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="logInRegBox">
-        <form class="updateItemListing" action="{% url 'item-update_item' id %}" method="post">
+    <div class="blueBox">
+        <div class="blueBoxBar">
+            <p class="blueBoxHeader">Update item</p>
+        </div>
+        <form class="blueBoxForm" action="{% url 'item-update_item' id %}" method="post">
         {% csrf_token %}
         {{ form }}
-            <div class="saveInformation">
-                <input type="submit" class="updateListingButton" value="UPDATE LISTING"/>
-            </div>
+            <input type="submit" class="blueBoxButton" value="UPDATE LISTING"/>
         </form>
     </div>
 {% endblock %}
