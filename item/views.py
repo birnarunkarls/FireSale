@@ -52,7 +52,7 @@ def my_bids(request, id):
 
     return render(request, 'item/my_bids.html', {
         'item': item,
-        'id': id
+        'id': id,
         'listings': listings
     })
 
