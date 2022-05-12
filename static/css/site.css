@@ -168,10 +168,15 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 200px;
 }
 
+.imgItem {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
 .itemImgBig {
     width: 340px;
     height: 230px;
-    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 #item_title {
@@ -192,7 +197,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 .makeBidInfo, .bidType, .productInfoBox, .sellerInfoBox, .similarItemsBox {
     display: flex;
-    height: 400px;
+    height: 450px;
 }
 
 .checkoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox {
@@ -205,6 +210,10 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     flex-direction: row;
 }
 
+.itemPage {
+    height: 500px;
+}
+
 /* inner div - pink boxes*/
 .imgItem, .imgDiv, #img_of_product, #shipping_info_overview, #payment_info_overview, #shipping, #payment_info, #rate_seller, #product_info, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, .similarItemsBox {
     background-color: #ffeee5;
@@ -213,15 +222,15 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     border-radius: 5px;
 }
 
+.similarItemsBox {
+    overflow-y: auto;
+}
+
 /* flex 1 */
-.productInfoBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems{
+.productInfoBox, .imgItem, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems{
     flex: 1;
 }
 
- /* flex 1.2 */
- .imgItem {
-    flex: 1;
-}
 
 /* flex 1,8 */
 .fillInfo {
@@ -261,11 +270,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 250px;
 }
 
-/* Rating stars */
-
-
-
-
 /* login & register */
 
 .logInRegBox {
@@ -276,7 +280,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     padding: 10px;
     border-radius: 5px;
 }
-
 
 .logInResBar {
     background-color: #18ACBA;
@@ -336,7 +339,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     background-color: #008c96;
     margin-left: 600px;
 }
-
 
 
 /* my profile */
