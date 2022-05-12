@@ -3,17 +3,20 @@
 {% block content %}
     <h1 id="item_title">{{ item.name }}</h1>
     <div class="itemPage">
-        <div class="imgItem">
+        <div class="imgItemBox">
             {% for item_image in item.images_set.all %}
                 <img class="itemImgBig" src="{{ item_image.image }}" />
             {% endfor %}
         </div>
         <div class="productInfoBox">
+            <h2>Product information</h2>
             <div class="productInfo">
-                <h2>Product information</h2>
                 <p>Condition: {{ item.condition }}</p>
                 <p>Description: {{ item.description }}</p>
                 <p>Category: {{ item.category }}</p>
+            </div>
+            <div class="highestBid">
+                <p>Highest bid: ${{ highest_bid }}</p>
             </div>
             <div class="largeButton">
                 <button class="makeBidButton"><a href="{% url 'item-make_bid' item.id %}">MAKE A BID</a></button>
@@ -21,17 +24,14 @@
         </div>
         <div class="sellerInfoBox">
             <div class="seller">
+                <h3>Seller information</h3>
                 <div id="img_seller">
                     <img class="itemImg" src="{{ seller.profile.profile_picture }}" />
                 </div>
                 <div class="sellerInfo">
-                    <h3>Seller information</h3>
                     <p>Name: {{ full_name }}</p>
                     <p>Average rating: {{ seller.average_rating }}</p>
                 </div>
-            </div>
-            <div class="highestBid">
-                <p>Highest bid: ${{ highest_bid }}</p>
             </div>
         </div>
         <div class="similarItemsBox">
