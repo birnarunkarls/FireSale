@@ -16,9 +16,25 @@ INSERT INTO item_item (name, description, condition, category_id, seller_id) VAL
 INSERT INTO item_item (name, description, condition, category_id, seller_id) VALUES ('Sweater', 'pink knit', 'medium', 3, 1);
 
 
-INSERT INTO item_bid (amount, notification, buyer_id, item_id) VALUES (100, 'text_message', 1, 8);
-INSERT INTO item_bid (amount, notification, buyer_id, item_id) VALUES (1000, 'push_notification', 2, 9);
-INSERT INTO item_bid (amount, notification, buyer_id, item_id) VALUES (2500, 'text_message', 3, 9);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (100, 1, 8);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 2, 9);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (2500, 3, 9);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 1, 7);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (50, 1, 8);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (3000, 2, 9);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (900, 3, 10);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 1, 11);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (10200, 3, 17);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (10300, 1, 20);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (100, 7, 26);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (12200, 1, 7);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (540, 1, 8);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (30500, 2, 9);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (90, 3, 10);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (100, 1, 11);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 3, 17);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (10300, 1, 20);
+INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (14000, 7, 26);
 
 INSERT INTO checkout_payment (user_id, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES (4, 'Jón Jónsson', '1111-11-111111', '07/27', '111', '01.05.20222', 10000);
 INSERT INTO checkout_payment (user_id, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount) VALUES (2, 'Gunnar Gunnarsson', '2222-11-222222', '02/25', '123', '05.05.20222', 2000);

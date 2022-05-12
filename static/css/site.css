@@ -79,18 +79,17 @@ body {
 }
 
 /* buttons */
-#item_name_home_page, #item_description_page {
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.itemNameHomePage, .itemDescriptionPage {
     color: black;
     padding-left: 20px;
     padding-top: 10px;
 }
 
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover{
+a:hover, .categories:hover, .itemNameHomePage:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover{
     text-decoration: none;
     color: #f5ccb8;
 }
