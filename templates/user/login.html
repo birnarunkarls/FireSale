@@ -1,51 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post" class="form form-horizontal">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="btn btn-primary" value="Login"/>
-    </form>
-
-    <div>
-        <div class="logInRegBox">
-            <div class="logInResBar">
-                <p class="loginRegHeader">Login</p>
-            </div>
-            <form method="post" class="form form-horizontal">
-                {% csrf_token %}
-                {{ form }}
-                <input type="submit" class="btn btn-primary" value="Login"/>
-            </form>
-            </div>
+    <div class="logInRegBox">
+        <div class="logInResBar">
+            <p class="loginRegHeader">Login</p>
         </div>
+        <form method="post" class="birta">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="login_button" value="Login"/>
+        </form>
     </div>
-
-
-
-
-    <div>
-        <div class="logInRegBox">
-            <div class="logInResBar">
-                <p class="loginRegHeader">Login</p>
-            </div>
-            <div class="logRegInput">
-                <div class="inputText">
-                    <p class="loginRegText">Username:</p>
-                    <p class="loginRegText">Password:</p>
-                </div>
-                <div class="inputColumn">
-                    <input id="username_input">
-                    <input id="password_input">
-                </div>
-            </div>
-            <div id="log_in_buttons">
-                <button id="forgot_password_button">forgot password?</button>
-                <button id="login_button">Login</button>
-            </div>
-            </div>
-        </div>
-    </div>
-
 
 {% endblock %}

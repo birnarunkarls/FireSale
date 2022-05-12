@@ -21,7 +21,7 @@ body {
 
 #logo {
     display: flex;
-    flex: 2;
+    flex: 1.2;
     justify-content: flex-end;
     height: 100px;
 }
@@ -37,15 +37,16 @@ body {
 }
 
 #login_register {
+    margin-right: 50px;
     display: flex;
-    flex: 1.9;
+    flex: 1;
     justify-content: right;
     align-items: flex-start;
 }
 
 #profile_info {
     display: flex;
-    flex: 1.9;
+    flex: 1;
     justify-content: flex-end;
     flex-direction: column;
     margin-right: 50px;
@@ -74,6 +75,7 @@ body {
     height: 32px;
     border: none;
     border-radius: 5px;
+    color: white;
 }
 
 /* buttons */
@@ -198,7 +200,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     flex-direction: column;
 }
 
-.itemPage, .checkoutPage, #checkout_heading, #checkout_overview_center, #checkout_overview_bottom, .logRegInput, .form form-horizontal {
+.itemPage, .checkoutPage, #checkout_heading, #checkout_overview_center, #checkout_overview_bottom, .form form-horizontal {
     display: flex;
     flex-direction: row;
 }
@@ -269,10 +271,12 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 .logInRegBox {
     background-color: #94d9e0;
     width: 50%;
-    margin: 50px 100px 0px 320px;
+    margin: auto;
+    margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
 }
+
 
 .logInResBar {
     background-color: #18ACBA;
@@ -289,31 +293,13 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin: 0px;
 }
 
-.inputText {
-    flex: 0.35;
-    font-size: 17px;
-    margin-left: 10px;
-}
-
-.inputColumn {
-    flex: 1;
-    margin-right: 20px;
-}
-
 #username_input, #password_input, #username_input, #email_input, #password_input, #password_again_input, #name_input, #phone_input, #birthday_input, #bio_input, #image_input, #create_account_button{
     width: 100%;
     margin-top: 32px;
 }
 
-.loginRegText{
-    margin-top: 36px;
-    margin-left: 20px;
-    margin-bottom: 0px;
-}
 
-
-
-.login_button, #create_account_button, #edit_info_button, #save_info_button, .btn btn-primary {
+.login_button, #create_account_button, #edit_info_button, #save_info_button {
     background-color: #008c96;
     border: none;
     font-size: medium;
@@ -324,9 +310,16 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 }
 
 .login_button {
-    margin: 25px 210px 15px 210px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 10px 20px 10px 20px;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 160px;
+    color: white;
+}
+
+.birta {
+    display: flex;
+    flex-direction: column;
 }
 
 #create_account_button, #save_info_button {
@@ -343,6 +336,8 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     background-color: #008c96;
     margin-left: 600px;
 }
+
+
 
 /* my profile */
 
