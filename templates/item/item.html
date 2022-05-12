@@ -11,26 +11,26 @@
         <div class="productInfoBox">
             <h2>Product information</h2>
             <div class="productInfo">
-                <p>Condition: {{ item.condition }}</p>
-                <p>Description: {{ item.description }}</p>
-                <p>Category: {{ item.category }}</p>
+                <p><b>Condition: </b>{{ item.condition }}</p>
+                <p><b>Description: </b>{{ item.description }}</p>
+                <p><b>Category: </b>{{ item.category }}</p>
             </div>
-            <div class="highestBid">
-                <p>Highest bid: ${{ highest_bid }}</p>
+            <div id="highest_bid_box">
+                <p id="highest_bid_text">Highest bid: ${{ highest_bid }}</p>
             </div>
             <div class="largeButton">
                 <button class="makeBidButton"><a href="{% url 'item-make_bid' item.id %}">MAKE A BID</a></button>
             </div>
         </div>
         <div class="sellerInfoBox">
+            <h2>Seller information</h2>
             <div class="seller">
-                <h3>Seller information</h3>
                 <div id="img_seller">
                     <img class="itemImg" src="{{ seller.profile.profile_picture }}" />
                 </div>
                 <div class="sellerInfo">
-                    <p>Name: {{ full_name }}</p>
-                    <p>Average rating: {{ seller.average_rating }}</p>
+                    <p><b>Name: </b>{{ full_name }}</p>
+                    <p><b>Average rating: </b>{{ seller.average_rating }}</p>
                 </div>
             </div>
         </div>
