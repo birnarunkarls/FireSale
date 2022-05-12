@@ -148,7 +148,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 .makeBidButton, .createListingButton, .updateListingButton {
     background-color: #008c96;
     padding: 15px 50px 15px 50px;
-    font-size: xx-large;
+    font-size: x-large;
     border: none;
     border-radius: 5px;
 }
@@ -254,6 +254,13 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 200px;
 }
 
+
+/* Item */
+#item_title {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 .imgItemBox {
     max-height: 450px;
     overflow-y: auto;
@@ -265,10 +272,35 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-bottom: 10px;
 }
 
-#item_title {
-    margin-left: 20px;
-    margin-top: 20px;
+.productInfo, .sellerInfo {
+    padding: 20px;
 }
+
+#highest_bid_box {
+    border-radius: 5px;
+    border: 2px solid #008c96;
+    padding: 5px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+#highest_bid_text {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0px;
+    color: #008c96;
+}
+
+.makeBidButton {
+    margin-top: 15%;
+    margin-left: 15%;
+}
+
+#img_seller {
+    margin-top: 8%;
+}
+
 
 .simItemImg {
     width: 120px;
@@ -317,6 +349,9 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems{
     flex: 1;
 }
+.largeButton {
+    align-items: flex-end;
+}
 
 /* flex 1,8 */
 .fillInfo {
@@ -328,25 +363,10 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     flex: 3;
 }
 
-/* flex 6 */
-.productInfo {
-    padding-left: 20px;
-}
-
-.largeButton, .makeBid {
-    margin: auto;
-}
-
 .createListingButton, .updateListingButton {
     margin-left: 23%;
     margin-top: 3%;
     color: white;
-}
-
-.makeBidButton {
-    color: white;
-    margin-left: 34%;
-    margin-top: 2%;
 }
 
 #highest_bid {
