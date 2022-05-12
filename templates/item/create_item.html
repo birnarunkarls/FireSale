@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="logInRegBox">
-        <div class="logInResBar">
-                <p class="loginRegHeader">Create new listing</p>
+    <div class="blueBox">
+        <div class="blueBoxBar">
+            <p class="blueBoxHeader">Create new listing</p>
         </div>
-        <form class="createItemListing" action="{% url 'item-create_item' user.id %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-            <div class="saveInformation">
-                <input type="submit" class="createListingButton" value="CREATE LISTING"/>
-            </div>
+        <form class="blueBoxForm" action="{% url 'item-create_item' user.id %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="blueBoxButton" value="CREATE LISTING"/>
         </form>
     </div>
-
 
 {% endblock %}

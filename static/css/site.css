@@ -73,8 +73,23 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-top: 13px;
 }
 
+/* footer */
+.footer {
+    background-color: #503434;
+    color: #ffeee5;
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.aboutUsText {
+    margin-bottom: 8px;
+    font-size: small;
+}
+
 /* buttons */
-.lightButton, .darkButton, #already_acc_login {
+.lightButton, .darkButton, #already_acc_login_button {
     margin-left: 20px;
     font-weight: bold;
     width: 93px;
@@ -140,6 +155,66 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 .darkButton {
     background-color: #f76566;
+}
+
+/* login & register & profile & create item */
+.blueBox {
+    background-color: #94d9e0;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 10px;
+}
+
+.blueBoxBar {
+    background-color: #18ACBA;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.blueBoxHeader {
+    margin: 0px;
+}
+
+.blueBoxForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.blueBoxFormReg {
+    padding: 20px;
+}
+
+.blueBoxButton {
+    background-color: #008c96;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    font-weight: bold;
+    font-size: large;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 175px;
+    margin-top: 20px;
+
+}
+
+#already_acc_text {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#already_acc_login_button {
+    background-color: #008c96;
+    margin-left: 600px;
 }
 
 /* Home page */
@@ -228,7 +303,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     flex: 1;
 }
 
-
 /* flex 1,8 */
 .fillInfo {
     flex: 1.8;
@@ -273,76 +347,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 250px;
 }
 
-/* login & register */
-
-.logInRegBox {
-    background-color: #94d9e0;
-    width: 50%;
-    margin: auto;
-    margin-top: 5%;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.logInResBar {
-    background-color: #18ACBA;
-    text-align: center;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 5px;
-}
-
-.loginRegHeader {
-    margin: 0px;
-}
-
-#username_input, #password_input, #username_input, #email_input, #password_input, #password_again_input, #name_input, #phone_input, #birthday_input, #bio_input, #image_input, #create_account_button{
-    width: 100%;
-    margin-top: 32px;
-}
-
-.login_button, #create_account_button, #edit_info_button, #save_info_button {
-    background-color: #008c96;
-    border: none;
-    font-size: medium;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    justify-content: flex-end;
-    border-radius: 5px;
-}
-
-.login_button {
-    padding: 10px 20px 10px 20px;
-    width: 50%;
-    margin-top: 20px;
-    margin-left: 160px;
-    color: white;
-}
-
-.login_form {
-    display: flex;
-    flex-direction: column;
-}
-
-#create_account_button, #save_info_button {
-    margin-bottom: 15px;
-    width: 70%;
-}
-
-#already_acc_text {
-    text-align: center;
-    margin-top: 30px;
-}
-
-#already_acc_login {
-    background-color: #008c96;
-    margin-left: 600px;
-}
-
-
 /* my profile */
 
 .myProfile {
@@ -374,21 +378,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-top: 30px;
 }
 
-/* footer */
-
-.footer {
-    background-color: #503434;
-    color: #ffeee5;
-    margin-top: 40px;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.aboutUsText {
-    margin-bottom: 8px;
-    font-size: small;
-}
 
 .profileImage {
     border-radius: 50%;

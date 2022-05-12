@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="logInRegBox">
-        <div class="logInResBar">
-                <p class="loginRegHeader">My profile</p>
+    <div class="blueBox">
+        <div class="blueBoxBar">
+            <p class="blueBoxHeader">My profile</p>
         </div>
-        <form class="form form-horizontal" method="post">
+        <form class="blueBoxForm" method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" class="makeBidButton" value="Update" />
+            <input type="submit" class="blueBoxButton" value="UPDATE" />
         </form>
     </div>
 
