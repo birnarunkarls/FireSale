@@ -116,7 +116,8 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 .itemNameHomePage, .itemDescriptionPage {
     color: black;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 7px;
+    margin-bottom: 0px;
 }
 
 a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover, .makeBidButton:hover, .itemNameHomePage:hover{
