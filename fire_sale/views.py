@@ -20,11 +20,28 @@ def home_page(request):
         return render(request, 'fire_sale/home_page.html', {
             'items': filtered_items
         })
-    if 'order_by' in request.GET:
-        order_by = request.GET['order_by']
+
+    if 'sort_by' in request.GET:
+        order_by = request.GET['sort_by']
+        order_by_items = Item.objects.order_by(order_by)
+    #    order_by = request.GET['sort_by']
+    #    print(order_by)
+    #    return render(request, 'item/sort_by.html', {
+    #        'items': Item.objects.order_by(order_by)
+    #    })
+
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({'data': [{
+                'id': x.id,
+                'name': x.name,
+                'description': x.description,
+                'condition': x.condition,
+                'firstImage': x.images_set.first().image
+            } for x in order_by_items]})
         return render(request, 'fire_sale/home_page.html', {
-            'items': Item.objects.order_by(order_by)
+            'items': order_by_items
         })
+
     context = {'items': Item.objects.all().order_by('name'), 'categories': ItemCategory.objects.all()}
     return render(request, 'fire_sale/home_page.html', context)
 
