@@ -1,6 +1,11 @@
 /* Navigation bar */
 body {
     background-color: #f1f1f1;
+    min-height: 400px;
+}
+
+.container {
+    min-height: 400px;
 }
 
 .navTop, .navBottom {
@@ -90,7 +95,7 @@ a {
     color: whitesmoke;
 }
 
-a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover{
+a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hover, .updateListingButton:hover, .simItemName:hover, .makeBidButton:hover{
     text-decoration: none;
     color: #f5ccb8;
 }
@@ -187,6 +192,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 .simItemImg {
     width: 120px;
     height: 84px;
+    border: 1px solid grey;
 }
 
 .simItemName {
@@ -216,7 +222,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 /* inner div - pink boxes*/
 .imgItem, .imgDiv, #img_of_product, #shipping_info_overview, #payment_info_overview, #shipping, #payment_info, #rate_seller, #product_info, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, .similarItemsBox {
-    background-color: #ffeee5;
+    background-color: white;
     padding: 20px;
     margin: 10px;
     border-radius: 5px;
@@ -252,9 +258,15 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 }
 
 .createListingButton, .updateListingButton {
-    margin-left: 19%;
+    margin-left: 23%;
     margin-top: 3%;
     color: white;
+}
+
+.makeBidButton {
+    color: white;
+    margin-left: 34%;
+    margin-top: 2%;
 }
 
 #highest_bid {
@@ -276,7 +288,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     background-color: #94d9e0;
     width: 50%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 5%;
     padding: 10px;
     border-radius: 5px;
 }
@@ -300,7 +312,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     width: 100%;
     margin-top: 32px;
 }
-
 
 .login_button, #create_account_button, #edit_info_button, #save_info_button {
     background-color: #008c96;
