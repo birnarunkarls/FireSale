@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 import user
 from item.forms.item_form import ItemCreateForm, ItemUpdateForm
-from item.models import Item, Images, ItemCategory
+from item.models import Item, Images, ItemCategory, Bid
 from django.contrib.auth.models import User
 
 
@@ -54,17 +54,21 @@ def get_item_by_id(request, id):
     item = Item.objects.filter(pk=id).first()
     seller = User.objects.filter(pk=item.seller.id).first()
     category = item.category
+    bid = Bid.objects.filter(item__id=item.id).all()
+    highest_bid = []
+    for i in bid:
+        highest_bid.append(i.amount)
     list_of_items = []
     for i in Item.objects.filter(category__id=category.id).all():
         if i.id != id:
             list_of_items.append(i)
-
     return render(request, 'item/item.html', {
         'item': item,
         'seller': seller,
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
         'category': category,
-        'similar_items': list_of_items
+        'similar_items': list_of_items,
+        'highest_bid': max(highest_bid)
     })
 
 @login_required

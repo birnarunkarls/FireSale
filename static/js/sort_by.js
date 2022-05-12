@@ -1,7 +1,9 @@
 $(document).ready(function (){
     $('.sort').on('click', function(e) {
         e.preventDefault();
-        var sort_by_value = $('.sort').val();
+        console.log("Clicking sort by")
+        let sort_by_value = e.target.textContent;
+        console.log(sort_by_value)
         $.ajax({
             url: '/?sort_by='+ sort_by_value,
             type: 'GET',
