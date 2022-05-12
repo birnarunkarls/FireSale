@@ -1,11 +1,22 @@
 from django.forms import ModelForm
-from checkout.models import Payment
+from checkout.models import Checkout, Rating
 
 
-class CheckoutPaymentForm(ModelForm):
+
+class CheckoutForm(ModelForm):
     class Meta:
-        model = Payment
+        model = Checkout
+        exclude = ['id']
 
+
+
+
+
+
+class RatingForm(ModelForm):
+    class Meta:
+        model = Rating
+        exclude = ['id']
 
 
 
