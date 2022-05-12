@@ -22,37 +22,40 @@ def my_bids(request, id):
     #seller = User.objects.filter(pk=id).first()
     listings = Item.objects.filter(seller__id=id)
     bids = Bid.objects.filter(buyer__id=id)
+    listing_bids = Bid.objects.filter(item__id=id).all()
     #bid_items = Item.objects.filter(seller__id=seller.id)
+    #bid = Bid.objects.filter(item__id=item.id).all()
+    highest_bid = []
     all_listings = []
+    all_bids_id = []
+    all_bid_items = []
+
+    for l in listing_bids:
+        print(l)
+        print(l.amount)
+        highest_bid.append(l.amount)
+
+    if len(highest_bid) != 0:
+        highest_bid_offer = max(highest_bid)
+    else:
+        highest_bid_offer = ""
+
     for i in listings:
         all_listings.append(i)
 
-    all_bids_id = []
-    all_bid_items = []
-    print(all_listings)
-    print(bids)
-
     for j in bids:
         all_bids_id.append(j)
-        print(j.id)
 
-    print(all_bids_id)
-
-    for bid in all_bids_id:
-        item = Item.objects.filter(pk=bid.item.id).first()
+    for bid_bid in all_bids_id:
+        item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
-        print(item.name)
-    print(all_bid_items)
-
-    #for k in bids:
-    #    all_bids.append(k.item)
-    #    print(k.item.id)
-    #print(all_bids)
 
     return render(request, 'item/my_bids.html', {
         'item': item,
         'id': id,
-        'listings': listings
+        'listings': listings,
+        'highest_bid': highest_bid_offer,
+        'bid_items': all_bid_items
     })
 
 # my listings
@@ -158,14 +161,4 @@ def categories(request, id):
         'items': list_of_items
     })
 
-
-#def sort_by_name(request):
-    #context = Item.objects.order_by('name').all()
-    #list_of_items = []
-    #for i in context:
-        #list_of_items.append(i)
-    #print(list_of_items)
-    #return render(request, 'item/sort_by.html', {
-        #'context': list_of_items
-    #})
 
