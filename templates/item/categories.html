@@ -2,20 +2,6 @@
 
 {% block content %}
     <div>
-        <div id="home_page_top_line_1">
-            <div class="categoriesPlace">
-                <p id="categories_header">Categories: </p>
-                {% for category in categories %}
-                    <a class="categories" href="/item/categories/{{category.id}}">{{ category.name }}</a>
-                {% endfor %}
-            </div>
-            <div class="sortBy">
-                <p id="sort_by_header">Sort by:</p>
-                <a class="sort" href="/">Name</a>
-                <a class="sort" href="/">Price</a>
-            </div>
-        </div>
-
         <div>
             <h1>{{ context }}</h1>
             <div id="items_for_sale">
