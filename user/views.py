@@ -37,6 +37,7 @@ def profile(request):
     all_ratings = []
     for i in ratings:
         all_ratings.append(i.rating)
+    print(all_ratings)
     return render(request, 'user/profile.html', {
         'form': ProfileForm(instance=profile),
         'average_rating': round(mean(all_ratings),1)

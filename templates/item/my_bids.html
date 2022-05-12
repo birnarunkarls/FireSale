@@ -2,10 +2,11 @@
 
 {% block content %}
 
-    <h1>My bids</h1>
+    <h1>My items</h1>
     <div class="bidType">
         <div class="bids">
-        <h2>Pending bids</h2>
+        <h2>My listed items</h2>
+            {%  %}
             <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL PENDING OFFER Í DATABASE</p>
             <div id="pending_bids">
                 <p>All pending bids from the database</p>
@@ -13,20 +14,12 @@
         </div>
 
         <div class="bids">
-        <h2>Accepted bids</h2>
+        <h2>My item bids</h2>
              <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL ACCEPTED OFFER Í DATABASE</p>
             <div id="accepted_bids">
                 <p>All accepted bids from the database</p>
                 <button id=decline_button>Decline offer</button>
                 <button id=accept_button><a href="{% url 'checkout-checkout_phase1' user.id %}">Accept offer</a></button>
-            </div>
-        </div>
-
-        <div class="bids">
-        <h2>Previous bids</h2>
-             <p>HAFA HÉR - FOR LYKKJU FYRIR ÖLL PREVIOUS OFFER Í DATABASE</p>
-            <div id="previous_bids">
-                <p>All previous bids from the database</p>
             </div>
         </div>
 

@@ -19,6 +19,8 @@ def item(request):
 @login_required
 def my_bids(request, id):
     item = Item.objects.filter(pk=id).first()
+    seller = User.objects.filter(pk=item.id).first()
+    print(seller)
     return render(request, 'item/my_bids.html', {
         'item': item,
         'id': id
