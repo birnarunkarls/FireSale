@@ -1,10 +1,9 @@
 <div class="eachItem">
     <a href="/item/{{ item.id }}">
         <img class="itemImg" src="{{ item.images_set.first.image }}" />
-        <h4 class="itemNameHomePage">{{ item.name }}</h4>
+        <h5 class="itemNameHomePage">{{ item.name }}</h5>
     </a>
         <p class="itemDescriptionPage">{{ item.description }}</p>
-        <p class="itemDescriptionPage">{{ highest_bid }}</p>
 </div>
 
 
