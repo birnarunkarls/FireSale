@@ -34,7 +34,7 @@
                 <p>Bid amount ($): <input type="text" id="bid_amount" ></p>
             </div>
             <div class="makeBid">
-                <button class="makeBidButton"><a href="{% url 'item-my_bids' bid_item.id %}">CONFIRM BID</a></button>
+                <button class="makeBidButton"><a href="{% url 'item-my_bids' user.id %}">CONFIRM BID</a></button>
             </div>
 
         </div>
