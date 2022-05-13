@@ -2,44 +2,37 @@
 
 
 {% block content %}
-    <h2> {{ bid_item.name }} </h2>
+    <h2 class="bigHeader"> {{ bid_item.name }} </h2>
     <div class=makeBidInfo>
-        <div class="imgItem">
+        <div class="makeBidImgBox">
             <img class="itemImg" src="{{ bid_item.images_set.first.image }}" />
         </div>
-        <div class="infoProduct">
+        <div class="makeBidInfoProduct">
             <div id=description_product>
-                <h3>Description of the product</h3>
+                <h3><b>Description of the product</b></h3>
                 <p>{{ bid_item.description }}</p>
             </div>
             <div id=information_seller>
-                <h3>Information on seller</h3>
-                <p>Name: {{ full_name }}</p>
-                <p>Bio: {{ bio }}</p>
+                <h3><b>Information on seller</b></h3>
+                <p><b>Name:</b> {{ full_name }}</p>
+                <p><b>Bio:</b> {{ bio }}</p>
             </div>
             <div id="highest_bid">
                 <h4 id="highest_bid_text">Highest bid: {{ highest_bid }}</h4>
             </div>
         </div>
-        <div class="newBid">
-            <h2>New bid</h2>
-            <p>You will get notified in 'My listings' if your bid is accepted</p>
+        <div class="makeNewBid">
+            <h2><b>New bid</b></h2>
+            <p id="not_info">You will get notified in 'My listings' if your bid is accepted</p>
             <div id="bid_amounts">
-                <p>Bid amount ($):</p>
+                <p>Please write your offer in <u>dollars ($):</u></p>
                 <form method="post" class="form form-horizontal">
                     {% csrf_token %}
                     {{ form }}
-                <input type="submit" class="btn btn-primary" value="Submit" />
+                <input type="submit" class="makeBidButton" value="SUBMIT" />
                 </form>
             </div>
-            <div class="makeBid">
-                <button class="makeBidButton"><a href="{% url 'item-my_bids' user.id %}">CONFIRM BID</a></button>
-            </div>
-
         </div>
-
-
-
     </div>
 
 {% endblock %}
