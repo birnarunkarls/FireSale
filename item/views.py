@@ -50,8 +50,6 @@ def my_bids(request, id):
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
 
-
-
     return render(request, 'item/my_bids.html', {
         'id': id,
         'listings': listings,
