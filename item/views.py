@@ -113,7 +113,7 @@ def make_bid(request, id):
     })
 
 
-
+@login_required
 def get_item_by_id(request, id):
     item = Item.objects.filter(pk=id).first()
     seller = User.objects.filter(pk=item.seller.id).first()
@@ -240,7 +240,7 @@ def update_item(request, id):
         form = ItemUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():
             form.save()
-            return redirect('item-my_bids', id=id)
+            return redirect('fire_sale-home_page', id=id)
     else:
         form = ItemUpdateForm(instance=instance)
     bid_status = Bid.objects.all()
@@ -255,7 +255,7 @@ def update_item(request, id):
         'notification': notification
     })
 
-
+@login_required
 def categories(request, id):
     context = ItemCategory.objects.filter(pk=id).first()
     list_of_items = []
