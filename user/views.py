@@ -39,7 +39,7 @@ def profile(request):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":

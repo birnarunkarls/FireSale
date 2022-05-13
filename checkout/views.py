@@ -24,7 +24,7 @@ def checkout_phase1(request, id):
             checkout.user = user
             checkout.save()
             return redirect('checkout-rating', item.id, )
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
@@ -41,8 +41,9 @@ def checkout_phase1(request, id):
 
 def rating(request, id):
     item = Item.objects.filter(pk=id).first()
-    print(id)
     user = User.objects.filter(pk=id).first()
+    seller = User.objects.filter(item__id=item.id)
+
     ratings = Rating.objects.filter(seller__id=request.user.id).all()
     all_ratings = []
     for i in ratings:
@@ -51,15 +52,15 @@ def rating(request, id):
         average_rating = round(sum(all_ratings) / len(all_ratings), 1)
     else:
         average_rating = ""
-
     if request.method == 'POST':
         form = RatingForm(data=request.POST)
         if form.is_valid():
             rating = form.save(commit=False)
-            rating.seller = user
+            rating.seller = seller.first()
+            print(user)
             rating.save()
             return redirect('checkout-checkout_phase2', item.id)
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
@@ -93,7 +94,7 @@ def checkout_phase2(request, id):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":

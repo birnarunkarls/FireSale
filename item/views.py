@@ -49,7 +49,7 @@ def my_bids(request, id):
     for bid_bid in all_bids_id:
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
@@ -95,7 +95,7 @@ def make_bid(request, id):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
@@ -148,7 +148,7 @@ def get_item_by_id(request, id):
         average_rating_seller = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating_seller = ""
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
@@ -190,7 +190,7 @@ def create_item(request, id):
     else:
         form = ItemCreateForm()
         # TODO: Instance new ItemCreateForm()
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
@@ -243,7 +243,7 @@ def update_item(request, id):
             return redirect('fire_sale-home_page', id=id)
     else:
         form = ItemUpdateForm(instance=instance)
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
@@ -269,7 +269,7 @@ def categories(request, id):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":

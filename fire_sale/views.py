@@ -38,7 +38,7 @@ def home_page(request):
             'items': order_by_items
         })
 
-    bid_status = Bid.objects.all()
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":

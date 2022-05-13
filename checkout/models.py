@@ -31,7 +31,7 @@ class Checkout(models.Model):
 
 
 class Rating(models.Model):
-    seller = models.ForeignKey(User, on_delete=models.CASCADE)
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, default="")
     rating = models.IntegerField(
         default=None,
         validators=[
