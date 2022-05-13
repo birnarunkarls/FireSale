@@ -43,7 +43,7 @@
                             </div>
                             {% for y in new_list %}
                                {% if i.id == y.item_id %}
-                                    {% if y.status == 'accepted' %}
+                                    {% if y.status == 'pending' %}
                                         <div class="editItemButtonsDiv">
                                             <a href="{% url 'item-delete_bid' i.id %}" class="decOfferButton">Decline offer</a>
                                             <a href="{% url 'item-accept_bid' i.id %}" class="accOfferButton">Accept offer</a>
