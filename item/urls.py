@@ -23,6 +23,10 @@ urlpatterns = [
 
     path('categories/<int:id>', views.categories, name="item-categories"),
 
+    path('delete_bid/<int:id>', views.delete_bid, name='item-delete_bid'),
+
+    path('accept_bid/<int:id>', views.accept_bid, name='item-accept_bid')
+
     #path('sort_by', views.sort_by, name='item-sort_by')
 
 ]

@@ -1,5 +1,7 @@
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
+#from jinja2 import Template
 
 import user
 from item.forms.item_form import ItemCreateForm, ItemUpdateForm
@@ -7,6 +9,9 @@ from item.forms.new_bid_form import NewBidForm
 from item.models import Item, Images, ItemCategory, Bid
 from django.contrib.auth.models import User
 from checkout.models import Rating
+
+
+
 
 
 # Create your views here.
@@ -31,16 +36,16 @@ def my_bids(request, id):
     all_bid_items = []
     my_listed_items_with_bids = []
     bid_amount = []
+    every_bid = []
+    for y in Bid.objects.filter(buyer__id=id).all():
+        every_bid.append(y)
 
     for b in listings:
         for a in Bid.objects.filter(item__id=b.id):
-            my_listed_items_with_bids.append([Item.objects.filter(pk=b.id).first().name, a.amount])
-            bid_amount.append(a.amount)
-    print(my_listed_items_with_bids)
+            my_listed_items_with_bids.append(Item.objects.filter(pk=b.id).first())
+
 
     for l in listing_bids:
-        print(l)
-        #print(l.amount)
         highest_bid.append(l.amount)
 
     if len(highest_bid) != 0:
@@ -58,25 +63,8 @@ def my_bids(request, id):
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
 
-    all_items_with_a_bid = []
-    all_pending_bids = []
-    all_accepted_bids = []
-    all_declined_bids = []
-    #for g in listings_wit_a_bid:
-    #    print(g.status)
-    #    all_items_with_a_bid.append(g)
-    #    if g.status == 'pending':
-    #        all_pending_bids.append(g)
-    #    elif g.status == 'accepted':
-    #        all_accepted_bids.append(g)
-    #    elif g.status == 'declined':
-    #        all_declined_bids.append(g)
-    #print(all_items_with_a_bid)
-    #print(all_bid_items)
-    #print(all_pending_bids)
-    #print(all_accepted_bids)
-    #print(all_declined_bids)
-    #print(all_bid_items)
+    print(all_bid_items)
+
 
     return render(request, 'item/my_bids.html', {
         #'item': item_buyer,
@@ -84,10 +72,9 @@ def my_bids(request, id):
         'listings': listings,
         'highest_bid': highest_bid_offer,
         'bid_items': all_bid_items,
-        'all_items_with_a_bid': all_items_with_a_bid,
         'my_listed_items_with_bids': my_listed_items_with_bids,
-        'amount_of_listed_items_with_bids': len(my_listed_items_with_bids),
-        'bid_amount': bid_amount
+        'bid_amount': bid_amount,
+        'every_bid': every_bid
     })
 
 # my listings
@@ -192,10 +179,25 @@ def create_item(request, id):
     })
 
 @login_required
-def delete_item(request,id):
+def delete_item(request, id):
     item = get_object_or_404(Item, pk=id)
     item.delete()
     return redirect('fire_sale-home_page')
+
+
+def delete_bid(request, id):
+    bid = get_object_or_404(Bid, item__id=id)
+    bid.delete()
+    return redirect('fire_sale-home_page')
+
+
+def accept_bid(request, id):
+    bid = get_object_or_404(Bid, item__id=id)
+    bid.status = 'accepted'
+    bid.save()
+    return redirect('fire_sale-home_page')
+
+
 
 @login_required
 def update_item(request, id):
@@ -214,7 +216,6 @@ def update_item(request, id):
         'form': form,
         'id': id
     })
-
 
 
 def categories(request, id):
