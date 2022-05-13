@@ -66,6 +66,8 @@ def checkout_phase2(request,id):
         highest_bid_amount = 'No bids made'
     checkout_info = []
     for k in checkout:
+        print(k)
+        print(k.full_name)
         checkout_info.append(k)
     print(checkout_info)
 
