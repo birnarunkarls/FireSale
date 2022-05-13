@@ -243,7 +243,7 @@ def update_item(request, id):
             return redirect('fire_sale-home_page', id=id)
     else:
         form = ItemUpdateForm(instance=instance)
-    bid_status = Bid.objects.filter(buyer__id=request.id)
+    bid_status = Bid.objects.filter(buyer__id=request.user.id)
     notification = 'False'
     for i in bid_status:
         if i.status == "accepted":
