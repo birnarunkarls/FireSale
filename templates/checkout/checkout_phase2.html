@@ -2,18 +2,17 @@
 
 {% block content %}
     <div id="checkout_heading">
-        <h1 class="checkoutHeadingText">Offer accepted</h1>
-        <h1 class="checkoutHeadingText">Checkout overview</h1>
+        <h1 class="bigHeader">Checkout overview</h1>
     </div>
-    <h2>{{ item }}</h2>
+    <h2 class="bigHeader">{{ item }}</h2>
 
     <div class="checkoutOverview">
         <div id="checkout_overview_center">
             <div id="img_of_product">
-                <img src="{{ item.images_set.first.image }}"/>
+                <img class="checkoutImg" src="{{ item.images_set.first.image }}"/>
             </div>
             <div id="shipping_info_overview">
-                <p>Shipping overview</p>
+                <h5 class="checkoutOverviewText"><b>Shipping overview</b></h5>
                 {% for a in checkout_info %}
                     <p>Full name: {{ a.full_name }}</p>
                     <p>Address: {{ a.street_name }} {{ a.house_number }}</p>
@@ -21,7 +20,7 @@
                 {% endfor %}
             </div>
             <div id="payment_info_overview">
-                <p>Payment overview</p>
+                <h5 class="checkoutOverviewText"><b>Payment overview</b></h5>
                 {% for a in checkout_info %}
                     <p>Cardholder name: {{ a.cardholder_name }}</p>
                     <p>Card number: {{ a.cardnumber }}</p>
@@ -32,12 +31,12 @@
         </div>
 
         <div id="checkout_overview_bottom">
-            <div id="product_info">
+            <div id="checkout_overview_bottom_left">
                 <p>Price: {{ highest_bid_amount }}</p>
                 <p>Description: {{ item.description }}</p>
             </div>
-            <div id="confirm_bid">
-                <button class="makeBidButton">CONFIRM PURCHASE</button>
+            <div id="checkout_overview_bottom_right">
+                <button class="submitPurchaseButton">CONFIRM PURCHASE</button>
             </div>
         </div>
     </div>
