@@ -76,6 +76,7 @@ def my_bids(request, id):
 def make_bid(request, id):
     bid_item = Item.objects.filter(pk=id).first()
     seller = User.objects.filter(pk=bid_item.seller.id).first()
+    bid = Bid.objects.filter(item__id=id).all()
     if request.method == 'POST':
         form = NewBidForm(data=request.POST)
         if form.is_valid():
@@ -84,33 +85,22 @@ def make_bid(request, id):
             new_bid.item = bid_item
             new_bid.save()
             return redirect('fire_sale-home_page',)
+    highest_bid = []
+    for i in bid:
+        highest_bid.append(i.amount)
+    if len(highest_bid) != 0:
+        highest_bid_amount = '$' + str(max(highest_bid))
+    else:
+        highest_bid_amount = 'No bids made'
     return render(request, 'item/make_bid.html', {
         'form': NewBidForm(),
         'bid_item': bid_item,
         'id': id,
         'seller': seller,
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
-        'bio': seller.profile.bio
+        'bio': seller.profile.bio,
+        'highest_bid': highest_bid_amount
     })
-
-def new_bid(request, id):
-    item = Item.objects.filter(seller__id=id).first()
-    bid = Bid.objects.filter(item__id=item.id).all()
-    #buyer = Bid.objects.filter(pk=id)
-    print(bid)
-    print(bid.buyer.id)
-    if request.method == 'POST':
-        form = NewBidForm(data=request.POST)
-        if form.is_valid():
-            new_bid = form.save(commit=False)
-            #new_bid.buyer =
-            new_bid.item = item
-            new_bid.save()
-            return redirect('item-my_bids', )
-    return render(request, 'item/make_bid.html', {
-        'form': NewBidForm()
-    })
-
 
 
 
