@@ -23,7 +23,7 @@ def checkout_phase1(request, id):
             checkout.item = item
             checkout.user = user
             checkout.save()
-            return redirect('checkout-rating', user.id)
+            return redirect('checkout-rating', item.id, )
     return render(request, 'checkout/checkout_phase1.html', {
         'form': CheckoutForm(),
         'item': item,
@@ -35,6 +35,7 @@ def checkout_phase1(request, id):
 
 def rating(request, id):
     item = Item.objects.filter(pk=id).first()
+    print(id)
     user = User.objects.filter(pk=id).first()
     ratings = Rating.objects.filter(seller__id=request.user.id).all()
     all_ratings = []

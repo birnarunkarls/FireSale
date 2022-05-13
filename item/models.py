@@ -14,7 +14,6 @@ class Item(models.Model):
     description = models.CharField(max_length=255, default="")
     condition = models.CharField(max_length=9999, default="")
     category = models.ForeignKey(ItemCategory, on_delete=models.CASCADE)
-    #highest_bid = models.FloatField(default=0)
 
     def __str__(self):
         return self.name

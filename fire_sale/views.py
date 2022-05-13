@@ -38,6 +38,11 @@ def home_page(request):
             'items': order_by_items
         })
 
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     ratings = Rating.objects.filter(seller__id=request.user.id).all()
     all_ratings = []
     for i in ratings:
@@ -50,6 +55,7 @@ def home_page(request):
     return render(request, 'fire_sale/home_page.html', {
         'items': Item.objects.all().order_by('name'),
         'categories': ItemCategory.objects.all(),
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
