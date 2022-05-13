@@ -51,6 +51,22 @@ def my_bids(request, id):
     for bid_bid in all_bids_id:
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
+    all_items_with_a_bid = []
+    all_pending_bids = []
+    all_accepted_bids = []
+    all_declined_bids = []
+    for g in Bid.objects.all():
+        all_items_with_a_bid.append(g)
+        if Bid.objects.filter(status='pending'):
+            all_pending_bids.append(g)
+        elif Bid.objects.filter(status='accepted'):
+            all_accepted_bids.append(g)
+        elif Bid.objects.filter(status='declined'):
+            all_declined_bids.append(g)
+    print(all_items_with_a_bid)
+    print(all_pending_bids)
+    print(all_accepted_bids)
+    print(all_declined_bids)
 
     return render(request, 'item/my_bids.html', {
         'item': item,

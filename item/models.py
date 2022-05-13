@@ -25,6 +25,7 @@ class Bid(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     buyer = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.FloatField(default=0)
+    status = models.CharField(max_length=9999, default="pending")
 
 
 class Images(models.Model):

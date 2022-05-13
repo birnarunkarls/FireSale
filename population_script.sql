@@ -16,9 +16,9 @@ INSERT INTO item_item (name, description, condition, category_id, seller_id) VAL
 INSERT INTO item_item (name, description, condition, category_id, seller_id) VALUES ('Sweater', 'pink knit', 'medium', 3, 1);
 
 
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (100, 1, 8);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 2, 9);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (2500, 3, 9);
+INSERT INTO item_bid (amount, status,buyer_id, item_id) VALUES (100, 'pending', 1, 10);
+INSERT INTO item_bid (amount, status, buyer_id, item_id) VALUES (1000, 'pending', 2, 30);
+INSERT INTO item_bid (amount,status, buyer_id, item_id) VALUES (2500, 'pending', 3, 28);
 
 
 INSERT INTO checkout_checkout (full_name, street_name, house_number, postal_code, city, country, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount, user_id, item_id) VALUES ('Jón Jónsson', 'Menntavegur', '1', '102', 'Reykjavik', 'Iceland', 'Birna Rún Karlsdóttir', '1111-11-111111', '07/27', '111', '01.05.20222', 10000, 1, 20);
