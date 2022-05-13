@@ -20,21 +20,27 @@ def item(request):
 # my bids
 @login_required
 def my_bids(request, id):
-    item = Item.objects.filter(pk=id).first()
-    #seller = User.objects.filter(pk=id).first()
+    item_seller = Item.objects.filter(seller__id=id).first()
     listings = Item.objects.filter(seller__id=id)
     bids = Bid.objects.filter(buyer__id=id)
     listing_bids = Bid.objects.filter(item__id=id).all()
-    #bid_items = Item.objects.filter(seller__id=seller.id)
-    #bid = Bid.objects.filter(item__id=item.id).all()
+    #my_listing_with_a_bids = Bid.objects.filter(item__id=listings.first().id)
     highest_bid = []
     all_listings = []
     all_bids_id = []
     all_bid_items = []
+    my_listed_items_with_bids = []
+    bid_amount = []
+
+    for b in listings:
+        for a in Bid.objects.filter(item__id=b.id):
+            my_listed_items_with_bids.append([Item.objects.filter(pk=b.id).first().name, a.amount])
+            bid_amount.append(a.amount)
+    print(my_listed_items_with_bids)
 
     for l in listing_bids:
         print(l)
-        print(l.amount)
+        #print(l.amount)
         highest_bid.append(l.amount)
 
     if len(highest_bid) != 0:
@@ -51,29 +57,37 @@ def my_bids(request, id):
     for bid_bid in all_bids_id:
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
+
     all_items_with_a_bid = []
     all_pending_bids = []
     all_accepted_bids = []
     all_declined_bids = []
-    for g in Bid.objects.all():
-        all_items_with_a_bid.append(g)
-        if Bid.objects.filter(status='pending'):
-            all_pending_bids.append(g)
-        elif Bid.objects.filter(status='accepted'):
-            all_accepted_bids.append(g)
-        elif Bid.objects.filter(status='declined'):
-            all_declined_bids.append(g)
-    print(all_items_with_a_bid)
-    print(all_pending_bids)
-    print(all_accepted_bids)
-    print(all_declined_bids)
+    #for g in listings_wit_a_bid:
+    #    print(g.status)
+    #    all_items_with_a_bid.append(g)
+    #    if g.status == 'pending':
+    #        all_pending_bids.append(g)
+    #    elif g.status == 'accepted':
+    #        all_accepted_bids.append(g)
+    #    elif g.status == 'declined':
+    #        all_declined_bids.append(g)
+    #print(all_items_with_a_bid)
+    #print(all_bid_items)
+    #print(all_pending_bids)
+    #print(all_accepted_bids)
+    #print(all_declined_bids)
+    #print(all_bid_items)
 
     return render(request, 'item/my_bids.html', {
-        'item': item,
+        #'item': item_buyer,
         'id': id,
         'listings': listings,
         'highest_bid': highest_bid_offer,
-        'bid_items': all_bid_items
+        'bid_items': all_bid_items,
+        'all_items_with_a_bid': all_items_with_a_bid,
+        'my_listed_items_with_bids': my_listed_items_with_bids,
+        'amount_of_listed_items_with_bids': len(my_listed_items_with_bids),
+        'bid_amount': bid_amount
     })
 
 # my listings
