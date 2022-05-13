@@ -2,17 +2,24 @@
 
 {% block content %}
 
-    <h1>Offer accepted</h1>
-    <h2>{{ name }}</h2>
+    <h1 class="bigHeader">Check out</h1>
+    <h2 class="bigHeader">{{ name }}</h2>
     <div class="checkoutPage">
         <div id="shipping_left">
-            <p>bull</p>
+            <div id="phase_1">
+                <h2>Phase 1</h2>
+                <h4>Shipping info</h4>
+            </div>
+            <did id="phase_2">
+                <h2>Phase 2</h2>
+                <h4>Payment info</h4>
+            </did>
         </div>
         <div id="shipping_right">
-            <form method="post" class="form form-horizontal">
+            <form method="post" class="blueBoxForm">
                 {% csrf_token %}
                 {{ form }}
-                <input type="submit" class="btn btn-primary" value="Submit" />
+                <input type="submit" class="blueBoxButtonSubmit" value="Submit" />
             </form>
         </div>
     </div>
