@@ -123,12 +123,22 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 .lightButton, .darkButton, #already_acc_login_button, .editItemsButton, #new_acc_login_button, .submitPurchaseButton {
     margin-left: 20px;
     font-weight: bold;
-    width: 115px;
+    width: 110px;
     height: 32px;
     border: none;
     border-radius: 5px;
     color: white;
 }
+
+.darkButton, #already_acc_login_button, .editItemsButton, #new_acc_login_button, .submitPurchaseButton {
+    width: 110px;
+}
+
+.lightButton {
+    width: 130px;
+}
+
+
 
 .itemNameHomePage, .itemDescriptionPage {
     color: black;
@@ -373,7 +383,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     flex: 0.78;
 }
 
-.each_bid_div_right, .bids, .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems, #shipping_left {
+.each_bid_div_right, .each_listing_div_right, .bids, .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems, #shipping_left {
     flex: 1;
 }
 
@@ -390,7 +400,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 450px;
 }
 
-#profile_info_nav, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox, .checkoutPage {
+#profile_info_nav, .each_listing_div_right, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox, .checkoutPage {
     display: flex;
     flex-direction: column;
 }
@@ -493,13 +503,23 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin: 15px 0px 0px 15px;
 }
 
-.each_bid_div_right {
+.each_bid_div_right, .each_listing_div_right {
     margin-top: 80px;
     maring-left: 45px;
 }
 
+.each_listing_div_right {
+    margin-top: 70px;
+}
+
+each_listing_div_right_top {
+    flex: 1.5;
+
+}
+
 .editItemButtonsDiv {
     margin: 30px 10px 10px 45px;
+    flex: 0.5
 }
 
 

@@ -5,6 +5,7 @@
     <div class="myBids">
         <div class="bids">
         <h2 class="each_bid_sort">My listed items</h2>
+        <h6 class="each_bid_sort">All items I have listed</h6>
             {% for i in listings %}
                 <div class="each_bid_div">
                     <div class="each_bid_div_left">
@@ -13,9 +14,10 @@
                             <img class="listingImage" src="{{i.images_set.first.image}}"/>
                         </a>
                     </div>
-                    <div class="each_bid_div_right">
-                        <div id="highest_bid_box">
+                    <div class="each_listing_div_right">
+                        <div id="each_listing_div_right_top">
                             <p id="highest_bid_text">Highest bid: {{ highest_bid }}</p>
+                            <button class="acceptBidButton">Accept offer</button>
                         </div>
                         <div class="editItemButtonsDiv">
                             <a href="{% url 'item-delete_item' i.id %}" class="block btn btn-primary">Delete item</a>
@@ -29,6 +31,7 @@
 
         <div class="bids">
         <h2 class="each_bid_sort">My item bids</h2>
+        <h6 class="each_bid_sort">All bids I have made</h6>
             {% for item in bid_items %}
                 <div class="each_bid_div">
                     <div class="each_bid_div_left">
