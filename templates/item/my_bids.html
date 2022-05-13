@@ -20,8 +20,8 @@
                             <button class="acceptBidButton">Accept offer</button>
                         </div>
                         <div class="editItemButtonsDiv">
-                            <a href="{% url 'item-delete_item' i.id %}" class="block btn btn-primary">Delete item</a>
-                            <a href="{% url 'item-update_item' i.id %}" class="block btn btn-primary">Update item</a>
+                            <a href="{% url 'item-delete_item' i.id %}" class="delUpdateButtons">Delete item</a>
+                            <a href="{% url 'item-update_item' i.id %}" class="delUpdateButtons">Update item</a>
                         </div>
                      </div>
 
@@ -42,11 +42,12 @@
                     </div>
                     <div class="each_bid_div_right">
                         <div id="offer_bid_box">
+                            <h5>Your offer has been accepted!</h5>
                             <p id="offer_bid_text">Offer:</p>
                         </div>
                         <div id="accepted_bids">
-                            <button id=decline_button>Decline offer</button>
-                            <button id=accept_button><a href="{% url 'checkout-checkout_phase1' item.id %}">Accept offer</a></button>
+                            <button id=decline_button>Cancel</button>
+                            <button id=accept_button><a href="{% url 'checkout-checkout_phase1' item.id %}">Purchase</a></button>
                         </div>
                     </div>
                 </div>
