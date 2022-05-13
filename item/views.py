@@ -240,7 +240,7 @@ def update_item(request, id):
         form = ItemUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():
             form.save()
-            return redirect('fire_sale-home_page', id=id)
+            return redirect('fire_sale-home_page')
     else:
         form = ItemUpdateForm(instance=instance)
     bid_status = Bid.objects.filter(buyer__id=request.user.id)
