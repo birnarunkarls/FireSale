@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from checkout.models import Rating
 from user.forms.profile_form import ProfileForm
 from user.models import Profile
+from item.models import Bid
 
 
 # register
