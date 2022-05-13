@@ -29,7 +29,7 @@ def checkout_phase1(request, id):
             checkout.user = user
             checkout.save()
             return redirect('checkout-rating', user.id)
-    return render(request, 'checkout/checkout_rating.html', {
+    return render(request, 'checkout/checkout_phase1.html', {
         'form': CheckoutForm(),
         'item': item,
         'name': item.name,
