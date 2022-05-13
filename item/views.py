@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 import user
 from item.forms.item_form import ItemCreateForm, ItemUpdateForm
+from item.forms.new_bid_form import NewBidForm
 from item.models import Item, Images, ItemCategory, Bid
 from django.contrib.auth.models import User
 from checkout.models import Rating
@@ -75,14 +76,42 @@ def my_bids(request, id):
 def make_bid(request, id):
     bid_item = Item.objects.filter(pk=id).first()
     seller = User.objects.filter(pk=bid_item.seller.id).first()
-
+    if request.method == 'POST':
+        form = NewBidForm(data=request.POST)
+        if form.is_valid():
+            new_bid = form.save(commit=False)
+            new_bid.buyer = seller
+            new_bid.item = bid_item
+            new_bid.save()
+            return redirect('fire_sale-home_page',)
     return render(request, 'item/make_bid.html', {
+        'form': NewBidForm(),
         'bid_item': bid_item,
         'id': id,
         'seller': seller,
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
         'bio': seller.profile.bio
     })
+
+def new_bid(request, id):
+    item = Item.objects.filter(seller__id=id).first()
+    bid = Bid.objects.filter(item__id=item.id).all()
+    #buyer = Bid.objects.filter(pk=id)
+    print(bid)
+    print(bid.buyer.id)
+    if request.method == 'POST':
+        form = NewBidForm(data=request.POST)
+        if form.is_valid():
+            new_bid = form.save(commit=False)
+            #new_bid.buyer =
+            new_bid.item = item
+            new_bid.save()
+            return redirect('item-my_bids', )
+    return render(request, 'item/make_bid.html', {
+        'form': NewBidForm()
+    })
+
+
 
 
 def get_item_by_id(request, id):

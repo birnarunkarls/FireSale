@@ -40,7 +40,6 @@ def checkout_phase1(request, id):
 def rating(request, id):
     item = Item.objects.filter(pk=id).first()
     user = User.objects.filter(pk=id).first()
-    print(user)
     if request.method == 'POST':
         form = RatingForm(data=request.POST)
         if form.is_valid():
@@ -53,7 +52,7 @@ def rating(request, id):
     })
 
 
-def checkout_phase2(request,id):
+def checkout_phase2(request, id):
     item = Item.objects.filter(seller__id=id).first()
     bid = Bid.objects.filter(item__id=item.id).all()
     checkout = Checkout.objects.filter(item__id=item.id)
