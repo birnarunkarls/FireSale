@@ -84,7 +84,7 @@ def make_bid(request, id):
             new_bid.buyer = request.user
             new_bid.item = bid_item
             new_bid.save()
-            return redirect('fire_sale-home_page',)
+            return redirect('item-my_bids', request.user.id)
     highest_bid = []
     for i in bid:
         highest_bid.append(i.amount)
