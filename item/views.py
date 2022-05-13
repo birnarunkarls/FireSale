@@ -49,7 +49,11 @@ def my_bids(request, id):
     for bid_bid in all_bids_id:
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
-
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'item/my_bids.html', {
         'id': id,
         'listings': listings,
@@ -57,7 +61,8 @@ def my_bids(request, id):
         'my_listed_items_with_bids': my_listed_items_with_bids,
         'every_bid': every_bid,
         'new_list': new_list,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 
@@ -90,6 +95,11 @@ def make_bid(request, id):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'item/make_bid.html', {
         'form': NewBidForm(),
         'bid_item': bid_item,
@@ -98,7 +108,8 @@ def make_bid(request, id):
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
         'bio': seller.profile.bio,
         'highest_bid': highest_bid_amount,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 
@@ -137,6 +148,11 @@ def get_item_by_id(request, id):
         average_rating_seller = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating_seller = ""
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'item/item.html', {
         'item': item,
         'seller': seller,
@@ -145,7 +161,8 @@ def get_item_by_id(request, id):
         'similar_items': list_of_items,
         'highest_bid': highest_bid_amount,
         'average_rating_seller': average_rating_seller,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 
@@ -173,10 +190,16 @@ def create_item(request, id):
     else:
         form = ItemCreateForm()
         # TODO: Instance new ItemCreateForm()
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'item/create_item.html', {
         'form': form,
         'user.id': seller,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 @login_required
@@ -220,10 +243,16 @@ def update_item(request, id):
             return redirect('item-my_bids', id=id)
     else:
         form = ItemUpdateForm(instance=instance)
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'item/update_item.html', {
         'form': form,
         'id': id,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 
@@ -240,11 +269,17 @@ def categories(request, id):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'item/categories.html', {
         'id': id,
         'context': context,
         'items': list_of_items,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 

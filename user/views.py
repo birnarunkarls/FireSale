@@ -38,10 +38,15 @@ def profile(request):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
-
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'user/profile.html', {
         'form': ProfileForm(instance=profile),
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 

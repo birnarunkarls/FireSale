@@ -24,12 +24,18 @@ def checkout_phase1(request, id):
             checkout.user = user
             checkout.save()
             return redirect('checkout-rating', item.id, )
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'checkout/checkout_phase1.html', {
         'form': CheckoutForm(),
         'item': item,
         'name': item.name,
         'id': id,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 
@@ -53,9 +59,15 @@ def rating(request, id):
             rating.seller = user
             rating.save()
             return redirect('checkout-checkout_phase2', item.id)
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'checkout/checkout_rating.html', {
         'form': RatingForm(),
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 
@@ -81,13 +93,18 @@ def checkout_phase2(request, id):
         average_rating = round(sum(all_ratings)/len(all_ratings), 1)
     else:
         average_rating = ""
-
+    bid_status = Bid.objects.all()
+    notification = 'False'
+    for i in bid_status:
+        if i.status == "accepted":
+            notification = 'True'
     return render(request, 'checkout/checkout_phase2.html', {
         'item': item,
         'id': id,
         'highest_bid_amount': highest_bid_amount,
         'checkout_info': checkout_info,
-        'average_rating': average_rating
+        'average_rating': average_rating,
+        'notification': notification
     })
 
 
