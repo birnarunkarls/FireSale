@@ -1,7 +1,5 @@
-
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-#from jinja2 import Template
 
 import user
 from item.forms.item_form import ItemCreateForm, ItemUpdateForm
@@ -10,34 +8,25 @@ from item.models import Item, Images, ItemCategory, Bid
 from django.contrib.auth.models import User
 from checkout.models import Rating
 
-
-
-
-
-# Create your views here.
-
-# item
-def item(request):
-    return render(request, 'item/item.html')
-
-
-
 # my bids
 @login_required
 def my_bids(request, id):
-    item_seller = Item.objects.filter(seller__id=id).first()
     listings = Item.objects.filter(seller__id=id)
     bids = Bid.objects.filter(buyer__id=id)
-    listing_bids = Bid.objects.filter(item__id=id).all()
-
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
     highest_bid = []
     all_listings = []
     all_bids_id = []
     all_bid_items = []
     my_listed_items_with_bids = []
-    bid_amount = []
     every_bid = []
-    listings_list = []
     for y in Bid.objects.filter(buyer__id=id).all():
         every_bid.append(y)
     new_list = []
@@ -61,32 +50,17 @@ def my_bids(request, id):
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
 
-    for d in listings:
-        listings_list.append(d)
 
 
     return render(request, 'item/my_bids.html', {
-        #'item': item_buyer,
         'id': id,
         'listings': listings,
-        'highest_bid': highest_bid_offer,
         'bid_items': all_bid_items,
         'my_listed_items_with_bids': my_listed_items_with_bids,
-        'bid_amount': bid_amount,
         'every_bid': every_bid,
-        'all_bids': all_bids_id,
-        'new_list': new_list
+        'new_list': new_list,
+        'average_rating': average_rating
     })
-
-# my listings
-#@login_required
-#def my_listings(request, id):
-#    item = Item.objects.filter(pk=id).first()
-#
-#    return render(request, 'item/my_listings.html', {
-#        'item': item,
-#        'id': id
-#    })
 
 
 # make_bid
@@ -110,6 +84,14 @@ def make_bid(request, id):
         highest_bid_amount = '$' + str(max(highest_bid))
     else:
         highest_bid_amount = 'No bids made'
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
     return render(request, 'item/make_bid.html', {
         'form': NewBidForm(),
         'bid_item': bid_item,
@@ -117,7 +99,8 @@ def make_bid(request, id):
         'seller': seller,
         'full_name': seller.profile.first_name + ' ' + seller.profile.last_name,
         'bio': seller.profile.bio,
-        'highest_bid': highest_bid_amount
+        'highest_bid': highest_bid_amount,
+        'average_rating': average_rating
     })
 
 
@@ -141,6 +124,15 @@ def get_item_by_id(request, id):
         if i.id != id:
             list_of_items.append(i)
 
+    ratings_user = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings_user = []
+    for i in ratings_user:
+        all_ratings_user.append(i.rating)
+    if len(all_ratings_user) != 0:
+        average_rating = round(sum(all_ratings_user)/len(all_ratings_user), 1)
+    else:
+        average_rating = ""
+
     for i in ratings:
         all_ratings.append(i.rating)
     if len(all_ratings) != 0:
@@ -154,7 +146,8 @@ def get_item_by_id(request, id):
         'category': category,
         'similar_items': list_of_items,
         'highest_bid': highest_bid_amount,
-        'average_rating_seller': average_rating_seller
+        'average_rating_seller': average_rating_seller,
+        'average_rating': average_rating
     })
 
 
@@ -162,6 +155,14 @@ def get_item_by_id(request, id):
 @login_required
 def create_item(request, id):
     seller = User.objects.filter(pk=id).first()
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
     if request.method == "POST":
         form = ItemCreateForm(data=request.POST)
         if form.is_valid():
@@ -176,7 +177,8 @@ def create_item(request, id):
         # TODO: Instance new ItemCreateForm()
     return render(request, 'item/create_item.html', {
         'form': form,
-        'user.id': seller
+        'user.id': seller,
+        'average_rating': average_rating
     })
 
 @login_required
@@ -186,12 +188,14 @@ def delete_item(request, id):
     return redirect('fire_sale-home_page')
 
 
+@login_required
 def delete_bid(request, id):
     bid = get_object_or_404(Bid, item__id=id)
     bid.delete()
     return redirect('fire_sale-home_page')
 
 
+@login_required
 def accept_bid(request, id):
     bid = get_object_or_404(Bid, item__id=id)
     bid.status = 'accepted'
@@ -203,33 +207,46 @@ def accept_bid(request, id):
 @login_required
 def update_item(request, id):
     instance = get_object_or_404(Item, pk=id)
-    #seller = User.objects.filter(pk=item.id).first()
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings) / len(all_ratings), 1)
+    else:
+        average_rating = ""
     if request.method == "POST":
         form = ItemUpdateForm(data=request.POST, instance=instance)
         if form.is_valid():
             form.save()
-            #print(id)
-            #print(seller)
             return redirect('item-my_bids', id=id)
     else:
         form = ItemUpdateForm(instance=instance)
     return render(request, 'item/update_item.html', {
         'form': form,
-        'id': id
+        'id': id,
+        'average_rating': average_rating
     })
 
 
 def categories(request, id):
     context = ItemCategory.objects.filter(pk=id).first()
-    #item = Item.objects.filter(category=context.id)
-    #category = ItemCategory.objects.filter(pk=context.id)
     list_of_items = []
     for i in Item.objects.filter(category__id=id).all():
         list_of_items.append(i)
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
     return render(request, 'item/categories.html', {
         'id': id,
         'context': context,
-        'items': list_of_items
+        'items': list_of_items,
+        'average_rating': average_rating
     })
 
 

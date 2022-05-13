@@ -12,5 +12,4 @@ urlpatterns = [
     path('logout', LogoutView.as_view(next_page='user-login'), name="user-logout"),
     # profile - þurfum að laga
     path('', views.profile, name="user-profile"),
-    path('profile_edit', views.profile_edit, name="user-profile_edit")
 ]

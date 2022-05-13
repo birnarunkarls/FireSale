@@ -6,13 +6,6 @@ from checkout.models import Rating
 
 # home_page
 def home_page(request):
-    #item = Item.objects.filter(pk=id).first()
-    #bid = Bid.objects.filter(item__id=item.id).all()
-
-    #highest_bid = []
-    #for i in bid:
-    #    highest_bid.append(i.amount)
-
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         filtered_items = Item.objects.filter(name__icontains=search_filter)
@@ -24,11 +17,9 @@ def home_page(request):
                 'description': x.description,
                 'condition': x.condition,
                 'firstImage': x.images_set.first().image,
-                #'highest_bid': max(highest_bid)
         } for x in filtered_items]})
         return render(request, 'fire_sale/home_page.html', {
-            'items': filtered_items,
-            #'highest_bid': max(highest_bid)
+            'items': filtered_items
         })
 
     if 'sort_by' in request.GET:
@@ -42,11 +33,9 @@ def home_page(request):
                 'description': x.description,
                 'condition': x.condition,
                 'firstImage': x.images_set.first().image,
-                #'highest_bid': max(highest_bid)
             } for x in order_by_items]})
         return render(request, 'fire_sale/home_page.html', {
-            'items': order_by_items,
-            #'highest_bid': max(highest_bid)
+            'items': order_by_items
         })
 
     ratings = Rating.objects.filter(seller__id=request.user.id).all()
@@ -59,22 +48,8 @@ def home_page(request):
         average_rating = ""
 
     return render(request, 'fire_sale/home_page.html', {
-        #'highest_bid': max(highest_bid),
         'items': Item.objects.all().order_by('name'),
         'categories': ItemCategory.objects.all(),
         'average_rating': average_rating
     })
 
-
-# category
-def category(request):
-    context = {'items': Item.objects.all().order_by(request)}
-    return render(request, 'fire_sale/category.html', context)
-
-# about
-def about(request):
-    return render(request, 'fire_sale/about.html')
-
-
-#def index(request):
-#    return HttpResponse('HttpResponse: Hello World')

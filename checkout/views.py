@@ -2,25 +2,20 @@ from django.shortcuts import render, redirect
 from item.models import Item, Bid
 from checkout.forms.checkout_form import CheckoutForm, RatingForm
 from django.contrib.auth.models import User
-from checkout.models import Checkout
-
-# Create your views here.
-
-
-# ckeckout
-
-#def checkout_phase1(request, id):
-#    item = Item.objects.filter(pk=id).first()
-#    return render(request, 'checkout/checkout_phase1.html', {
-#        'item': item,
-#        'name': item.name,
-#        'id': id
-#    })
+from checkout.models import Checkout, Rating
 
 
 def checkout_phase1(request, id):
     item = Item.objects.filter(pk=id).first()
     user = User.objects.filter(pk=item.seller.id).first()
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
     if request.method == 'POST':
         form = CheckoutForm(data=request.POST)
         if form.is_valid():
@@ -33,14 +28,22 @@ def checkout_phase1(request, id):
         'form': CheckoutForm(),
         'item': item,
         'name': item.name,
-        'id': id
+        'id': id,
+        'average_rating': average_rating
     })
 
 
 def rating(request, id):
     item = Item.objects.filter(pk=id).first()
     user = User.objects.filter(pk=id).first()
-    print(item)
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings) / len(all_ratings), 1)
+    else:
+        average_rating = ""
 
     if request.method == 'POST':
         form = RatingForm(data=request.POST)
@@ -50,7 +53,8 @@ def rating(request, id):
             rating.save()
             return redirect('checkout-checkout_phase2', item.id)
     return render(request, 'checkout/checkout_rating.html', {
-        'form': RatingForm()
+        'form': RatingForm(),
+        'average_rating': average_rating
     })
 
 
@@ -68,17 +72,22 @@ def checkout_phase2(request, id):
     checkout_info = []
     for k in checkout:
         checkout_info.append(k)
+    ratings = Rating.objects.filter(seller__id=request.user.id).all()
+    all_ratings = []
+    for i in ratings:
+        all_ratings.append(i.rating)
+    if len(all_ratings) != 0:
+        average_rating = round(sum(all_ratings)/len(all_ratings), 1)
+    else:
+        average_rating = ""
 
     return render(request, 'checkout/checkout_phase2.html', {
         'item': item,
         'id': id,
         'highest_bid_amount': highest_bid_amount,
-        'checkout_info': checkout_info
+        'checkout_info': checkout_info,
+        'average_rating': average_rating
     })
-
-def checkout_phase3(request):
-    return render(request, 'checkout/checkout_phase3.html')
-
 
 
 
