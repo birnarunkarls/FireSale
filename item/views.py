@@ -120,6 +120,8 @@ def get_item_by_id(request, id):
         'average_rating_seller': average_rating_seller
     })
 
+
+
 @login_required
 def create_item(request, id):
     seller = User.objects.filter(pk=id).first()

@@ -18,8 +18,6 @@ class Checkout(models.Model):
     cardnumber = models.CharField(max_length=255, default="")
     expiration_date = models.CharField(max_length=9999, default="")
     cvc = models.CharField(max_length=9999, default="")
-    payment_date = models.CharField(max_length=9999, default="")
-    total_amount = models.FloatField(default=0)
 
 
 

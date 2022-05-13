@@ -1,34 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post" class="form form-horizontal">
-        {% csrf_token %}
-        {{ form }}
 
-    <input type="submit" class="btn btn-primary" >
-    </form>
     <h1>Offer accepted</h1>
     <h2>{{ name }}</h2>
     <div class="checkoutPage">
+
         <div id="img_of_product">
             <img src="{{ item.images_set.first.image }}" />
             <p>Description: {{ item.description }}</p>
         </div>
 
-        <h1>Shipping method</h1>
+        <form method="post" class="form form-horizontal">
+            {% csrf_token %}
+            {{ form }}
+        <input type="submit" class="btn btn-primary" value="Submit" />
+        </form>
 
-
-
-        <h1>Shipping information</h1>
-
-
-
-        <h1>Payment information</h1>
-
-
-
-        <h1>Rate seller</h1>
-
+        
         <div class="fillInfo">
             <div id="shipping">
                 <div id="shipping_method">
