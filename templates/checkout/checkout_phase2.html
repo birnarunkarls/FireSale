@@ -14,11 +14,20 @@
             </div>
             <div id="shipping_info_overview">
                 <p>Shipping overview</p>
-                <p>{{ checkout_info.full_name }}</p>
-                <p>{{ checkout_info.street_name }}</p>
+                {% for a in checkout_info %}
+                    <p>Full name: {{ a.full_name }}</p>
+                    <p>Address: {{ a.street_name }} {{ a.house_number }}</p>
+                    <p>Location: {{ a.postal_code }}, {{ a.city }} {{ a.country }}</p>
+                {% endfor %}
             </div>
             <div id="payment_info_overview">
                 <p>Payment overview</p>
+                {% for a in checkout_info %}
+                    <p>Cardholder name: {{ a.cardholder_name }}</p>
+                    <p>Card number: {{ a.cardnumber }}</p>
+                    <p>Expiration date: {{ a.expiration_date }}</p>
+                    <p>CVC: {{ a.cvc }}</p>
+                {% endfor %}
             </div>
         </div>
 
