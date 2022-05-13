@@ -93,6 +93,12 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     padding-right: 3px;
 }
 
+#bell_icon {
+    color: #e00000;
+    margin-left: -8px;
+    margin-top: -8px;
+}
+
 .profileImage {
     border-radius: 50%;
     border: 1px solid #008c96;
@@ -221,7 +227,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 /* BLUE BOXES (login, register,profile,create item, edit item */
 
-.blueBox {
+.blueBox, #shipping_right {
     background-color: #94d9e0;
     border-radius: 5px;
     width: 50%;
@@ -255,7 +261,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     padding: 20px;
 }
 
-.blueBoxButton {
+.blueBoxButton, .blueBoxButtonSubmit {
     background-color: #008c96;
     color: white;
     border: none;
@@ -267,7 +273,10 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     padding-bottom: 8px;
     margin-left: 175px;
     margin-top: 20px;
+}
 
+.blueBoxButtonSubmit {
+    margin-left: 260px;
 }
 
 #already_acc_text {
@@ -397,16 +406,28 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 /* FLEX */
 
+.sortBy, .editItemButtonsDiv {
+    flex: 0.535;
+}
+
+.categoriesPlace, .makeBidImgBox {
+    flex: 0.75;
+}
+
 .each_bid_div_left, #checkout_overview_bottom_left {
     flex: 0.78;
 }
 
-.each_bid_div_right, .each_listing_div_right, .bids, .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .makeBidInfoProduct, .makeNewBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems, #shipping_left, #each_bid_div_right_top, #each_listing_div_right_top, #highest_bid {
+.each_bid_div_right, .each_listing_div_right, .bids, .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .makeBidInfoProduct, .makeNewBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems, #shipping_left, #each_bid_div_right_top, #each_listing_div_right_top, #highest_bid, #phase_1, #phase_2 {
     flex: 1;
 }
 
-.fillInfo, #shipping_right, #checkout_overview_bottom_right {
+.fillInfo, #checkout_overview_bottom_right {
     flex: 1.8;
+}
+
+#shipping_right {
+    flex: 2.2;
 }
 
 #description_product, #information_seller {
@@ -414,20 +435,12 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     background-color: white;
 }
 
-.categoriesPlace, .makeBidImgBox {
-    flex: 0.75;
-}
-
-.sortBy, .editItemButtonsDiv {
-    flex: 0.535;
-}
-
 .makeBidInfo, .bidType, .productInfoBox, .sellerInfoBox, .similarItemsBox {
     display: flex;
     height: 450px;
 }
 
-#profile_info_nav, .each_listing_div_right, .productInfoBox, .sellerInfoBox, .bids, .makeBidInfoProduct, .makeNewBid, #log_in_buttons, .similarItemsBox, .checkoutPage {
+#profile_info_nav, .each_listing_div_right, #shipping_left, .productInfoBox, .sellerInfoBox, .bids, .makeBidInfoProduct, .makeNewBid, #log_in_buttons, .similarItemsBox, .checkoutPage {
     display: flex;
     flex-direction: column;
 }
@@ -543,6 +556,20 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-bottom: 25px;
     text-decoration: underline;
 }
+
+#phase_1, #phase_2 {
+    border-top: 2px solid black;
+}
+
+#phase_1 {
+    margin-top: 66px;
+}
+
+#phase_2 {
+    margin-top: 60px;
+}
+
+
 
 
 
