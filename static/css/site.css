@@ -75,10 +75,22 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     color: #008c96;
 }
 
+.profileImage {
+    border-radius: 50%;
+    border: 1px solid #008c96;
+    width: 50px;
+    height: 50px;
+}
+
 #star_icon {
     margin-top: 11px;
     margin-right: 3px;
     color: #008c96;
+}
+
+#house_icon, #profile_icon, #item_icon {
+    padding-bottom: 4px;
+    padding-right: 3px;
 }
 
 .profileImage {
@@ -108,10 +120,10 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
 
 /* BUTTONS */
 
-.lightButton, .darkButton, #already_acc_login_button, .editItemsButton {
+.lightButton, .darkButton, #already_acc_login_button, .editItemsButton, #new_acc_login_button {
     margin-left: 20px;
     font-weight: bold;
-    width: 93px;
+    width: 110px;
     height: 32px;
     border: none;
     border-radius: 5px;
@@ -228,7 +240,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-top: 30px;
 }
 
-#already_acc_login_button {
+#already_acc_login_button, #new_acc_login_button {
     background-color: #008c96;
     margin-left: 600px;
 }
@@ -257,6 +269,10 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 200px;
 }
 
+.bigHeader {
+    margin-top: 10px;
+    margin-left: 7px;
+}
 
 /* ITEM */
 
