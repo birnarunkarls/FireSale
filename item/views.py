@@ -80,7 +80,7 @@ def make_bid(request, id):
         form = NewBidForm(data=request.POST)
         if form.is_valid():
             new_bid = form.save(commit=False)
-            new_bid.buyer = seller
+            new_bid.buyer = request.user
             new_bid.item = bid_item
             new_bid.save()
             return redirect('fire_sale-home_page',)
