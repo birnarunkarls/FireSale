@@ -361,11 +361,11 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     flex: 0.8;
 }
 
-.each_bid_div_right, .bids, .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems{
+.each_bid_div_right, .bids, .productInfoBox, .imgItemBox, .sellerInfoBox, .bids, .largeButton, .makeBid, .imgDiv, .infoProduct, .newBid, #img_of_product, #shipping_info_overview, #payment_info_overview, #highest_bid, #img_of_product, .checkoutHeadingText, #shipping, #payment_info, #rate_seller, #product_info, #checkout_overview_center, #checkout_overview_bottom, .similarItems, .similarItems, #shipping_left{
     flex: 1;
 }
 
-.fillInfo {
+.fillInfo, #shipping_right {
     flex: 1.8;
 }
 
@@ -378,7 +378,7 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 450px;
 }
 
-#profile_info_nav, .checkoutOverview, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox {
+#profile_info_nav, .productInfoBox, .sellerInfoBox, .bids, .infoProduct, .newBid, #log_in_buttons, .similarItemsBox, .checkoutPage {
     display: flex;
     flex-direction: column;
 }

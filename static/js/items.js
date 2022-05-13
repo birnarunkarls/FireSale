@@ -11,8 +11,8 @@ $(document).ready(function (){
                     return `<div class="eachItem">
                         <a href="/${d.id}">
                             <img class="itemImg" src="${d.firstImage}" />
-                            <h4>${d.name}</h4>
-                            <p>${d.description}</p>
+                            <h4 class="itemNameHomePage">${d.name}</h4>
+                            <p class="itemDescriptionPage">${d.description}</p>
                         </a>
 
                     </div>`
