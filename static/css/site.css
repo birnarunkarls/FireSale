@@ -1,6 +1,5 @@
 body {
     background-color: #f1f1f1;
-    min-height: 400px;
 }
 
 .container {
@@ -99,14 +98,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-top: -8px;
 }
 
-.profileImage {
-    border-radius: 50%;
-    border: 1px solid #008c96;
-    width: 50px;
-    height: 50px;
-}
-
-
 /* FOOTER */
 
 .footer {
@@ -134,10 +125,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     border: none;
     border-radius: 5px;
     color: white;
-}
-
-.darkButton, #already_acc_login_button, .editItemsButton, #new_acc_login_button, .submitPurchaseButton {
-    width: 110px;
 }
 
 .lightButton {
