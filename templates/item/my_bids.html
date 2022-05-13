@@ -44,7 +44,11 @@
                     </div>
                     <div class="each_listing_div_right">
                         <div id="each_listing_div_right_top">
-                            <p>Bid amount: {{ bid_amount }}</p>
+                            {% for k in new_list %}
+                                {% if k.item_id == i.id %}
+                                    <p>Bid amount: {{ k.amount }}</p>
+                                {% endif %}
+                            {% endfor %}
                             <button class="acceptBidButton">Accept offer</button>
                         </div>
                         <div class="editItemButtonsDiv">

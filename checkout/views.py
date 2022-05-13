@@ -47,7 +47,7 @@ def rating(request, id):
             rating = form.save(commit=False)
             rating.seller = user
             rating.save()
-            return redirect('checkout-checkout_phase2', 33)
+            return redirect('checkout-checkout_phase2', item.id)
     return render(request, 'checkout/checkout_rating.html', {
         'form': RatingForm()
     })

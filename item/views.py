@@ -29,7 +29,7 @@ def my_bids(request, id):
     listings = Item.objects.filter(seller__id=id)
     bids = Bid.objects.filter(buyer__id=id)
     listing_bids = Bid.objects.filter(item__id=id).all()
-    #my_listing_with_a_bids = Bid.objects.filter(item__id=listings.first().id)
+
     highest_bid = []
     all_listings = []
     all_bids_id = []
@@ -37,16 +37,14 @@ def my_bids(request, id):
     my_listed_items_with_bids = []
     bid_amount = []
     every_bid = []
+    listings_list = []
     for y in Bid.objects.filter(buyer__id=id).all():
         every_bid.append(y)
-
+    new_list = []
     for b in listings:
         for a in Bid.objects.filter(item__id=b.id):
+            new_list.append(a)
             my_listed_items_with_bids.append(Item.objects.filter(pk=b.id).first())
-
-
-    for l in listing_bids:
-        highest_bid.append(l.amount)
 
     if len(highest_bid) != 0:
         highest_bid_offer = max(highest_bid)
@@ -63,7 +61,8 @@ def my_bids(request, id):
         item = Item.objects.filter(pk=bid_bid.item.id).first()
         all_bid_items.append(item)
 
-    print(all_bid_items)
+    for d in listings:
+        listings_list.append(d)
 
 
     return render(request, 'item/my_bids.html', {
@@ -74,7 +73,9 @@ def my_bids(request, id):
         'bid_items': all_bid_items,
         'my_listed_items_with_bids': my_listed_items_with_bids,
         'bid_amount': bid_amount,
-        'every_bid': every_bid
+        'every_bid': every_bid,
+        'all_bids': all_bids_id,
+        'new_list': new_list
     })
 
 # my listings
