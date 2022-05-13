@@ -1,106 +1,98 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <div class="myBids">
-        <div class="bids">
-        <h2 class="each_bid_sort">My listed items</h2>
-        <h6 class="each_bid_sort">All items I have for sale</h6>
-            {% for i in listings %}
-                <div class="each_bid_div">
-                    <div class="each_bid_div_left">
-                        <a href="{% url 'item-get_item_by_id' i.id %}">
-                            <h4 class="each_bid_header">{{ i }}</h4>
-                            <img class="listingImage" src="{{i.images_set.first.image}}"/>
-                        </a>
+    <div class="myBidsOver">
+        <div class="myBids1">
+            <h2 class="each_bid_sort">My listed items</h2>
+            <h6 class="each_bid_sort">All items I have for sale</h6>
+                {% for i in listings %}
+                    <div class="each_bid_div">
+                        <div class="each_bid_div_left">
+                            <a href="{% url 'item-get_item_by_id' i.id %}">
+                                <h4 class="each_bid_header">{{ i }}</h4>
+                                <img class="listingImage1" src="{{i.images_set.first.image}}"/>
+                            </a>
+                        </div>
+                        <div class="editItemButtonsDiv1">
+                            <a href="{% url 'item-delete_item' i.id %}" class="delUpdateButtons">Delete</a>
+                            <a href="{% url 'item-update_item' i.id %}" class="delUpdateButtons">Update</a>
+                        </div>
                     </div>
-                    <div class="each_listing_div_right">
-                        <div id="each_listing_div_right_top">
-                            <p id="highest_bid_text">Highest bid: {{ highest_bid }}</p>
-                            <button class="acceptBidButton">Accept offer</button>
-                        </div>
-                        <div class="editItemButtonsDiv">
-                            <a href="{% url 'item-delete_item' i.id %}" class="delUpdateButtons">Delete item</a>
-                            <a href="{% url 'item-update_item' i.id %}" class="delUpdateButtons">Update item</a>
-                        </div>
-                     </div>
-
-                </div>
-            {% endfor %}
+                {% endfor %}
         </div>
 
 
-    <div class="myBids">
-        <div class="bids">
-        <h2 class="each_bid_sort">My listed items</h2>
-        <h6 class="each_bid_sort">All items I have for sale</h6>
-            {% for i in my_listed_items_with_bids %}
-                <div class="each_bid_div">
-                    <div class="each_bid_div_left">
-                        <a href="{% url 'item-get_item_by_id' i.id %}">
-                            <h4 class="each_bid_header">{{ i }}</h4>
-                            <img class="listingImage" src="{{i.images_set.first.image}}"/>
-                        </a>
-                    </div>
-                    <div class="each_listing_div_right">
-                        <div id="each_listing_div_right_top">
-                            {% for k in new_list %}
-                                {% if k.item_id == i.id %}
-                                    <p>Bid amount: {{ k.amount }}</p>
+        <div class="myBids2">
+            <h2 class="each_bid_sort">My listed items</h2>
+            <h6 class="each_bid_sort">All items I have for sale</h6>
+                {% for i in my_listed_items_with_bids %}
+                    <div class="each_bid_div2">
+                        <div class="each_bid_div_left">
+                            <a href="{% url 'item-get_item_by_id' i.id %}">
+                                <h4 class="each_bid_header">{{ i }}</h4>
+                                <img class="listingImage2" src="{{i.images_set.first.image}}"/>
+                            </a>
+                        </div>
+                        <div class="each_listing_div_right">
+                            <div id="each_listing_div_right_top">
+                                {% for k in new_list %}
+                                    {% if k.item_id == i.id %}
+                                        <h4>Bid amount: {{ k.amount }}</h4>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            {% for y in new_list %}
+                               {% if i.id == y.item_id %}
+                                    {% if y.status == 'pending' %}
+                                        <div class="editItemButtonsDiv">
+                                            <a href="{% url 'item-delete_bid' i.id %}" class="decOfferButton">Decline offer</a>
+                                            <a href="{% url 'item-accept_bid' i.id %}" class="accOfferButton">Accept offer</a>
+                                        </div>
+                                    {% else %}
+                                        <h5>PENDING</h5>
+                                        <P>Waiting for <u>buyer</u> to purchase the item</P>
+                                    {% endif %}
                                 {% endif %}
                             {% endfor %}
-                        </div>
-                    {% for y in new_list %}
-                           {% if i.id == y.item_id %}
-                                {% if y.status == 'pending' %}
-                                    <div class="editItemButtonsDiv">
-                                        <a href="{% url 'item-delete_bid' i.id %}" class="declineOfferButton">Decline offer</a>
-                                        <a href="{% url 'item-accept_bid' i.id %}" class="acceptOfferButton">Accept offer</a>
-                                    </div>
-                                {% else %}
-                                    <p>birta</p>
-                                {% endif %}
-                        {% endif %}
-                    {% endfor %}
-                     </div>
-
-                </div>
-            {% endfor %}
+                         </div>
+                    </div>
+                {% endfor %}
         </div>
-
-
-
-        <div class="bids">
-        <h2 class="each_bid_sort">My item bids</h2>
-        <h6 class="each_bid_sort">All bids I have made</h6>
-            {% for item in bid_items %}
-                <div class="each_bid_div">
-                    <div class="each_bid_div_left">
-                        <a href="{% url 'item-get_item_by_id' item.id %}">
-                            <h4 class="each_bid_header">{{ item }}</h4>
-                            <img class="listingImage" src="{{item.images_set.first.image}}"/>
-                        </a>
+        <div class="myBids3">
+            <h2 class="each_bid_sort">My item bids</h2>
+            <h6 class="each_bid_sort">All bids I have made</h6>
+                {% for item in bid_items %}
+                    <div class="each_bid_div2">
+                        <div class="each_bid_div_left">
+                            <a href="{% url 'item-get_item_by_id' item.id %}">
+                                <h4 class="each_bid_header">{{ item }}</h4>
+                                <img class="listingImage3" src="{{item.images_set.first.image}}"/>
+                            </a>
+                        </div>
+                        <div class="each_bid_div_right">
+                            <div id="each_listing_div_right_top">
+                                {% for y in every_bid %}
+                                    {% if item.id == y.item_id %}
+                                        {% if y.status == 'accepted' %}
+                                            <div id="offer_bid_box">
+                                                <h5>Your offer has been accepted!</h5>
+                                                <p id="offer_bid_text">Offer:</p>
+                                            </div>
+                                            <div id="accepted_bids">
+                                                <button id=accept_button><a href="{% url 'checkout-checkout_phase1' item.id %}">Purchase</a></button>
+                                            </div>
+                                        {% else %}
+                                            <div class="pending_bid3">
+                                                <h5>PENDING</h5>
+                                                <P>Waiting for <u>seller</u> to accept the offer</P>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
-                    <div class="each_bid_div_right">
-                        {% for y in every_bid %}
-                            {% if item.id == y.item_id %}
-                                {% if y.status == 'accepted' %}
-                                    <div id="offer_bid_box">
-                                        <h5>Your offer has been accepted!</h5>
-                                        <p id="offer_bid_text">Offer:</p>
-                                    </div>
-                                    <div id="accepted_bids">
-                                        <button id=decline_button>Cancel</button>
-                                        <button id=accept_button><a href="{% url 'checkout-checkout_phase1' item.id %}">Purchase</a></button>
-                                    </div>
-                                {% else %}
-                                    <p>birta</p>
-                                {% endif %}
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
         </div>
     </div>
 
