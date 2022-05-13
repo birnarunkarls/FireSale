@@ -19,22 +19,7 @@ INSERT INTO item_item (name, description, condition, category_id, seller_id) VAL
 INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (100, 1, 8);
 INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 2, 9);
 INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (2500, 3, 9);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 1, 7);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (50, 1, 8);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (3000, 2, 9);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (900, 3, 10);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 1, 11);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (10200, 3, 17);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (10300, 1, 20);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (100, 7, 26);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (12200, 1, 7);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (540, 1, 8);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (30500, 2, 9);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (90, 3, 10);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (100, 1, 11);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (1000, 3, 17);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (10300, 1, 20);
-INSERT INTO item_bid (amount, buyer_id, item_id) VALUES (14000, 7, 26);
+
 
 INSERT INTO checkout_checkout (full_name, street_name, house_number, postal_code, city, country, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount, user_id, item_id) VALUES ('Jón Jónsson', 'Menntavegur', '1', '102', 'Reykjavik', 'Iceland', 'Birna Rún Karlsdóttir', '1111-11-111111', '07/27', '111', '01.05.20222', 10000, 1, 20);
 INSERT INTO checkout_checkout (full_name, street_name, house_number, postal_code, city, country, cardholder_name, cardnumber, expiration_date, cvc, payment_date, total_amount, user_id, item_id) VALUES ('Gunnar Gunnarsson', 'Bjarmaland', '0', '108', 'Reykjavik', 'Iceland', 'Birna Rún Karlsdóttir', '1111-11-111111', '07/27', '111', '01.05.20222', 20000, 1, 30);

@@ -36,6 +36,8 @@
                 <p>Description: {{ item.description }}</p>
             </div>
             <div id="checkout_overview_bottom_right">
+                <a href="{% url 'item-delete_item' item.id %}" class="block btn btn-primary">CONFIRM PURCHASE</a>
+
                 <button class="submitPurchaseButton">CONFIRM PURCHASE</button>
             </div>
         </div>

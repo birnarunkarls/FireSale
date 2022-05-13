@@ -40,22 +40,23 @@ def checkout_phase1(request, id):
 def rating(request, id):
     item = Item.objects.filter(pk=id).first()
     user = User.objects.filter(pk=id).first()
+
     if request.method == 'POST':
         form = RatingForm(data=request.POST)
         if form.is_valid():
             rating = form.save(commit=False)
             rating.seller = user
             rating.save()
-            return redirect('checkout-checkout_phase2', user.id)
+            return redirect('checkout-checkout_phase2', 33)
     return render(request, 'checkout/checkout_rating.html', {
         'form': RatingForm()
     })
 
 
 def checkout_phase2(request, id):
-    item = Item.objects.filter(seller__id=id).first()
-    bid = Bid.objects.filter(item__id=item.id).all()
-    checkout = Checkout.objects.filter(item__id=item.id)
+    item = Item.objects.filter(pk=id).first()
+    bid = Bid.objects.filter(item__id=id).all()
+    checkout = Checkout.objects.filter(item__id=id)
     highest_bid = []
     for i in bid:
         highest_bid.append(i.amount)
@@ -65,10 +66,7 @@ def checkout_phase2(request, id):
         highest_bid_amount = 'No bids made'
     checkout_info = []
     for k in checkout:
-        print(k)
-        print(k.full_name)
         checkout_info.append(k)
-    print(checkout_info)
 
     return render(request, 'checkout/checkout_phase2.html', {
         'item': item,
