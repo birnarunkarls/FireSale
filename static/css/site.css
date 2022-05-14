@@ -316,6 +316,12 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     height: 200px;
 }
 
+.itemImgSeller {
+    width: 300px;
+    height: 250px;
+}
+
+
 .bigHeader {
     margin-top: 10px;
     margin-left: 7px;
@@ -367,10 +373,6 @@ a:hover, .categories:hover, #item_name_home_page:hover, .createListingButton:hov
     margin-top: 30px;
     margin-left: 23%;
     color: white;
-}
-
-#img_seller {
-    margin-top: 8%;
 }
 
 .simItemImg {
